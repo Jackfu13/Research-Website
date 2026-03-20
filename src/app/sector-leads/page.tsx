@@ -1,3 +1,6 @@
+import { Card } from "@/components/Card";
+import { PageHeader } from "@/components/PageHeader";
+import { PageLayout } from "@/components/PageLayout";
 import { PersonCard } from "@/components/PersonCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { sectors } from "@/content/sectors";
@@ -16,15 +19,23 @@ function getSubtitle(lead: (typeof sectors.coverage)[number]) {
 
 export default function SectorLeadsPage() {
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-16 md:py-20">
-      <section className="space-y-6">
-        <SectionHeading
-          title="Sector Leads"
-          subtitle={`${sectors.intro} ${sectors.assignmentNote} ${sectors.coLeadPolicy}`}
-        />
+    <PageLayout>
+      <PageHeader
+        title="Sector Leads"
+        intro={`${sectors.intro} ${sectors.assignmentNote}`}
+      />
+
+      <section className="grid gap-6 md:grid-cols-2">
+        <Card title="Coverage Ownership" body={sectors.intro} />
+        <Card title="Assignment Policy" body={sectors.coLeadPolicy} />
       </section>
 
-      <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <section className="space-y-8 bg-[var(--color-surface-muted)] px-6 py-12 md:px-8">
+        <SectionHeading
+          title="Current Coverage"
+          subtitle="Known assignments are listed below, while open or single-lead sectors remain marked as such."
+        />
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {sectors.coverage.map((entry) => (
           <PersonCard
             key={entry.sector}
@@ -33,7 +44,8 @@ export default function SectorLeadsPage() {
             subtitle={getSubtitle(entry)}
           />
         ))}
+        </div>
       </section>
-    </div>
+    </PageLayout>
   );
 }
