@@ -43,6 +43,33 @@ Do not invent:
 - Tailwind CSS 4
 - ESLint
 
+## How to Run Locally
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npm run dev
+```
+
+3. Open the site in your browser:
+
+```text
+http://localhost:3000
+```
+
+4. Before wrapping up changes, run verification:
+
+```bash
+npm run lint
+npm run build -- --webpack
+```
+
 ## Scripts
 
 ```bash
@@ -51,8 +78,6 @@ npm run dev
 npm run lint
 npm run build -- --webpack
 ```
-
-Open [http://localhost:3000](http://localhost:3000) during local development.
 
 Notes:
 
