@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## Project
-This repository contains the website for the **Northeastern Equity Research Group (NERG)**.
+This repository contains the website for the **Equity Research Group (ERG)**.
 
 The website should present the group as a serious, professional, student-run equity research organization.
 

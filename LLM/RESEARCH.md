@@ -1,9 +1,9 @@
 # RESEARCH.md
 
-### Northeastern Equity Research Group
+### Equity Research Group
 
 ### Mission
-The Northeastern Equity Research Group is a student-run equity research organization focused on under-covered small and mid-cap companies. The group produces institutional-quality research on names that receive little Wall Street coverage, developing members into rigorous fundamental analysts.
+The Equity Research Group is a student-run equity research organization focused on under-covered small and mid-cap companies. The group produces institutional-quality research on names that receive little Wall Street coverage, developing members into rigorous fundamental analysts.
 
 ---
 

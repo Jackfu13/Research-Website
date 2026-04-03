@@ -1,4 +1,5 @@
 import { Card } from "@/components/Card";
+import { InterestForm } from "@/components/InterestForm";
 import { ListCard } from "@/components/ListCard";
 import { PageHeader } from "@/components/PageHeader";
 import { PageLayout } from "@/components/PageLayout";
@@ -38,6 +39,14 @@ export default function JoinPage() {
           title="Why Join"
           body={`${membership.recruitingPositioning} ${membership.participationSummary}`}
         />
+      </section>
+
+      <section className="space-y-6">
+        <SectionHeading
+          title="Express Interest"
+          subtitle="Applications open each semester. Submit your information below and we will reach out when the next cycle begins."
+        />
+        <InterestForm />
       </section>
     </PageLayout>
   );

@@ -1,12 +1,12 @@
-# Northeastern Equity Research Group Website
+# Equity Research Group Website
 
-Website for the **Northeastern Equity Research Group (NERG)**, a student-run equity research organization focused on under-covered small and mid-cap companies.
+Website for the **Equity Research Group (ERG)**, a student-run equity research organization focused on under-covered small and mid-cap companies.
 
 This repository contains the public-facing site built with Next.js App Router, TypeScript, and Tailwind CSS.
 
 ## Purpose
 
-The site should present NERG as:
+The site should present ERG as:
 
 - serious
 - professional

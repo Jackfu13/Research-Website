@@ -1,7 +1,7 @@
 # DESIGN.md
 
 ## Goal
-Build a polished website for the Northeastern Equity Research Group.
+Build a polished website for the Equity Research Group.
 The website should feel serious, credible, and student-led.
 It should resemble a clean university finance organization site.
 
@@ -15,13 +15,13 @@ It should resemble a clean university finance organization site.
 - Cards or modules stacked vertically stretching to most of the page
 
 ## Colors
-- Background: white or warm off-white
+- Background: white or very slightly green-tinted off-white
 - Text: charcoal / near-black
-- Primary accent: deep-medium red
-- Borders: light gray/red
+- Primary accent: military green (medium, not dark — approx #4d7c57)
+- Borders: light gray / light green-gray
 
 ## Theme notes
-- Overall theme should read red, but still minimal
+- Overall theme should read green, but still minimal
 - Navbar should be solid for now rather than using a filled background
 
 ## Typographyin

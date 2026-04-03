@@ -1,6 +1,6 @@
 # PLAN.md
 
-Implementation plan for the NERG website.
+Implementation plan for the ERG website.
 Do not write code that contradicts this plan without updating it first.
 
 ---
@@ -89,7 +89,7 @@ Never invent members, stats, returns, sponsors, or accomplishments.
 | Component | Location | Purpose |
 |---|---|---|
 | `Nav` | `src/components/Nav.tsx` | Top nav: org name left, links right. No animation. |
-| `Footer` | `src/components/Footer.tsx` | Org name, Substack link, Northeastern affiliation. |
+| `Footer` | `src/components/Footer.tsx` | Org name and supporting footer links. |
 
 ### Shared Primitives
 

@@ -11,7 +11,7 @@ export default function AboutPage() {
     <PageLayout>
       <PageHeader
         title="About"
-        intro="The Northeastern Equity Research Group is built as a serious student-run research organization with a flat year-one structure, clear sector ownership, and a deliberate focus on under-followed companies."
+        intro="The Equity Research Group is built as a serious student-run research organization with a flat year-one structure, clear sector ownership, and a deliberate focus on under-followed companies."
       />
 
       <section className="grid gap-6 md:grid-cols-3">

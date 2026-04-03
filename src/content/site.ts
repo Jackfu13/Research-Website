@@ -14,16 +14,16 @@ export type InvestmentUniverseItem = {
 };
 
 export const site = {
-  name: "Northeastern Equity Research Group",
-  shortName: "NERG",
-  heroEyebrow: "Northeastern University",
+  name: "Equity Research Group",
+  shortName: "ERG",
+  heroEyebrow: "Student-run equity research",
   tagline:
     "Student-run equity research focused on under-covered small and mid-cap companies.",
   heroSummary:
     "The group produces institutional-quality research on names that receive little Wall Street coverage.",
   mission:
-    "The Northeastern Equity Research Group is a student-run equity research organization focused on under-covered small and mid-cap companies. The group produces institutional-quality research on names that receive little Wall Street coverage, developing members into rigorous fundamental analysts.",
-  footerNote: "Student-run equity research organization at Northeastern University.",
+    "The Equity Research Group is a student-run equity research organization focused on under-covered small and mid-cap companies. The group produces institutional-quality research on names that receive little Wall Street coverage, developing members into rigorous fundamental analysts.",
+  footerNote: "Student-run equity research organization.",
   homepageCta:
     "Admission is based on application, stock pitch submission, and interview.",
   investmentUniverse: [

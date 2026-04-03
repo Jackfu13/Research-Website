@@ -2,9 +2,9 @@
 
 ## Project Context
 
-This repository contains the website for the **Northeastern Equity Research Group (NERG)**.
+This repository contains the website for the **Equity Research Group (ERG)**.
 
-NERG is a student-run equity research organization focused on under-covered small and mid-cap companies.
+ERG is a student-run equity research organization focused on under-covered small and mid-cap companies.
 
 The website should reflect the group's focus on:
 
