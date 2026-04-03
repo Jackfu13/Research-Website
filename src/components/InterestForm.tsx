@@ -41,9 +41,16 @@ export function InterestForm() {
     e.preventDefault();
     setError(null);
 
-    // TODO: replace with your form endpoint (e.g. Formspree, a server action, or an API route)
-    // Example: await fetch("https://formspree.io/f/YOUR_ID", { method: "POST", body: JSON.stringify(form) })
-    await new Promise((r) => setTimeout(r, 400));
+    const res = await fetch("https://formspree.io/f/mkopvdnz", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    if (!res.ok) {
+      setError("Something went wrong. Please try again.");
+      return;
+    }
 
     setSubmitted(true);
   }
