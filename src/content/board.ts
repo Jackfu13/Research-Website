@@ -2,6 +2,9 @@ export type BoardRole = {
   title: string;
   responsibilities: string[];
   note: string;
+  name: string | null;
+  photo: string | null;
+  bio: string | null;
 };
 
 export const board = {
@@ -22,6 +25,9 @@ export const board = {
         "Maintains sector coverage and pitches",
       ],
       note: "Functional leadership role within the year-one flat partnership.",
+      name: null,
+      photo: null,
+      bio: null,
     },
     {
       title: "Portfolio Coordinator",
@@ -32,6 +38,9 @@ export const board = {
         "Maintains sector coverage and pitches",
       ],
       note: "Owns portfolio administration while remaining part of the research rotation.",
+      name: null,
+      photo: null,
+      bio: null,
     },
     {
       title: "Publishing Lead",
@@ -42,6 +51,9 @@ export const board = {
         "Maintains sector coverage and pitches",
       ],
       note: "Owns publishing workflow while remaining part of the research rotation.",
+      name: null,
+      photo: null,
+      bio: null,
     },
   ] satisfies BoardRole[],
   futureStructure: {

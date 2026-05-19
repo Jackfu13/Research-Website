@@ -4,9 +4,9 @@ export type NavigationLink = {
 };
 
 export const navigationLinks: NavigationLink[] = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/executive-board", label: "Executive Board" },
-  { href: "/sector-leads", label: "Sector Leads" },
+  { href: "/team", label: "Members" },
   { href: "/research", label: "Research" },
   { href: "/join", label: "Join" },
 ];
