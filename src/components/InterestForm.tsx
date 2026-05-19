@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { sectors } from "@/content/sectors";
 
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+
 type FormState = {
   name: string;
   email: string;
@@ -19,7 +21,10 @@ const EMPTY: FormState = {
   note: "",
 };
 
-const GRAD_YEARS = ["2025", "2026", "2027", "2028", "2029"];
+const CURRENT_YEAR = new Date().getFullYear();
+const GRAD_YEARS = Array.from({ length: 5 }, (_, index) =>
+  String(CURRENT_YEAR + index),
+);
 
 const inputClass =
   "w-full border border-[var(--color-border)] bg-white px-4 py-3 text-sm text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:outline-none";
@@ -27,6 +32,7 @@ const inputClass =
 export function InterestForm() {
   const [form, setForm] = useState<FormState>(EMPTY);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   function handleChange(
@@ -39,20 +45,35 @@ export function InterestForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (submitting) return;
+
     setError(null);
+    setSubmitting(true);
 
-    const res = await fetch("https://formspree.io/f/mkopvdnz", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-
-    if (!res.ok) {
-      setError("Something went wrong. Please try again.");
+    if (!FORMSPREE_ENDPOINT) {
+      setError("The interest form is not configured yet. Please try again later.");
+      setSubmitting(false);
       return;
     }
 
-    setSubmitted(true);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        setError("Something went wrong. Please try again.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -169,15 +190,18 @@ export function InterestForm() {
       </div>
 
       {error ? (
-        <p className="mt-4 text-sm text-red-600">{error}</p>
+        <p className="mt-4 text-sm text-red-600" role="alert">
+          {error}
+        </p>
       ) : null}
 
       <div className="mt-6">
         <button
           type="submit"
-          className="inline-flex min-h-11 items-center justify-center border border-[var(--color-accent)] bg-[var(--color-accent)] px-5 py-2 text-sm font-medium uppercase tracking-[0.08em] text-white transition-colors hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-strong)]"
+          disabled={submitting}
+          className="inline-flex min-h-11 items-center justify-center border border-[var(--color-accent)] bg-[var(--color-accent)] px-5 py-2 text-sm font-medium uppercase tracking-[0.08em] text-white transition-colors hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-strong)] disabled:cursor-not-allowed disabled:opacity-65"
         >
-          Submit Interest
+          {submitting ? "Submitting..." : "Submit Interest"}
         </button>
       </div>
     </form>

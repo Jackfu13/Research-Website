@@ -6,7 +6,7 @@ type PageLayoutProps = {
 
 export function PageLayout({ children }: PageLayoutProps) {
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 py-12 md:py-16">
+    <div className="flex w-full flex-col">
       {children}
     </div>
   );

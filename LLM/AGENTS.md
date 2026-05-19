@@ -13,20 +13,20 @@ The design should feel **institutional, clean, and credible**, not flashy or sta
 
 Before performing any task, always read the following files:
 
-1. DESIGN.md
-2. RESEARCH.md
+1. LLM/DESIGN.md
+2. LLM/RESEARCH.md
 3. src/content files
 4. existing components in src/components
 
-Before implementing UI, summarize DESIGN.md in your own words.
+Before implementing UI, summarize LLM/DESIGN.md in your own words.
 
-Before implementing or modifying content, summarize RESEARCH.md in your own words.
+Before implementing or modifying content, summarize LLM/RESEARCH.md in your own words.
 
 ---
 
 # Source of Truth
 
-### DESIGN.md
+### LLM/DESIGN.md
 Defines the visual system including:
 
 - typography
@@ -35,11 +35,11 @@ Defines the visual system including:
 - layout principles
 - UI component consistency
 
-All UI decisions must follow DESIGN.md.
+All UI decisions must follow LLM/DESIGN.md.
 
 ---
 
-### RESEARCH.md
+### LLM/RESEARCH.md
 Defines the organization's:
 
 - mission
@@ -50,7 +50,7 @@ Defines the organization's:
 - portfolio structure
 - messaging
 
-RESEARCH.md is the **source of truth for all factual content**.
+LLM/RESEARCH.md is the **source of truth for all factual content**.
 
 Do not invent:
 
@@ -62,7 +62,7 @@ Do not invent:
 - statistics
 - accomplishments
 
-All content must be grounded in RESEARCH.md.
+All content must be grounded in LLM/RESEARCH.md.
 
 ---
 
@@ -87,3 +87,46 @@ General expectations:
 # Repository Structure
 
 Expected structure:
+```text
+src/
+  app/
+    layout.tsx
+    page.tsx
+    about/page.tsx
+    team/page.tsx
+    research/page.tsx
+    join/page.tsx
+    globals.css
+  components/
+    BoardMemberCard.tsx
+    Button.tsx
+    Card.tsx
+    Footer.tsx
+    InterestForm.tsx
+    ListCard.tsx
+    Navbar.tsx
+    PageHeader.tsx
+    PageLayout.tsx
+    PersonCard.tsx
+    SectionHeading.tsx
+    SiteShell.tsx
+  content/
+    board.ts
+    membership.ts
+    navigation.ts
+    output.ts
+    portfolio.ts
+    process.ts
+    sectors.ts
+    site.ts
+```
+
+Current public routes:
+
+- `/`
+- `/about`
+- `/team`
+- `/research`
+- `/join`
+
+The old `/executive-board` and `/sector-leads` pages are merged into `/team`.

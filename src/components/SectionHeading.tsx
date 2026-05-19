@@ -2,11 +2,12 @@ type SectionHeadingProps = {
   title: string;
   subtitle?: string;
   light?: boolean;
+  center?: boolean;
 };
 
-export function SectionHeading({ title, subtitle, light = false }: SectionHeadingProps) {
+export function SectionHeading({ title, subtitle, light = false, center = false }: SectionHeadingProps) {
   return (
-    <div className="max-w-3xl space-y-3">
+    <div className={`max-w-3xl space-y-3 ${center ? "mx-auto text-center" : ""}`}>
       <h2 className={`text-2xl font-semibold tracking-tight md:text-3xl ${light ? "text-[var(--color-footer-text)]" : "text-[var(--color-text)]"}`}>
         {title}
       </h2>

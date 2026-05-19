@@ -75,7 +75,7 @@ Each lead owns primary coverage of one sector. Larger or more active sectors may
 | Financials – Fintech | Isaac Toffel |
 | Energy | Jack Dalton |
 | Materials & Chemicals | Single lead |
-| Real Estate & REITs | Eli Goldstien |
+| Real Estate & REITs | Eli Goldstein |
 | Business Services | Ben Rosenblatt |
 | Transportation & Logistics | Single lead |
 | Aerospace and Defense | Edan Winter |

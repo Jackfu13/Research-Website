@@ -19,12 +19,12 @@ The visual tone should feel institutional and credible rather than startup-like 
 
 Two files define the project and should be read before making changes:
 
-1. [`DESIGN.md`](DESIGN.md)
+1. [`LLM/DESIGN.md`](LLM/DESIGN.md)
    Defines the visual system, spacing, color direction, typography, and component consistency.
-2. [`RESEARCH.md`](RESEARCH.md)
+2. [`LLM/RESEARCH.md`](LLM/RESEARCH.md)
    Defines the mission, structure, sector coverage, research process, membership expectations, and messaging.
 
-Content must be grounded in `RESEARCH.md`.
+Content must be grounded in `LLM/RESEARCH.md`.
 
 Do not invent:
 
@@ -85,12 +85,21 @@ Notes:
 - `npm run lint` runs the project lint checks.
 - `npm run build -- --webpack` is the most reliable local production verification path used in this repo.
 
+## Environment Variables
+
+The join page interest form posts to Formspree through a public client-side endpoint.
+
+Create `.env.local` and set:
+
+```bash
+NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+```
+
 ## Current Routes
 
 - `/` homepage
 - `/about`
-- `/executive-board`
-- `/sector-leads`
+- `/team`
 - `/research`
 - `/join`
 
@@ -102,15 +111,16 @@ src/
     layout.tsx                Root layout
     page.tsx                  Homepage
     about/page.tsx
-    executive-board/page.tsx
-    sector-leads/page.tsx
+    team/page.tsx             Executive board and sector leads
     research/page.tsx
     join/page.tsx
     globals.css               Design tokens and global styles
   components/
+    BoardMemberCard.tsx
     Button.tsx
     Card.tsx
     Footer.tsx
+    InterestForm.tsx
     ListCard.tsx
     Navbar.tsx
     PageHeader.tsx
@@ -131,7 +141,7 @@ src/
 
 ## Content Model
 
-`src/content` is the bridge between `RESEARCH.md` and the UI.
+`src/content` is the bridge between `LLM/RESEARCH.md` and the UI.
 
 Use it for repeated content and page data instead of scattering copy inside page components.
 
@@ -148,12 +158,12 @@ Current content files:
 
 ## Design Rules
 
-The site should stay consistent with the design system in `DESIGN.md`:
+The site should stay consistent with the design system in `LLM/DESIGN.md`:
 
 - clean, content-first layouts
 - strong typography hierarchy
 - generous whitespace
-- restrained red accent system
+- restrained deep green accent system
 - subtle hover states only
 - consistent cards, buttons, and section headings
 
@@ -170,8 +180,8 @@ Avoid:
 
 Before making UI or content changes:
 
-1. Read `DESIGN.md`
-2. Read `RESEARCH.md`
+1. Read `LLM/DESIGN.md`
+2. Read `LLM/RESEARCH.md`
 3. Review existing files in `src/content`
 4. Review shared components in `src/components`
 

@@ -3,14 +3,15 @@ type BoardMemberCardProps = {
   title: string;
   photo: string | null;
   bio: string | null;
+  compact?: boolean;
 };
 
-export function BoardMemberCard({ name, title, photo, bio }: BoardMemberCardProps) {
+export function BoardMemberCard({ name, title, photo, bio, compact = false }: BoardMemberCardProps) {
   const displayName = name ?? "TBD";
 
   return (
     <article className="flex flex-col bg-[var(--color-surface)] border border-[var(--color-border)]">
-      <div className="aspect-[3/4] w-full overflow-hidden bg-[var(--color-surface-muted)]">
+      <div className={`${compact ? "aspect-[3/4]" : "h-80"} w-full overflow-hidden bg-[var(--color-surface-muted)]`}>
         {photo ? (
           <img
             src={photo}
@@ -28,7 +29,7 @@ export function BoardMemberCard({ name, title, photo, bio }: BoardMemberCardProp
         )}
       </div>
 
-      <div className="flex flex-col items-center gap-1 px-4 py-5 text-center">
+      <div className="flex h-24 flex-col items-center justify-center gap-1 px-4 text-center">
         <p className="text-base font-semibold text-[var(--color-text)]">{displayName}</p>
         <p className="text-sm text-[var(--color-text-soft)]">{title}</p>
         {bio && (

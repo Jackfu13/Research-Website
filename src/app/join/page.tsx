@@ -11,42 +11,50 @@ export default function JoinPage() {
     <PageLayout>
       <PageHeader title="Join" intro={membership.intro} />
 
-      <section className="space-y-6">
-        <SectionHeading
-          title="Admissions Process"
-          subtitle="Membership is evaluated through a straightforward three-step process."
-        />
-        <div className="grid gap-6 md:grid-cols-3">
-          {membership.admissionSteps.map((step) => (
-            <Card key={step.title} title={step.title} body={step.description} />
-          ))}
+      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
+        <div className="space-y-8">
+          <SectionHeading
+            title="Admissions Process"
+            subtitle="Membership is evaluated through a straightforward three-step process."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {membership.admissionSteps.map((step) => (
+              <Card key={step.title} title={step.title} body={step.description} />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="grid gap-6 md:grid-cols-3">
-        <ListCard title="Member Expectations" items={membership.memberExpectations} />
-        <ListCard title="Membership Standards" items={membership.membershipRules} />
-        <ListCard title="Recruiting Outcomes" items={membership.recruitingOutcomes} />
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+        <div className="grid gap-6 md:grid-cols-3">
+          <ListCard title="Member Expectations" items={membership.memberExpectations} />
+          <ListCard title="Membership Standards" items={membership.membershipRules} />
+          <ListCard title="Recruiting Outcomes" items={membership.recruitingOutcomes} />
+        </div>
       </section>
 
-      <section className="grid gap-6 bg-[var(--color-surface-muted)] px-6 py-12 md:grid-cols-[minmax(0,1.1fr)_minmax(18rem,1fr)] md:px-8">
-        <ListCard
-          title="Meeting Cadence"
-          intro="The group is designed around a consistent weekly operating rhythm."
-          items={membership.meetingCadence}
-        />
-        <Card
-          title="Why Join"
-          body={`${membership.recruitingPositioning} ${membership.participationSummary}`}
-        />
+      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
+        <div className="grid gap-6 md:grid-cols-[minmax(0,1.1fr)_minmax(18rem,1fr)] md:items-start">
+          <ListCard
+            title="Meeting Cadence"
+            intro="The group is designed around a consistent weekly operating rhythm."
+            items={membership.meetingCadence}
+          />
+          <Card
+            title="Why Join"
+            body={`${membership.recruitingPositioning} ${membership.participationSummary}`}
+          />
+        </div>
       </section>
 
-      <section className="space-y-6">
-        <SectionHeading
-          title="Express Interest"
-          subtitle="Applications open each semester. Submit your information below and we will reach out when the next cycle begins."
-        />
-        <InterestForm />
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+        <div className="space-y-8">
+          <SectionHeading
+            title="Express Interest"
+            subtitle="Applications open each semester. Submit your information below and we will reach out when the next cycle begins."
+          />
+          <InterestForm />
+        </div>
       </section>
     </PageLayout>
   );
