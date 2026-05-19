@@ -1,38 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { navigationLinks } from "@/content/navigation";
 import { site } from "@/content/site";
 
 export function Navbar() {
-  const [visible, setVisible] = useState(true);
-  const [lastY, setLastY] = useState(0);
-
-  useEffect(() => {
-    function onScroll() {
-      const y = window.scrollY;
-      if (y <= 0) {
-        setVisible(true);
-      } else if (y < lastY) {
-        setVisible(true);
-      } else if (y > lastY) {
-        setVisible(false);
-      }
-      setLastY(y);
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [lastY]);
+  const pathname = usePathname();
 
   return (
-    <header
-      className="sticky top-0 z-50 bg-[var(--color-footer-bg)] transition-transform duration-300"
-      style={{ transform: visible ? "translateY(0)" : "translateY(-100%)" }}
-    >
-      <div className="flex w-full flex-col gap-4 px-8 py-4 md:flex-row md:items-center md:justify-between">
+    <header className="bg-[var(--color-footer-bg)]">
+      <div className="flex w-full flex-col gap-4 px-12 py-5 md:flex-row md:items-center md:justify-between md:px-20">
         <Link href="/" className="max-w-xl">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-footer-text)] opacity-60">
             {site.shortName}
@@ -42,12 +21,20 @@ export function Navbar() {
           </p>
         </Link>
         <nav aria-label="Primary">
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--color-footer-text)] opacity-75">
-            {navigationLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
+          <ul className="flex flex-wrap gap-x-10 gap-y-2 text-base font-medium text-[var(--color-footer-text)]">
+            {navigationLinks.map((link) => {
+              const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={active ? "border-b-2 border-[var(--color-footer-text)] pb-0.5" : "hover:opacity-80 transition-opacity"}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>

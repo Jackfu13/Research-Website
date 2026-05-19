@@ -3,7 +3,7 @@ import Link from "next/link";
 type ButtonProps = {
   href: string;
   label: string;
-  variant?: "primary" | "outline";
+  variant?: "primary" | "outline" | "light";
 };
 
 export function Button({
@@ -14,7 +14,9 @@ export function Button({
   const className =
     variant === "primary"
       ? "border-[var(--color-accent)] bg-[var(--color-accent)] text-white hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-strong)]"
-      : "border-[var(--color-accent)] bg-white text-[var(--color-accent)] hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-faint)] hover:text-[var(--color-accent-strong)]";
+      : variant === "outline"
+        ? "border-[var(--color-accent)] bg-white text-[var(--color-accent)] hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-faint)] hover:text-[var(--color-accent-strong)]"
+        : "border-white bg-white text-[var(--color-accent-strong)] hover:bg-[var(--color-accent-soft)]";
 
   return (
     <Link

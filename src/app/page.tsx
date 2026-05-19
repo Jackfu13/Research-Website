@@ -23,9 +23,8 @@ export default function Home() {
           <p className="max-w-2xl text-lg leading-8 text-[var(--color-footer-text)] opacity-80 md:text-xl">
             {site.tagline}
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <Button href="/about" label="About the Group" />
-            <Button href="/join" label="Join the Group" variant="outline" />
+          <div className="pt-2">
+            <Button href="/join" label="Join the Group" variant="light" />
           </div>
         </div>
       </section>
@@ -97,7 +96,7 @@ export default function Home() {
       </section>
 
       {/* Published research */}
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
             title="Published Research"
@@ -137,7 +136,7 @@ export default function Home() {
           <p className="max-w-xl text-base leading-7 text-[var(--color-footer-text)] opacity-80">
             {site.homepageCta}
           </p>
-          <Button href="/join" label="Apply Now" variant="outline" />
+          <Button href="/join" label="Apply Now" variant="light" />
         </div>
       </section>
 

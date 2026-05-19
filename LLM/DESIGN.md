@@ -18,13 +18,22 @@ The target feel is between these two: more visually grounded than Penn WITG, les
 ### Full-width bands
 - Pages are composed of full-width color band sections, not centered card columns
 - Each section's background color stretches edge to edge
-- Text and grid content inside sections use generous horizontal padding (`px-8` or `px-12`), but no `max-w` container wrapping the whole page
-- Sections alternate between white/cream and green backgrounds to create visual rhythm
+- Text and grid content inside sections use `px-12 md:px-20` horizontal padding
+- No `max-w` container wrapping the whole page
+- Sections alternate between white (`--color-surface`) and muted green (`--color-surface-muted`) to create visual rhythm
+- Dark green (`--color-footer-bg`) is reserved for the hero, page headers, and the bottom CTA band
 
-### Navbar and Footer
-- Navbar spans the full browser width — no `max-w` inner wrapper
-- Footer spans the full browser width — no `max-w` inner wrapper
-- Both use `px-8` or `px-12` for internal horizontal padding
+### Navbar
+- Sticky, full browser width, deep green background (`--color-footer-bg`)
+- Always visible — no scroll hide/show behavior
+- Active page indicated by white `border-b-2` underline on the current link
+- Horizontal padding: `px-12 md:px-20`
+- Logo: short name (ERG) small and muted above the full org name
+- Links: `text-base font-medium`, full white, `gap-x-10`
+
+### Footer
+- Full browser width, near-black background (`--color-footer-dark: #2d2d2d`)
+- Minimal — org name centered, no nav links
 
 ### PageLayout
 - Not a centering wrapper — just a `flex flex-col w-full` passthrough
@@ -36,7 +45,7 @@ The target feel is between these two: more visually grounded than Penn WITG, les
 
 ```css
 --color-bg: #f6f8f6              /* off-white with faint green tint — default page bg */
---color-surface: #ffffff          /* white — card and content surface */
+--color-surface: #ffffff          /* white — primary section and card surface */
 --color-surface-muted: #f0f4f1    /* light gray-green — alternate section bg */
 --color-text: #1a1a1a             /* near-black */
 --color-text-soft: #4b5563        /* secondary text */
@@ -45,42 +54,78 @@ The target feel is between these two: more visually grounded than Penn WITG, les
 --color-accent-soft: #dce8df      /* light green — subtle highlights */
 --color-accent-faint: #f2f6f3     /* very light green — hover bg on cards */
 --color-border: #e5e5e5           /* light gray borders */
---color-border-strong: #b5cdb9    /* green-tinted border */
---color-muted: #6b7280            /* secondary/muted text */
---color-footer-bg: #1a5c3a        /* deep green — footer and hero sections */
---color-footer-text: #f8fdf9      /* near-white — text on dark green */
+--color-border-strong: #b5cdb9    /* green-tinted border — card hover states */
+--color-muted: #6b7280            /* muted/secondary text */
+--color-footer-bg: #1a5c3a        /* deep green — navbar, hero, page headers, CTA bands */
+--color-footer-text: #f8fdf9      /* near-white — text on deep green surfaces */
+--color-footer-text-soft: #c8dece /* softer near-white — secondary text on deep green */
+--color-footer-dark: #2d2d2d      /* near-black — footer background */
 ```
-
-**Key change from prior version:** accent and footer colors updated from military green (`#4d7c57`) to deep forest green (`#1a5c3a`), matching the Cornell/finance institutional aesthetic.
 
 ---
 
 ## Typography
 
-- **Font:** Inter (or system sans-serif fallback) — neutral, financial, readable
-- One font family across the entire site — no display/body split
+- **Font:** `"Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif` — system stack, no external font loaded
+- One font family across the entire site
 - No text larger than `text-5xl` anywhere
 
 Scale:
-- Hero / h1: `text-4xl` or `text-5xl`, `font-semibold`, tight tracking
-- Section h2: `text-2xl` to `text-3xl`, `font-semibold`
-- Body: `text-base`, `leading-relaxed`
-- Meta / label: `text-xs`, `uppercase`, `tracking-widest`
+- Hero / h1: `text-3xl md:text-5xl`, `font-semibold`, tight tracking
+- Section h2: `text-2xl md:text-3xl`, `font-semibold`
+- Body: `text-base`, `leading-7` or `leading-8`
+- Meta / label: `text-xs`, `uppercase`, `tracking-[0.18em]`
+- Navbar links: `text-base font-medium`
 
-Headlines on dark green sections use `--color-footer-text`. Body text on light sections uses `--color-text`.
+Text on dark green sections uses `--color-footer-text`. Body text on light sections uses `--color-text` or `--color-text-soft`.
 
 ---
 
 ## Components
 
-- One shared button style — rectangular, never `rounded-full`
-- One shared card style — consistent border, padding, no shadow
-- One shared section heading style (`SectionHeading`) — supports `light` prop for dark backgrounds
-- Consistent spacing throughout all pages
+### Button — 3 variants
 
-### Members page pattern
-- **Executive Board:** Deep green full-width band, centered `h2` title, photo card grid (3×5 columns responsive). Cards: portrait photo, name, role, optional "Read Bio" link.
-- **Sector Leads:** White/muted full-width band, sector name as bold header, member names listed below each header. Organized by sector, not by card-per-person.
+| Variant | Use case | Appearance |
+|---|---|---|
+| `primary` | Default, on light backgrounds | Green fill, white text |
+| `outline` | Secondary action, on light backgrounds | Green border, green text, white bg |
+| `light` | On dark green backgrounds (hero, CTA) | White fill, dark green text |
+
+All variants: rectangular (never `rounded-full`), `uppercase`, `tracking-[0.08em]`, `min-h-11`.
+
+### Card
+- Border: `--color-border`, hover border: `--color-border-strong`
+- Background: `--color-surface`, hover bg: `--color-accent-faint`
+- Optional `meta` label above title (small, uppercase, accent color)
+- Optional `children` slot below body text
+- One card style only — never recreated inline
+
+### SectionHeading
+- Props: `title`, `subtitle?`, `light?`, `center?`
+- `light` variant uses `--color-footer-text` — for use on dark green bands
+- `center` adds `mx-auto text-center`
+
+### ListCard
+- Same border/surface treatment as Card
+- Renders a title, optional intro, and a bulleted item list
+
+### BoardMemberCard
+- Portrait photo or initials placeholder
+- Name + role title below
+- Optional bio trigger (only rendered when bio exists)
+- Executive board: `h-80` photo area, rendered in a `sm:grid-cols-3` grid
+- Sector leads: `aspect-[3/4]` compact mode, rendered in a `grid-cols-2 sm:grid-cols-4 lg:grid-cols-8` grid
+
+### PageHeader
+- Full-width deep green band
+- Centered h1 + intro paragraph
+- `large` prop increases vertical padding for emphasis
+
+### InterestForm
+- Client component with controlled inputs
+- Fields: name, email, graduation year, sector interest, optional note
+- Posts to Formspree via `NEXT_PUBLIC_FORMSPREE_ENDPOINT`
+- Shows confirmation state on success, inline error on failure
 
 ---
 
@@ -90,8 +135,7 @@ Headlines on dark green sections use `--color-footer-text`. Body text on light s
 - Content-first layout
 - Strong typography hierarchy
 - Generous whitespace
-- No animation
-- No flashy startup aesthetics
+- No animation — navbar is static sticky, no scroll effects
 
 ---
 
@@ -107,7 +151,7 @@ Headlines on dark green sections use `--color-footer-text`. Body text on light s
 | Testimonials or social proof | No data exists |
 | Centered body text walls | Hard to read |
 | Dark mode | Site uses white/off-white bg |
-| Decorative animation | Prohibited |
+| Excessive motion or transitions | Prohibited |
 | `max-w` page wrapper | Use full-width bands instead |
 | Inconsistent card styles | One card style only |
 | Fake report previews | Prohibited |

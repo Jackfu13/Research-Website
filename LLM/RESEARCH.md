@@ -35,7 +35,7 @@ This means going beyond filings and earnings calls to include:
 The group launches with 15–20 sector leads operating as equals. No junior analysts until the model is proven.
 
 ### Executive Board
-Three functional roles with administrative responsibilities. All executive board members also maintain sector coverage and pitch like everyone else.
+3-6 functional roles with administrative responsibilities. All executive board members also maintain sector coverage and pitch like everyone else.
 
 #### President
 - Sets meeting cadence and deadlines
