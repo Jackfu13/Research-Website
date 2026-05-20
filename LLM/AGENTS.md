@@ -14,13 +14,13 @@ The design should feel **institutional, clean, and credible**, not flashy or sta
 Before performing any task, always read the following files:
 
 1. LLM/DESIGN.md
-2. LLM/RESEARCH.md
+2. LLM/Charter.md
 3. src/content files
 4. existing components in src/components
 
 Before implementing UI, summarize LLM/DESIGN.md in your own words.
 
-Before implementing or modifying content, summarize LLM/RESEARCH.md in your own words.
+Before implementing or modifying content, summarize LLM/Charter.md in your own words.
 
 ---
 
@@ -39,7 +39,7 @@ All UI decisions must follow LLM/DESIGN.md.
 
 ---
 
-### LLM/RESEARCH.md
+### LLM/Charter.md
 Defines the organization's:
 
 - mission
@@ -50,7 +50,7 @@ Defines the organization's:
 - portfolio structure
 - messaging
 
-LLM/RESEARCH.md is the **source of truth for all factual content**.
+LLM/Charter.md is the **source of truth for all factual content**.
 
 Do not invent:
 
@@ -62,7 +62,7 @@ Do not invent:
 - statistics
 - accomplishments
 
-All content must be grounded in LLM/RESEARCH.md.
+All content must be grounded in LLM/Charter.md.
 
 ---
 

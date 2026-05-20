@@ -3,6 +3,7 @@ export type BoardRole = {
   responsibilities: string[];
   note: string;
   name: string | null;
+  slug: string;
   photo: string | null;
   bio: string | null;
 };
@@ -25,6 +26,7 @@ export const board = {
       ],
       note: "",
       name: "Isaac Toffel",
+      slug: "isaac-toffel",
       photo: null,
       bio: null,
     },
@@ -37,6 +39,7 @@ export const board = {
       ],
       note: "",
       name: "Lucas Davis",
+      slug: "lucas-davis",
       photo: null,
       bio: null,
     },
@@ -48,6 +51,7 @@ export const board = {
       ],
       note: "",
       name: "Jack Dalton",
+      slug: "jack-dalton",
       photo: null,
       bio: null,
     },
@@ -59,6 +63,7 @@ export const board = {
       ],
       note: "",
       name: "Braden Benzan",
+      slug: "braden-benzan",
       photo: null,
       bio: null,
     },
@@ -70,6 +75,7 @@ export const board = {
       ],
       note: "",
       name: "Corbin Duckworth",
+      slug: "corbin-duckworth",
       photo: null,
       bio: null,
     },
@@ -81,6 +87,7 @@ export const board = {
       ],
       note: "",
       name: "Jack Fu",
+      slug: "jack-fu",
       photo: null,
       bio: null,
     },
@@ -92,6 +99,7 @@ export const board = {
       ],
       note: "",
       name: "Pablo Velazquez de Leon",
+      slug: "pablo-velazquez-de-leon",
       photo: null,
       bio: null,
     },
@@ -103,6 +111,7 @@ export const board = {
       ],
       note: "",
       name: "Steele Shapiro",
+      slug: "steele-shapiro",
       photo: null,
       bio: null,
     },

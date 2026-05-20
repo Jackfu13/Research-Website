@@ -21,15 +21,18 @@ The target feel is between these two: more visually grounded than Penn WITG, les
 - Text and grid content inside sections use `px-12 md:px-20` horizontal padding
 - No `max-w` container wrapping the whole page
 - Sections alternate between white (`--color-surface`) and muted green (`--color-surface-muted`) to create visual rhythm
-- Dark green (`--color-footer-bg`) is reserved for the hero, page headers, and the bottom CTA band
+- Dark green (`--color-footer-bg`) is reserved for page headers (`PageHeader`) and the navbar on non-photo pages
+- Photo-hero pages use a full-bleed background image with `bg-black/60` overlay instead of a solid dark green band
 
 ### Navbar
-- Sticky, full browser width, deep green background (`--color-footer-bg`)
-- Always visible — no scroll hide/show behavior
-- Active page indicated by white `border-b-2` underline on the current link
-- Horizontal padding: `px-12 md:px-20`
+- Full browser width, horizontal padding `px-12 md:px-20`
 - Logo: short name (ERG) small and muted above the full org name
 - Links: `text-base font-medium`, full white, `gap-x-10`
+- Active page indicated by white `border-b-2` underline on the current link
+- **Two modes depending on page:**
+  - On photo-hero pages (`/` and `/about`): `fixed`, transparent background — navbar floats over the hero image
+  - On all other pages: normal flow, solid deep green background (`--color-footer-bg`)
+- No scroll hide/show behavior on any page
 
 ### Footer
 - Full browser width, near-black background (`--color-footer-dark: #2d2d2d`)
@@ -56,7 +59,8 @@ The target feel is between these two: more visually grounded than Penn WITG, les
 --color-border: #e5e5e5           /* light gray borders */
 --color-border-strong: #b5cdb9    /* green-tinted border — card hover states */
 --color-muted: #6b7280            /* muted/secondary text */
---color-footer-bg: #1a5c3a        /* deep green — navbar, hero, page headers, CTA bands */
+--color-accent-mid: #267a52        /* medium green — button fills on all backgrounds */
+--color-footer-bg: #1a5c3a        /* deep green — navbar (non-photo pages) and page headers */
 --color-footer-text: #f8fdf9      /* near-white — text on deep green surfaces */
 --color-footer-text-soft: #c8dece /* softer near-white — secondary text on deep green */
 --color-footer-dark: #2d2d2d      /* near-black — footer background */
@@ -66,7 +70,7 @@ The target feel is between these two: more visually grounded than Penn WITG, les
 
 ## Typography
 
-- **Font:** `"Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif` — system stack, no external font loaded
+- **Font:** `"DM Sans"` — loaded from Google Fonts, fallback to `"Helvetica Neue", Arial, sans-serif`
 - One font family across the entire site
 - No text larger than `text-5xl` anywhere
 
@@ -83,15 +87,19 @@ Text on dark green sections uses `--color-footer-text`. Body text on light secti
 
 ## Components
 
-### Button — 3 variants
+### Button — 3 variants, 2 sizes
 
-| Variant | Use case | Appearance |
-|---|---|---|
-| `primary` | Default, on light backgrounds | Green fill, white text |
-| `outline` | Secondary action, on light backgrounds | Green border, green text, white bg |
-| `light` | On dark green backgrounds (hero, CTA) | White fill, dark green text |
+| Variant | Appearance |
+|---|---|
+| `primary` | Deep green fill (`--color-accent`), white text. Hover darkens to `--color-accent-strong`. |
+| `outline` | Medium green fill (`--color-accent-mid`), white text. Hover darkens to `--color-accent`. |
+| `light` | Medium green fill (`--color-accent-mid`), white text. Hover darkens to `--color-accent`. |
 
-All variants: rectangular (never `rounded-full`), `uppercase`, `tracking-[0.08em]`, `min-h-11`.
+`outline` and `light` are currently identical — both use `--color-accent-mid`. The distinction is semantic (use `light` on dark backgrounds, `outline` on light ones) but renders the same.
+
+Sizes: default (`min-h-11 px-5 py-2 text-sm`) and `large` prop (`min-h-14 px-10 py-3 text-base`).
+
+All variants: rectangular (never `rounded-full`), `uppercase`, `tracking-[0.08em]`.
 
 ### Card
 - Border: `--color-border`, hover border: `--color-border-strong`
@@ -135,7 +143,7 @@ All variants: rectangular (never `rounded-full`), `uppercase`, `tracking-[0.08em
 - Content-first layout
 - Strong typography hierarchy
 - Generous whitespace
-- No animation — navbar is static sticky, no scroll effects
+- No animation — navbar has no scroll effects, only a `transition-colors` on the photo-hero pages
 
 ---
 

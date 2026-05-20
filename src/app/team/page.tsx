@@ -17,6 +17,7 @@ export default function TeamPage() {
               key={`${role.title}-${i}`}
               name={role.name}
               title={role.title}
+              slug={role.slug}
               photo={role.photo}
               bio={role.bio}
             />
@@ -37,6 +38,7 @@ export default function TeamPage() {
                 key={v.name}
                 name={v.lead}
                 title={v.name}
+                slug={v.slug}
                 photo={v.photo}
                 bio={v.bio}
               />

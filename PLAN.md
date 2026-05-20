@@ -4,7 +4,7 @@ Implementation plan for the ERG website.
 Do not write code that contradicts this plan without updating it first.
 
 `LLM/Charter.md` is the current source of truth for organization facts.
-`LLM/RESEARCH.md` is the cleaned website-facing distillation of that charter.
+`LLM/Charter.md` is the cleaned website-facing distillation of that charter.
 
 ---
 
@@ -33,8 +33,8 @@ src/app/
     page.tsx          application process, expectations, outcomes
 ```
 
-Five pages. Every page maps to content that exists in `LLM/RESEARCH.md`.
-Do not add pages for content that does not exist in `LLM/RESEARCH.md`.
+Five pages. Every page maps to content that exists in `LLM/Charter.md`.
+Do not add pages for content that does not exist in `LLM/Charter.md`.
 
 Note: `/executive-board`, `/vertical-leads`, and `/sector-leads` stay merged into `/team` (displayed as "Members" in the navbar).
 
@@ -43,7 +43,7 @@ Note: `/executive-board`, `/vertical-leads`, and `/sector-leads` stay merged int
 ## Content File Structure
 
 Content files are typed data, not JSX and not prose invented inline.
-They are the bridge from `LLM/RESEARCH.md` into components.
+They are the bridge from `LLM/Charter.md` into components.
 
 ```text
 src/content/
@@ -100,7 +100,7 @@ type PitchStandardSection = {
 }
 ```
 
-All content strings must be sourced from `LLM/RESEARCH.md`.
+All content strings must be sourced from `LLM/Charter.md`.
 Never invent members, stats, returns, sponsors, biographies, reports, or accomplishments.
 
 ---
@@ -173,7 +173,7 @@ Sections in order, top to bottom:
 2. **Feature Grid** - "Deep Primary Research", "Vertical Ownership", "Institutional Standards".
 3. **Investment Universe** - $300M-$10B market cap, US-listed companies, all sectors/geographies, no style mandate.
 4. **Verticals** - compact view of the five verticals and vertical leads. Link to `/team`.
-5. **Research Standards** - the six required pitch components from `LLM/RESEARCH.md`.
+5. **Research Standards** - the six required pitch components from `LLM/Charter.md`.
 6. **Apply CTA** - admission by application, stock pitch submission, and interview. Link to `/join`.
 
 ### About Page
@@ -311,7 +311,7 @@ Pages use full-width color bands, not a centered `max-w` wrapper.
 Implement in this sequence to avoid rework:
 
 1. Update `src/content/site.ts` for $300M-$10B, Northeastern affiliation, core edge, and vertical structure language.
-2. Update `src/content/board.ts` for the eight-person executive board and named role owners from `LLM/RESEARCH.md`.
+2. Update `src/content/board.ts` for the eight-person executive board and named role owners from `LLM/Charter.md`.
 3. Update `src/content/sectors.ts` from a flat sector list to five verticals with sub-sector coverage.
 4. Update `src/content/process.ts` to include the detailed stock pitch standards checklist.
 5. Update homepage sections to match the new hierarchy.

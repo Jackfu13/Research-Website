@@ -22,7 +22,7 @@ The site should feel like a **serious academic or research organization**, not a
 Before making any changes to the repository, always read:
 
 1. DESIGN.md
-2. RESEARCH.md
+2. Charter.md
 3. src/content files
 4. relevant existing components
 
@@ -32,7 +32,7 @@ Summarize DESIGN.md in your own words and follow that summary.
 
 Before implementing or editing content:
 
-Summarize RESEARCH.md in your own words and use it as the content source of truth.
+Summarize Charter.md in your own words and use it as the content source of truth.
 
 ---
 
@@ -52,9 +52,9 @@ All visual and styling decisions must follow DESIGN.md.
 
 ---
 
-### RESEARCH.md
+### Charter.md
 
-RESEARCH.md defines:
+Charter.md defines:
 
 - organization mission
 - investment universe
@@ -64,9 +64,9 @@ RESEARCH.md defines:
 - portfolio structure
 - organizational messaging
 
-RESEARCH.md is the **authoritative source for all facts about the organization**.
+Charter.md is the **authoritative source for all facts about the organization**.
 
-Never invent information that does not exist in RESEARCH.md.
+Never invent information that does not exist in Charter.md.
 
 ---
 

@@ -10,6 +10,7 @@ export type SectorCoverage = {
 
 export type Vertical = {
   name: string;
+  slug: string;
   lead: string;
   subSectors: string[];
   photo: string | null;
@@ -19,6 +20,7 @@ export type Vertical = {
 export const verticals: Vertical[] = [
   {
     name: "Technology",
+    slug: "vertical-technology",
     lead: "Mia Patel / Corbin Duckworth",
     subSectors: ["Software", "Semiconductors", "Internet & Platforms", "Gaming & Interactive Media", "Cybersecurity", "AI & Data Infrastructure"],
     photo: null,
@@ -26,6 +28,7 @@ export const verticals: Vertical[] = [
   },
   {
     name: "Industrials & Defense",
+    slug: "vertical-industrials-defense",
     lead: "Aiden Schacter",
     subSectors: ["Machinery & Industrial Equipment", "Defense", "Aerospace", "Transportation & Logistics", "Commercial & Professional Services"],
     photo: null,
@@ -33,6 +36,7 @@ export const verticals: Vertical[] = [
   },
   {
     name: "Financials",
+    slug: "vertical-financials",
     lead: "Eli Goldstein",
     subSectors: ["Banks", "Fintech", "Asset & Wealth Management", "Real Estate", "Capital Markets", "Private Credit"],
     photo: null,
@@ -40,6 +44,7 @@ export const verticals: Vertical[] = [
   },
   {
     name: "Resources & Real Assets",
+    slug: "vertical-resources-real-assets",
     lead: "Jack Dalton",
     subSectors: ["Energy", "Materials & Chemicals", "Utilities & Renewables", "Exploration & Production", "Oilfield Services & Equipment"],
     photo: null,
@@ -47,6 +52,7 @@ export const verticals: Vertical[] = [
   },
   {
     name: "Consumer & Services",
+    slug: "vertical-consumer-services",
     lead: "Derek Z",
     subSectors: ["Consumer Staples & Agriculture", "Consumer Discretionary", "Business Services", "E-commerce & Retail", "Restaurants & Food Service", "Travel & Leisure"],
     photo: null,

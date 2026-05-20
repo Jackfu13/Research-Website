@@ -1,12 +1,15 @@
+import Link from "next/link";
+
 type BoardMemberCardProps = {
   name: string | null;
   title: string;
+  slug: string;
   photo: string | null;
   bio: string | null;
   compact?: boolean;
 };
 
-export function BoardMemberCard({ name, title, photo, bio, compact = false }: BoardMemberCardProps) {
+export function BoardMemberCard({ name, title, slug, photo, compact = false }: BoardMemberCardProps) {
   const displayName = name ?? "TBD";
 
   return (
@@ -29,14 +32,18 @@ export function BoardMemberCard({ name, title, photo, bio, compact = false }: Bo
         )}
       </div>
 
-      <div className="flex h-24 flex-col items-center justify-center gap-1 px-4 text-center">
+      <div className="flex flex-col items-center gap-1 px-4 pt-4 pb-0 text-center">
         <p className="text-base font-semibold text-[var(--color-text)]">{displayName}</p>
         <p className="text-sm text-[var(--color-text-soft)]">{title}</p>
-        {bio && (
-          <button className="mt-3 text-sm underline underline-offset-4 text-[var(--color-text-soft)] hover:text-[var(--color-text)] transition-colors">
-            Read Bio
-          </button>
-        )}
+      </div>
+
+      <div className="mt-4 flex justify-center pb-4">
+        <Link
+          href={`/team/${slug}`}
+          className="border-2 border-[var(--color-accent)] px-3 py-1 text-xs font-medium uppercase tracking-[0.08em] text-[var(--color-accent)] transition-colors hover:bg-[var(--color-accent)] hover:text-white"
+        >
+          Bio
+        </Link>
       </div>
     </article>
   );

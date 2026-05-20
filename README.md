@@ -21,10 +21,10 @@ Two files define the project and should be read before making changes:
 
 1. [`LLM/DESIGN.md`](LLM/DESIGN.md)
    Defines the visual system, spacing, color direction, typography, and component consistency.
-2. [`LLM/RESEARCH.md`](LLM/RESEARCH.md)
+2. [`LLM/Charter.md`](LLM/Charter.md)
    Defines the mission, structure, sector coverage, research process, membership expectations, and messaging.
 
-Content must be grounded in `LLM/RESEARCH.md`.
+Content must be grounded in `LLM/Charter.md`.
 
 Do not invent:
 
@@ -141,7 +141,7 @@ src/
 
 ## Content Model
 
-`src/content` is the bridge between `LLM/RESEARCH.md` and the UI.
+`src/content` is the bridge between `LLM/Charter.md` and the UI.
 
 Use it for repeated content and page data instead of scattering copy inside page components.
 
@@ -181,7 +181,7 @@ Avoid:
 Before making UI or content changes:
 
 1. Read `LLM/DESIGN.md`
-2. Read `LLM/RESEARCH.md`
+2. Read `LLM/Charter.md`
 3. Review existing files in `src/content`
 4. Review shared components in `src/components`
 
