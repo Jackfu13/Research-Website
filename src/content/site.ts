@@ -22,12 +22,12 @@ export const site = {
   heroSummary:
     "The group produces institutional-quality research on names that receive little Wall Street coverage.",
   mission:
-    "The Equity Research Group is a student-run equity research organization focused on under-covered small and mid-cap companies. The group produces institutional-quality research on names that receive little Wall Street coverage, developing members into rigorous fundamental analysts.",
+    "The Equity Research Group (ERG) is a student-run equity research organization at Northeastern University focused on under-covered small and mid-cap companies. ERG produces institutional-quality research on names that receive little Wall Street coverage, developing members into rigorous fundamental analysts.",
   footerNote: "Student-run equity research organization.",
   homepageCta:
     "Admission is based on application, stock pitch submission, and interview.",
   investmentUniverse: [
-    { label: "Market cap", value: "$300M-$5B" },
+    { label: "Market cap", value: "$300M–$10B" },
     { label: "Listing", value: "US-listed companies" },
     { label: "Coverage", value: "All sectors, all geographies" },
     {
@@ -39,7 +39,7 @@ export const site = {
     {
       title: "Deep Primary Research",
       description:
-        "Sell-side coverage drops off dramatically below $5B market cap, so the group focuses on work others often do not do.",
+        "Sell-side coverage drops off dramatically below $10B market cap, so the group focuses on work others often do not do.",
     },
     {
       title: "Sector Ownership",
@@ -56,15 +56,15 @@ export const site = {
     {
       title: "Mission",
       body: [
-        "The group focuses on under-covered small and mid-cap companies where rigorous fundamental research can create original insights.",
-        "Its aim is to produce institutional-quality research while developing members into disciplined equity research analysts.",
+        "The Equity Research Group (ERG) is a student-run equity research organization at Northeastern University focused on under-covered small and mid-cap companies.",
+        "ERG produces institutional-quality research on names that receive little Wall Street coverage, developing members into rigorous fundamental analysts.",
       ],
     },
     {
       title: "Structure",
       body: [
-        "In year one, the group launches as a flat partnership with 15 to 20 sector leads operating as equals.",
-        "The executive board holds functional administrative roles, but board members still maintain sector coverage and pitch like everyone else.",
+        "ERG operates under a vertical leadership model, organizing coverage across five verticals each led by a designated Vertical Lead.",
+        "The executive board holds functional administrative roles, but all board members maintain sector coverage and pitch like everyone else.",
       ],
     },
     {
@@ -76,19 +76,19 @@ export const site = {
     },
   ] satisfies SiteSection[],
   coreEdge: {
-    title: "Deep primary research on ignored names",
+    title: "Our Edge",
     summary:
-      "The group's edge is simple: it does the work others do not.",
+      "Institutional sell-side coverage thins out significantly below $10B market cap, leaving a large segment of the market underanalyzed. ERG targets this gap — building original views on companies that receive limited Wall Street attention by going deeper than public filings and earnings calls.",
     methods: [
-      "Customer interviews",
       "Competitor analysis",
+      "Customer interviews",
       "Supply chain mapping",
-      "On-the-ground research where possible",
+      "Primary research where accessible",
     ],
   },
   differentiation: [
     "Unlike broad investment clubs that rotate members through generic projects, the group gives each member true ownership of a coverage universe.",
     "The small-cap focus ensures original research rather than regurgitation of Street consensus.",
-    "The flat structure in year one creates accountability because there is nowhere to hide.",
+    "The vertical structure creates clear accountability and specialization — every role has a defined owner, and there is nowhere to hide.",
   ],
 } as const;

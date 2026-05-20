@@ -8,5 +8,5 @@ export const navigationLinks: NavigationLink[] = [
   { href: "/about", label: "About" },
   { href: "/team", label: "Members" },
   { href: "/research", label: "Research" },
-  { href: "/join", label: "Join" },
+  { href: "/join", label: "Recruitment" },
 ];

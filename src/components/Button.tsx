@@ -4,23 +4,29 @@ type ButtonProps = {
   href: string;
   label: string;
   variant?: "primary" | "outline" | "light";
+  large?: boolean;
 };
 
 export function Button({
   href,
   label,
   variant = "primary",
+  large = false,
 }: ButtonProps) {
   const className =
     variant === "primary"
       ? "border-[var(--color-accent)] bg-[var(--color-accent)] text-white hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-strong)]"
       : variant === "outline"
-        ? "border-[var(--color-accent)] bg-white text-[var(--color-accent)] hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-faint)] hover:text-[var(--color-accent-strong)]"
-        : "border-white bg-white text-[var(--color-accent-strong)] hover:bg-[var(--color-accent-soft)]";
+        ? "border-[var(--color-accent-mid)] bg-[var(--color-accent-mid)] text-white hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]"
+        : "border-[var(--color-accent-mid)] bg-[var(--color-accent-mid)] text-white hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]";
+
+  const sizeClass = large
+    ? "min-h-14 px-10 py-3 text-base"
+    : "min-h-11 px-5 py-2 text-sm";
 
   return (
     <Link
-      className={`inline-flex min-h-11 items-center justify-center border px-5 py-2 text-sm font-medium uppercase tracking-[0.08em] transition-colors ${className}`}
+      className={`inline-flex items-center justify-center border font-medium uppercase tracking-[0.08em] transition-colors ${sizeClass} ${className}`}
       href={href}
     >
       {label}

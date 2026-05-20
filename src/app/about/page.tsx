@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { board } from "@/content/board";
-import { sectors } from "@/content/sectors";
+import { verticals } from "@/content/sectors";
 import { site } from "@/content/site";
 
 export default function AboutPage() {
@@ -15,6 +15,7 @@ export default function AboutPage() {
         title="About"
         intro="The Equity Research Group is built as a serious student-run research organization with a flat year-one structure, clear sector ownership, and a deliberate focus on under-followed companies."
         large
+        photo="/northeastern-5.jpg"
       />
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
@@ -33,10 +34,7 @@ export default function AboutPage() {
 
       <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
         <div className="space-y-8">
-          <SectionHeading
-            title="Investment Universe"
-            subtitle="Coverage is intentionally broad across sectors and styles, but focused on the part of the market where deep work can still create original insight."
-          />
+          <SectionHeading title="Investment Universe" />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {site.investmentUniverse.map((item) => (
               <Card key={item.label} title={item.value} meta={item.label} />
@@ -49,23 +47,16 @@ export default function AboutPage() {
         <div className="space-y-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeading
-              title="Sector Coverage"
-              subtitle={sectors.intro}
+              title="Vertical Coverage"
+              subtitle="ERG organizes its coverage universe into five verticals, each owned by a dedicated vertical lead."
             />
             <Button href="/team" label="View Members" variant="outline" />
           </div>
-          <div className="grid gap-px overflow-hidden border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-2 xl:grid-cols-4">
-            {sectors.coverage.map((entry) => (
-              <div
-                key={entry.sector}
-                className="bg-[var(--color-surface)] px-5 py-4"
-              >
-                <p className="text-sm font-semibold leading-6 text-[var(--color-text)]">
-                  {entry.sector}
-                </p>
-                <p className="mt-1 text-sm leading-6 text-[var(--color-text-soft)]">
-                  {entry.lead ?? (entry.status === "open" ? "Open" : "Single lead")}
-                </p>
+          <div className="grid gap-px overflow-hidden border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-3 xl:grid-cols-5">
+            {verticals.map((v) => (
+              <div key={v.name} className="bg-[var(--color-surface)] px-5 py-4">
+                <p className="text-sm font-semibold leading-6 text-[var(--color-text)]">{v.name}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--color-text-soft)]">{v.subSectors.join(", ")}</p>
               </div>
             ))}
           </div>

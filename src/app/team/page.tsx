@@ -2,13 +2,7 @@ import { BoardMemberCard } from "@/components/BoardMemberCard";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { board } from "@/content/board";
-import { sectors } from "@/content/sectors";
-
-function getLeadName(entry: (typeof sectors.coverage)[number]) {
-  if (entry.lead) return entry.lead;
-  if (entry.status === "open") return "Open";
-  return "Single Lead";
-}
+import { verticals } from "@/content/sectors";
 
 export default function TeamPage() {
   return (
@@ -17,7 +11,7 @@ export default function TeamPage() {
         <h2 className="text-center text-3xl font-semibold tracking-tight text-[var(--color-footer-text)] md:text-4xl">
           Executive Board
         </h2>
-        <div className="mt-10 mx-auto grid w-full max-w-4xl grid-cols-1 gap-6 sm:grid-cols-3">
+        <div className="mt-10 mx-auto grid w-full max-w-[77rem] grid-cols-2 gap-6 sm:grid-cols-4">
           {board.roles.map((role, i) => (
             <BoardMemberCard
               key={`${role.title}-${i}`}
@@ -30,23 +24,24 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="w-full space-y-8 bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
-        <SectionHeading
-          title="Sector Leads"
-          subtitle="Each lead owns primary coverage of one sector. Open and single-lead sectors are marked below."
-          center
-        />
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
-          {sectors.coverage.map((entry) => (
-            <BoardMemberCard
-              key={entry.sector}
-              name={getLeadName(entry)}
-              title={entry.sector}
-              photo={entry.photo}
-              bio={entry.bio}
-              compact
-            />
-          ))}
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+        <div className="space-y-10">
+          <SectionHeading
+            title="Vertical Leads"
+            subtitle="ERG organizes its research across five verticals. Each vertical is led by a designated lead responsible for coordinating sub-sector coverage and maintaining research quality."
+            center
+          />
+          <div className="mx-auto grid w-full max-w-[86rem] grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+            {verticals.map((v) => (
+              <BoardMemberCard
+                key={v.name}
+                name={v.lead}
+                title={v.name}
+                photo={v.photo}
+                bio={v.bio}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </PageLayout>

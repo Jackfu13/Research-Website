@@ -2,7 +2,6 @@ import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { ListCard } from "@/components/ListCard";
 import { SectionHeading } from "@/components/SectionHeading";
-import { board } from "@/content/board";
 import { output } from "@/content/output";
 import { process } from "@/content/process";
 import { site } from "@/content/site";
@@ -12,46 +11,32 @@ export default function Home() {
     <div className="flex w-full flex-col">
 
       {/* Hero */}
-      <section className="w-full bg-[var(--color-footer-bg)] px-8 py-20 md:px-12 md:py-28">
-        <div className="flex flex-col items-center text-center space-y-6">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-footer-text)] opacity-60">
+      <section className="relative w-full px-8 pb-28 pt-40 md:px-12 md:pb-36 md:pt-52">
+        <img
+          src="/northeastern-5.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 flex flex-col items-center text-center space-y-6">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-white opacity-70" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
             {site.heroEyebrow}
           </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-[var(--color-footer-text)] md:text-5xl">
+          <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
             {site.name}
           </h1>
-          <p className="max-w-2xl text-lg leading-8 text-[var(--color-footer-text)] opacity-80 md:text-xl">
+          <p className="max-w-2xl text-lg leading-8 text-white opacity-90 md:text-xl" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
             {site.tagline}
           </p>
-          <div className="pt-2">
-            <Button href="/join" label="Join the Group" variant="light" />
-          </div>
-        </div>
-      </section>
-
-      {/* Mission */}
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1.35fr)_minmax(18rem,1fr)] md:items-start">
-          <div className="space-y-6">
-            <SectionHeading
-              title="Mission"
-              subtitle="The group is organized to do serious small and mid-cap equity research while training members into disciplined fundamental analysts."
-            />
-            <p className="max-w-3xl text-base leading-8 text-[var(--color-text-soft)]">
-              {site.mission}
-            </p>
-          </div>
-          <div className="border-t-2 border-[var(--color-accent)] pt-5">
-            <Card
-              title={board.yearOneStructure.title}
-              body={`${board.yearOneStructure.summary} ${board.executiveBoardIntro}`}
-            />
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <Button href="/about" label="About" variant="light" large />
+            <Button href="/join" label="Join" variant="light" large />
           </div>
         </div>
       </section>
 
       {/* Feature highlights */}
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
             title="What We Do"
@@ -65,23 +50,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Investment Universe */}
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="Investment Universe"
-            subtitle="Coverage is centered on under-followed US-listed companies without a fixed style mandate."
-          />
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {site.investmentUniverse.map((item) => (
-              <Card key={item.label} title={item.value} meta={item.label} />
-            ))}
+      {/* Core edge */}
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+        <div className="flex flex-col items-center text-center space-y-6">
+          <SectionHeading title={site.coreEdge.title} center />
+          <p className="max-w-2xl text-base leading-8 text-[var(--color-text-soft)]">
+            {site.coreEdge.summary}
+          </p>
+          <div className="space-y-3">
+            <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-text)]">How We Do It</p>
+            <ul className="space-y-2">
+              {site.coreEdge.methods.map((method) => (
+                <li key={method} className="text-sm font-medium text-[var(--color-text-soft)]">
+                  — {method}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       {/* Research process */}
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
             title="Research Process"
@@ -96,7 +86,7 @@ export default function Home() {
       </section>
 
       {/* Published research */}
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
             title="Published Research"
@@ -129,16 +119,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Join CTA */}
-      <section className="w-full bg-[var(--color-footer-bg)] px-8 py-16 md:px-12">
-        <div className="flex flex-col items-center text-center space-y-6">
-          <SectionHeading title="Join the Group" light />
-          <p className="max-w-xl text-base leading-7 text-[var(--color-footer-text)] opacity-80">
-            {site.homepageCta}
-          </p>
-          <Button href="/join" label="Apply Now" variant="light" />
-        </div>
-      </section>
 
     </div>
   );
