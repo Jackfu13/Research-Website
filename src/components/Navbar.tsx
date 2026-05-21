@@ -12,9 +12,9 @@ export function Navbar() {
 
   return (
     <header
-      className={`z-50 transition-colors ${
+      className={`z-50 ${
         hasPhotoHeader
-          ? "fixed top-0 left-0 right-0 bg-transparent"
+          ? "absolute top-0 left-0 right-0 bg-transparent"
           : "bg-[var(--color-footer-bg)]"
       }`}
     >
