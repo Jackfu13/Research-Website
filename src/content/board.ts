@@ -5,6 +5,7 @@ export type BoardRole = {
   name: string | null;
   slug: string;
   photo: string | null;
+  photoPosition?: "top" | "center" | "bottom";
   bio: string | null;
 };
 
@@ -27,7 +28,7 @@ export const board = {
       note: "",
       name: "Isaac Toffel",
       slug: "isaac-toffel",
-      photo: null,
+      photo: "/0292_URF__Toffel.I_090225_.JPG",
       bio: null,
     },
     {
@@ -88,7 +89,8 @@ export const board = {
       note: "",
       name: "Jack Fu",
       slug: "jack-fu",
-      photo: null,
+      photo: "/202511127-27.jpg",
+      photoPosition: "bottom",
       bio: null,
     },
     {

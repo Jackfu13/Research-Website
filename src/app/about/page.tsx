@@ -13,7 +13,7 @@ export default function AboutPage() {
     <PageLayout>
       <PageHeader
         title="About"
-        intro="The Equity Research Group is built as a serious student-run research organization with a flat year-one structure, clear sector ownership, and a deliberate focus on under-followed companies."
+        intro="The Equity Research Group is built as a serious student-run research organization with a vertical leadership model, clear sub-sector ownership, and a deliberate focus on under-covered companies."
         large
         photo="/northeastern-5.jpg"
       />
@@ -56,7 +56,9 @@ export default function AboutPage() {
             {verticals.map((v) => (
               <div key={v.name} className="bg-[var(--color-surface)] px-5 py-4">
                 <p className="text-sm font-semibold leading-6 text-[var(--color-text)]">{v.name}</p>
-                <p className="mt-1 text-sm leading-6 text-[var(--color-text-soft)]">{v.subSectors.join(", ")}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--color-text-soft)]">
+                  {v.subSectors.map((subSector) => subSector.name).join(", ")}
+                </p>
               </div>
             ))}
           </div>

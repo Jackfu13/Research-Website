@@ -8,6 +8,12 @@ export type PitchRequirement = {
   description: string;
 };
 
+export type ResearchStandard = {
+  label: string;
+  components: string[];
+  description: string;
+};
+
 export type Workstream = {
   title: string;
   description: string;
@@ -15,7 +21,7 @@ export type Workstream = {
 
 export const process = {
   intro:
-    "The research process combines repeatable idea generation, primary diligence, formal pitching, group voting, and ongoing portfolio review.",
+    "Ideas are sourced, researched, formally pitched, voted on by the group, and tracked in the paper portfolio.",
   ideaGeneration: {
     sources: [
       "Screens",
@@ -57,32 +63,32 @@ export const process = {
   ] satisfies ProcessStage[],
   pitchRequirements: [
     {
-      label: "Business overview and industry context",
-      description:
-        "Explain the company and the industry context required to understand the idea.",
+      label: "Business Overview",
+      description: "Business model, revenue streams, competitive position, and the industry context needed to evaluate the idea.",
     },
     {
-      label: "Variant perception",
-      description: "State what the market is missing.",
+      label: "Variant Perception",
+      description: "A clear statement of what the market is missing and why the current price doesn't reflect it.",
     },
     {
-      label: "Key drivers and risks",
-      description:
-        "Identify the major drivers of the thesis and the risks that could break it.",
+      label: "Key Drivers and Risks",
+      description: "The metrics that determine whether the thesis plays out and the factors most likely to break it.",
     },
     {
-      label: "Financial model",
-      description: "Include base, bull, and bear cases.",
+      label: "Financial Model",
+      description: "Bottom-up projections with base, bull, and bear cases built on clearly labeled assumptions.",
     },
     {
-      label: "Valuation and price target",
-      description:
-        "Connect the thesis to valuation work and a defined price target.",
+      label: "Valuation and Price Target",
+      description: "DCF and comparable company analysis with a defined price target and implied upside or downside.",
     },
     {
-      label: "Defined catalyst or timeline",
-      description:
-        "Specify the event path or timeline that could close the gap.",
+      label: "Catalysts and Timeline",
+      description: "Near- and medium-term events that could close the gap between current price and intrinsic value.",
+    },
+    {
+      label: "Risks and Mitigants",
+      description: "A direct assessment of what could go wrong, including a steelman of the bear case.",
     },
   ] satisfies PitchRequirement[],
   workstreams: [
@@ -102,6 +108,38 @@ export const process = {
         "All leads vote on formal pitches, and accepted positions are tracked in the paper portfolio and reviewed quarterly.",
     },
   ] satisfies Workstream[],
+  researchStandards: [
+    {
+      label: "The Thesis",
+      components: [
+        "Business overview",
+        "Industry context",
+        "Variant perception",
+      ],
+      description:
+        "We start by understanding the business, how it makes money, and where it sits in its industry. From there, we build a specific view on what the market is getting wrong and why.",
+    },
+    {
+      label: "The Analysis",
+      components: [
+        "Key drivers and risks",
+        "Financial model",
+        "Base, bull, and bear cases",
+        "Valuation and price target",
+      ],
+      description:
+        "We identify the two or three metrics that actually drive the business, then build our own financial model from the ground up with base, bull, and bear cases. Valuation work includes a DCF and comparable company analysis, and every pitch ends with a price target we can defend.",
+    },
+    {
+      label: "The Path",
+      components: [
+        "Catalysts and timeline",
+        "Risks and mitigants",
+      ],
+      description:
+        "A good idea needs a reason to work and a timeline for when it does. We identify specific catalysts that could close the gap, and we take the bear case seriously as part of the work.",
+    },
+  ] satisfies ResearchStandard[],
   pitchFormat: [
     "Written memo (10-15 pages)",
     "30-minute presentation plus 15-minute Q&A",

@@ -8,7 +8,7 @@ import { site } from "@/content/site";
 
 export function Navbar() {
   const pathname = usePathname();
-  const hasPhotoHeader = pathname === "/" || pathname === "/about";
+  const hasPhotoHeader = ["/", "/about", "/team", "/research", "/join"].includes(pathname);
 
   return (
     <header

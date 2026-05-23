@@ -3,7 +3,6 @@ import { Card } from "@/components/Card";
 import { ListCard } from "@/components/ListCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { output } from "@/content/output";
-import { process } from "@/content/process";
 import { site } from "@/content/site";
 
 export default function Home() {
@@ -50,8 +49,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core edge */}
+      {/* Output */}
       <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+        <div className="space-y-8">
+          <SectionHeading
+            title="Our Work"
+            subtitle={output.goal}
+          />
+          <div className="grid gap-6 md:grid-cols-2">
+            <ListCard
+              title="Internal"
+              items={output.channels[0].items}
+            />
+            <ListCard
+              title="External"
+              items={output.channels[1].items}
+            />
+          </div>
+          <div className="flex justify-center">
+            <Button href="/research#published-research" label="View Research" variant="primary" />
+          </div>
+        </div>
+      </section>
+
+      {/* Core edge */}
+      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="flex flex-col items-center text-center space-y-6">
           <SectionHeading title={site.coreEdge.title} center />
           <p className="max-w-2xl text-base leading-8 text-[var(--color-text-soft)]">
@@ -66,55 +88,6 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Research process */}
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="Research Process"
-            subtitle="Work moves from idea generation through formal pitching and quarterly portfolio review."
-          />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-            {process.stages.map((step) => (
-              <Card key={step.title} title={step.title} body={step.description} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Published research */}
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="Published Research"
-            subtitle="External output is intended to be polished, public-facing research prepared through the group's publishing process."
-          />
-          <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
-            <Card
-              title={output.publishedResearchPreview.title}
-              body={output.publishedResearchPreview.body}
-              meta="Preview"
-            >
-              <div className="space-y-4">
-                <p className="border border-dashed border-[var(--color-border-strong)] px-4 py-5 text-sm leading-6 text-[var(--color-text-soft)]">
-                  {output.publishedResearchPreview.emptyState}
-                </p>
-                <ul className="space-y-2 text-sm leading-6 text-[var(--color-text-soft)]">
-                  {output.channels[1].items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </Card>
-            <ListCard
-              title="Research Standard"
-              intro="Every public-facing idea begins with the same research standard used in the internal process."
-              items={process.pitchRequirements.map((r) => r.label)}
-              meta="Standard"
-            />
           </div>
         </div>
       </section>

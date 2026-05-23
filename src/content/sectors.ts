@@ -1,18 +1,16 @@
-export type SectorLeadStatus = "named" | "open" | "single-lead";
+export type SectorLeadStatus = "named" | "open";
 
-export type SectorCoverage = {
-  sector: string;
+export type SubSectorCoverage = {
+  name: string;
   lead: string | null;
   status: SectorLeadStatus;
-  photo: string | null;
-  bio: string | null;
 };
 
 export type Vertical = {
   name: string;
   slug: string;
   lead: string;
-  subSectors: string[];
+  subSectors: SubSectorCoverage[];
   photo: string | null;
   bio: string | null;
 };
@@ -22,23 +20,43 @@ export const verticals: Vertical[] = [
     name: "Technology",
     slug: "vertical-technology",
     lead: "Mia Patel / Corbin Duckworth",
-    subSectors: ["Software", "Semiconductors", "Internet & Platforms", "Gaming & Interactive Media", "Cybersecurity", "AI & Data Infrastructure"],
+    subSectors: [
+      { name: "Software (Enterprise / SaaS)", lead: "Danny Schwartz", status: "named" },
+      { name: "Semiconductors", lead: "Avi Nathan", status: "named" },
+      { name: "Internet & Platforms", lead: "Caelyn Casey", status: "named" },
+      { name: "Gaming & Interactive Media", lead: "Theo Brown", status: "named" },
+      { name: "Cybersecurity", lead: "Joy Shome", status: "named" },
+      { name: "AI & Data Infrastructure", lead: "Hasith Soon", status: "named" },
+    ],
     photo: null,
     bio: null,
   },
   {
     name: "Industrials & Defense",
     slug: "vertical-industrials-defense",
-    lead: "Aiden Schacter",
-    subSectors: ["Machinery & Industrial Equipment", "Defense", "Aerospace", "Transportation & Logistics", "Commercial & Professional Services"],
+    lead: "Aiden",
+    subSectors: [
+      { name: "Machinery & Industrial Equipment", lead: "Steele", status: "named" },
+      { name: "Defense", lead: "Edan Winter", status: "named" },
+      { name: "Aerospace", lead: "Aiden Schacter", status: "named" },
+      { name: "Transportation & Logistics", lead: null, status: "open" },
+      { name: "Commercial & Professional Services", lead: "Keaton Lai", status: "named" },
+    ],
     photo: null,
     bio: null,
   },
   {
     name: "Financials",
     slug: "vertical-financials",
-    lead: "Eli Goldstein",
-    subSectors: ["Banks", "Fintech", "Asset & Wealth Management", "Real Estate", "Capital Markets", "Private Credit"],
+    lead: "Eli Goldstien",
+    subSectors: [
+      { name: "Banks", lead: "Anthony Gibbs", status: "named" },
+      { name: "Fintech", lead: "Luana Case", status: "named" },
+      { name: "Asset & Wealth Management", lead: "Isaac Rocha", status: "named" },
+      { name: "Real Estate", lead: "Eli G", status: "named" },
+      { name: "Capital Markets", lead: "Chris Chen", status: "named" },
+      { name: "Private Credit", lead: "Bryce Huang", status: "named" },
+    ],
     photo: null,
     bio: null,
   },
@@ -46,7 +64,13 @@ export const verticals: Vertical[] = [
     name: "Resources & Real Assets",
     slug: "vertical-resources-real-assets",
     lead: "Jack Dalton",
-    subSectors: ["Energy", "Materials & Chemicals", "Utilities & Renewables", "Exploration & Production", "Oilfield Services & Equipment"],
+    subSectors: [
+      { name: "Energy", lead: "Jack Dalton", status: "named" },
+      { name: "Materials & Chemicals", lead: null, status: "open" },
+      { name: "Utilities & Renewables", lead: "Jordi Visser", status: "named" },
+      { name: "Exploration & Production", lead: null, status: "open" },
+      { name: "Oilfield Services & Equipment", lead: null, status: "open" },
+    ],
     photo: null,
     bio: null,
   },
@@ -54,35 +78,15 @@ export const verticals: Vertical[] = [
     name: "Consumer & Services",
     slug: "vertical-consumer-services",
     lead: "Derek Z",
-    subSectors: ["Consumer Staples & Agriculture", "Consumer Discretionary", "Business Services", "E-commerce & Retail", "Restaurants & Food Service", "Travel & Leisure"],
+    subSectors: [
+      { name: "Consumer Staples & Agriculture", lead: "Orestes Blades", status: "named" },
+      { name: "Consumer Discretionary", lead: "Derek", status: "named" },
+      { name: "Business Services", lead: "Ben Rosenblatt", status: "named" },
+      { name: "E-commerce & Retail", lead: null, status: "open" },
+      { name: "Restaurants & Food Service", lead: "Dominic Romero", status: "named" },
+      { name: "Travel & Leisure", lead: null, status: "open" },
+    ],
     photo: null,
     bio: null,
   },
 ];
-
-export const sectors = {
-  intro:
-    "Each lead owns primary coverage of one sector. Larger or more active sectors may have co-leads sharing coverage.",
-  assignmentNote:
-    "Sector assignments are determined at the start of the year based on member preference and demonstrated interest.",
-  coLeadPolicy:
-    "Co-lead arrangements require both members to pitch separately; shared coverage does not mean shared output.",
-  coverage: [
-    { sector: "Software", lead: "Danny Schwartz", status: "named", photo: null, bio: null },
-    { sector: "Digital Infrastructure & Telecom", lead: null, status: "open", photo: null, bio: null },
-    { sector: "Hardware & Semiconductors", lead: "Corbin Duckworth", status: "named", photo: null, bio: null },
-    { sector: "Industrials", lead: "Aiden Schacter", status: "named", photo: null, bio: null },
-    { sector: "Healthcare – Biotech", lead: "Lucas Aulisi", status: "named", photo: null, bio: null },
-    { sector: "Healthcare – Medtech & Services", lead: null, status: "single-lead", photo: null, bio: null },
-    { sector: "Cyber Security", lead: "Paarth", status: "named", photo: null, bio: null },
-    { sector: "Consumer Staples & Agriculture", lead: null, status: "single-lead", photo: null, bio: null },
-    { sector: "Financials – Banks & Insurance", lead: "Anthony Gibbs", status: "named", photo: null, bio: null },
-    { sector: "Financials – Fintech", lead: "Isaac Toffel", status: "named", photo: null, bio: null },
-    { sector: "Energy", lead: "Jack Dalton", status: "named", photo: null, bio: null },
-    { sector: "Materials & Chemicals", lead: null, status: "single-lead", photo: null, bio: null },
-    { sector: "Real Estate & REITs", lead: "Eli Goldstein", status: "named", photo: null, bio: null },
-    { sector: "Business Services", lead: "Ben Rosenblatt", status: "named", photo: null, bio: null },
-    { sector: "Transportation & Logistics", lead: null, status: "single-lead", photo: null, bio: null },
-    { sector: "Aerospace and Defense", lead: "Edan Winter", status: "named", photo: null, bio: null },
-  ] satisfies SectorCoverage[],
-} as const;

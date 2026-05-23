@@ -21,12 +21,10 @@ export const output = {
       ],
     },
   ] satisfies OutputChannel[],
-  goal: "Build a public track record members can reference in recruiting.",
+  goal: "Research that meets the standard gets published. Members graduate with a track record, not just experience.",
   publishedResearchPreview: {
     title: "Published research archive",
-    body:
-      "Public releases are intended to flow through the group's external research channels rather than a marketing-style showcase.",
     emptyState:
-      "No public reports are listed here yet. This section is reserved for polished releases prepared for publication.",
+      "No public reports yet — polished research will be released here as it clears the group's publishing standard.",
   },
 } as const;

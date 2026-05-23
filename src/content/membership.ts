@@ -9,43 +9,57 @@ export const membership = {
   participationSummary:
     "Members are expected to maintain sector coverage, contribute to weekly discussion, and complete at least one full pitch each semester.",
   membershipRules: [
-    "15-20 members in year one",
     "Admission by application, stock pitch submission, and interview",
-    "Every member pitches at least once per semester; no exceptions",
-    "Inactive members are removed at semester end",
+    "Every member pitches at least once per semester",
+    "Members who don't meet participation requirements don't stay",
   ],
   admissionSteps: [
     {
       title: "Application",
-      description: "Admission begins with an application.",
+      description: "Submit an application covering your background and interest in equity research.",
     },
     {
-      title: "Stock Pitch Submission",
-      description: "Applicants submit a stock pitch as part of the evaluation.",
+      title: "Stock Pitch",
+      description: "Present a stock pitch — a real idea with a thesis, basic analysis, and a view on value.",
     },
     {
       title: "Interview",
-      description: "Final admission decisions include an interview.",
+      description: "A conversation about your pitch, your thinking, and how you approach markets.",
     },
   ] satisfies AdmissionStep[],
   meetingCadence: [
     "Weekly meetings of 1.5 hours",
     "One or two pitches per week, rotating through sectors",
     "Remaining time for sector updates, market discussion, and idea generation",
-    "Attendance is mandatory; two unexcused absences trigger removal review",
+    "Attendance is mandatory — consistent absence puts membership at risk",
   ],
   memberExpectations: [
-    "A minimum of one full pitch per semester",
-    "Ongoing coverage and watchlist maintenance for a sector",
+    "At least one full pitch per semester",
+    "Ongoing coverage and watchlist maintenance for your sector",
     "Active participation in Q&A and voting",
-    "Tracking personal calls and learning from mistakes",
   ],
   recruitingPositioning:
     "The group exists to prepare members for equity research careers.",
   recruitingOutcomes: [
-    "4+ polished, interview-ready stock pitches by graduation",
-    "Deep expertise in at least one sector",
-    "A public track record via Substack",
-    "Clear perspectives on markets and individual names",
+    {
+      title: "4+ Polished Pitches",
+      description: "Graduate with a portfolio of interview-ready ideas built and defended in front of the group.",
+    },
+    {
+      title: "Sector Expertise",
+      description: "Own a vertical end-to-end — coverage, watchlist, and a working understanding of what moves it.",
+    },
+    {
+      title: "A Public Track Record",
+      description: "Polished research gets published on Substack, giving you a record you can reference in recruiting.",
+    },
+    {
+      title: "Adversarial Q&A Reps",
+      description: "Every pitch gets challenged. You leave knowing how to defend a thesis under real pressure.",
+    },
+    {
+      title: "An Investment Philosophy",
+      description: "Repeated pitching and debate builds a genuine point of view on markets, not just experience.",
+    },
   ],
 } as const;

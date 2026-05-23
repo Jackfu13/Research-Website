@@ -1,5 +1,4 @@
 import { Card } from "@/components/Card";
-import { ListCard } from "@/components/ListCard";
 import { PageHeader } from "@/components/PageHeader";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -10,23 +9,9 @@ import { process } from "@/content/process";
 export default function ResearchPage() {
   return (
     <PageLayout>
-      <PageHeader title="Research" intro={process.intro} />
+      <PageHeader title="Research" intro={process.intro} large photo="/northeastern-5.jpg" />
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="Process"
-            subtitle="Work moves from idea generation through formal pitching and quarterly portfolio review."
-          />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-            {process.stages.map((step) => (
-              <Card key={step.title} title={step.title} body={step.description} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
             title="Idea Sources"
@@ -41,17 +26,29 @@ export default function ResearchPage() {
       </section>
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="grid gap-6 md:grid-cols-[minmax(0,1.15fr)_minmax(18rem,1fr)] md:items-start">
-          <ListCard
-            title="Research Standard"
-            intro="Every public-facing or portfolio-bound idea starts from the same research checklist."
-            items={process.pitchRequirements.map((r) => r.label)}
+        <div className="space-y-8">
+          <SectionHeading
+            title="Research Standards"
+            subtitle="Every pitch must cover the following components before it is scheduled for presentation."
           />
-          <ListCard
-            title="Pitch Format"
-            intro="Formal presentation standards are part of the process, not an optional extra."
-            items={process.pitchFormat}
-          />
+          <div className="grid gap-px overflow-hidden border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-3">
+            {process.researchStandards.map((r) => (
+              <div key={r.label} className="bg-[var(--color-surface)] px-5 py-5">
+                <p className="text-sm font-semibold leading-6 text-[var(--color-text)]">{r.label}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {r.components.map((component) => (
+                    <span
+                      key={component}
+                      className="border border-[var(--color-border-strong)] px-2.5 py-1 text-xs font-medium uppercase tracking-[0.08em] text-[var(--color-accent)]"
+                    >
+                      {component}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)]">{r.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -69,45 +66,23 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
+      <section id="published-research" className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
             title="Published Research"
-            subtitle="Public research is intended to sit here as releases are prepared."
+            subtitle={output.goal}
           />
-          <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
-            <Card
-              title={output.publishedResearchPreview.title}
-              body={output.publishedResearchPreview.body}
-              meta="Future Releases"
-            >
-              <p className="border border-dashed border-[var(--color-border-strong)] px-4 py-5 text-sm leading-6 text-[var(--color-text-soft)]">
-                {output.publishedResearchPreview.emptyState}
-              </p>
-            </Card>
-            <ListCard
-              title={output.channels[1].title}
-              intro={output.goal}
-              items={output.channels[1].items}
-            />
-          </div>
+          <Card
+            title={output.publishedResearchPreview.title}
+            meta="Coming Soon"
+          >
+            <p className="border border-dashed border-[var(--color-border-strong)] px-4 py-5 text-sm leading-6 text-[var(--color-text-soft)]">
+              {output.publishedResearchPreview.emptyState}
+            </p>
+          </Card>
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
-        <div className="grid gap-6 md:grid-cols-2">
-          <ListCard
-            title={output.channels[0].title}
-            items={output.channels[0].items}
-          />
-          <ListCard
-            title="Research Standard Details"
-            items={process.pitchRequirements.map(
-              (r) => `${r.label}: ${r.description}`,
-            )}
-          />
-        </div>
-      </section>
     </PageLayout>
   );
 }

@@ -5,7 +5,7 @@ export type PortfolioRule = {
 
 export const portfolio = {
   intro:
-    "The group runs a paper portfolio with clear sizing, capacity, and review rules.",
+    "ERG runs a $1M notional paper portfolio managed like a real fund — positions are sized, tracked, and defended every quarter.",
   rules: [
     { label: "Starting capital", value: "$1M notional paper portfolio" },
     { label: "Position size", value: "3-7% per name at entry" },

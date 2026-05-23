@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type BoardMemberCardProps = {
@@ -7,19 +8,22 @@ type BoardMemberCardProps = {
   photo: string | null;
   bio: string | null;
   compact?: boolean;
+  photoPosition?: "top" | "center" | "bottom";
 };
 
-export function BoardMemberCard({ name, title, slug, photo, compact = false }: BoardMemberCardProps) {
+export function BoardMemberCard({ name, title, slug, photo, compact = false, photoPosition = "top" }: BoardMemberCardProps) {
   const displayName = name ?? "TBD";
 
   return (
     <article className="flex flex-col bg-[var(--color-surface)] border border-[var(--color-border)]">
-      <div className={`${compact ? "aspect-[3/4]" : "h-80"} w-full overflow-hidden bg-[var(--color-surface-muted)]`}>
+      <div className={`${compact ? "aspect-[3/4]" : "h-80"} relative w-full overflow-hidden bg-[var(--color-surface-muted)]`}>
         {photo ? (
-          <img
+          <Image
             src={photo}
             alt={displayName}
-            className="h-full w-full object-cover object-top"
+            fill
+            className={`object-cover object-${photoPosition}`}
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center">
