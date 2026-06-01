@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,11 +9,16 @@ type BoardMemberCardProps = {
   photo: string | null;
   bio: string | null;
   compact?: boolean;
-  photoPosition?: "top" | "center" | "bottom";
+  photoOffsetY?: number;
+  photoScale?: number;
 };
 
-export function BoardMemberCard({ name, title, slug, photo, compact = false, photoPosition = "top" }: BoardMemberCardProps) {
+export function BoardMemberCard({ name, title, slug, photo, compact = false, photoOffsetY = 0, photoScale = 1 }: BoardMemberCardProps) {
   const displayName = name ?? "TBD";
+  const imageStyle: CSSProperties = { objectPosition: `50% ${photoOffsetY}%` };
+  if (photoScale !== 1) {
+    imageStyle.transform = `scale(${photoScale})`;
+  }
 
   return (
     <article className="flex flex-col bg-[var(--color-surface)] border border-[var(--color-border)]">
@@ -22,7 +28,8 @@ export function BoardMemberCard({ name, title, slug, photo, compact = false, pho
             src={photo}
             alt={displayName}
             fill
-            className={`object-cover object-${photoPosition}`}
+            className="object-cover"
+            style={imageStyle}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
           />
         ) : (

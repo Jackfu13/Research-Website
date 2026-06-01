@@ -19,7 +19,7 @@ export default function AboutPage() {
       />
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {site.aboutSections.map((section) => (
             <Card key={section.title} title={section.title}>
               <div className="space-y-3 text-base leading-7 text-[var(--color-text-soft)]">
@@ -72,9 +72,10 @@ export default function AboutPage() {
             intro="The group's structure is designed to produce ownership and accountability rather than generic club participation."
             items={site.differentiation}
           />
-          <Card
+          <ListCard
             title={board.yearOneStructure.title}
-            body={`${board.yearOneStructure.summary} ${board.executiveBoardIntro}`}
+            intro={board.yearOneStructure.summary}
+            items={board.yearOneStructure.points}
           />
         </div>
       </section>

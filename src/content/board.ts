@@ -5,7 +5,14 @@ export type BoardRole = {
   name: string | null;
   slug: string;
   photo: string | null;
-  photoPosition?: "top" | "center" | "bottom";
+  // Team card photo crop. 0 = top of image visible, 100 = bottom. Default 0.
+  photoOffsetY: number;
+  // Team card photo zoom. 1 = no zoom; 1.1 = 10% in. Default 1.
+  photoScale: number;
+  // Bio page photo crop. Same scale as photoOffsetY.
+  bioPhotoOffsetY: number;
+  // Bio page photo zoom. Same scale as photoScale.
+  bioPhotoScale: number;
   bio: string | null;
 };
 
@@ -13,7 +20,12 @@ export const board = {
   yearOneStructure: {
     title: "Year One: Vertical Leadership Model",
     summary:
-      "The group launches with five verticals — Technology, Industrials & Defense, Financials, Resources & Real Assets, and Consumer & Services — each led by a designated Vertical Lead. No junior analysts are added until the model is proven.",
+      "The group launches with five verticals — Technology, Industrials & Defense, Financials, Resources & Real Assets, and Consumer & Services — each led by a designated Vertical Lead.",
+    points: [
+      "No junior analysts are added until the model is proven",
+      "Eight functional executive board roles cover leadership, research oversight, education, operations, technology, and marketing",
+      "All executive board members maintain sector coverage and pitch alongside sector leads",
+    ],
   },
   executiveBoardIntro:
     "Eight functional roles covering leadership, research oversight, education, operations, technology, and marketing. All executive board members maintain sector coverage and pitch alongside sector leads.",
@@ -29,6 +41,10 @@ export const board = {
       name: "Isaac Toffel",
       slug: "isaac-toffel",
       photo: "/0292_URF__Toffel.I_090225_.JPG",
+      photoOffsetY: 0,
+      photoScale: 1,
+      bioPhotoOffsetY: 0,
+      bioPhotoScale: 1,
       bio: null,
     },
     {
@@ -42,6 +58,10 @@ export const board = {
       name: "Lucas Davis",
       slug: "lucas-davis",
       photo: null,
+      photoOffsetY: 0,
+      photoScale: 1,
+      bioPhotoOffsetY: 0,
+      bioPhotoScale: 1,
       bio: null,
     },
     {
@@ -54,6 +74,10 @@ export const board = {
       name: "Jack Dalton",
       slug: "jack-dalton",
       photo: null,
+      photoOffsetY: 0,
+      photoScale: 1,
+      bioPhotoOffsetY: 0,
+      bioPhotoScale: 1,
       bio: null,
     },
     {
@@ -66,6 +90,10 @@ export const board = {
       name: "Braden Benzan",
       slug: "braden-benzan",
       photo: null,
+      photoOffsetY: 0,
+      photoScale: 1,
+      bioPhotoOffsetY: 0,
+      bioPhotoScale: 1,
       bio: null,
     },
     {
@@ -78,6 +106,10 @@ export const board = {
       name: "Corbin Duckworth",
       slug: "corbin-duckworth",
       photo: null,
+      photoOffsetY: 0,
+      photoScale: 1,
+      bioPhotoOffsetY: 0,
+      bioPhotoScale: 1,
       bio: null,
     },
     {
@@ -90,7 +122,10 @@ export const board = {
       name: "Jack Fu",
       slug: "jack-fu",
       photo: "/202511127-27.jpg",
-      photoPosition: "bottom",
+      photoOffsetY: 50,
+      photoScale: 1,
+      bioPhotoOffsetY: 30,
+      bioPhotoScale: 1.1,
       bio: null,
     },
     {
@@ -103,6 +138,10 @@ export const board = {
       name: "Pablo Velazquez de Leon",
       slug: "pablo-velazquez-de-leon",
       photo: null,
+      photoOffsetY: 0,
+      photoScale: 1,
+      bioPhotoOffsetY: 0,
+      bioPhotoScale: 1,
       bio: null,
     },
     {
@@ -114,8 +153,12 @@ export const board = {
       note: "",
       name: "Steele Shapiro",
       slug: "steele-shapiro",
-      photo: null,
-      bio: null,
+      photo: "/steele-shapiro.jpg",
+      photoOffsetY: 0,
+      photoScale: 1.2,
+      bioPhotoOffsetY: 20,
+      bioPhotoScale: 1,
+      bio: "I am a second-year Finance and Marketing student at Northeastern University, originally from Seattle. I joined the ERG team to deepen my understanding of equity research and financial analysis. Outside of academics, I have a passion for photography and tennis.",
     },
   ] satisfies BoardRole[],
   futureStructure: {

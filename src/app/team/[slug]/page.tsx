@@ -1,3 +1,7 @@
+import type { CSSProperties } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
 import { PageLayout } from "@/components/PageLayout";
 import { board } from "@/content/board";
 import { verticals } from "@/content/sectors";
@@ -20,6 +24,10 @@ export default async function BioPage({ params }: Props) {
 
   const name = boardMember?.name ?? vertical?.lead ?? null;
   const title = boardMember?.title ?? vertical?.name ?? null;
+  const bio = boardMember?.bio ?? vertical?.bio ?? null;
+  const photo = boardMember?.photo ?? vertical?.photo ?? null;
+  const photoOffsetY = boardMember?.bioPhotoOffsetY ?? boardMember?.photoOffsetY ?? 0;
+  const photoScale = boardMember?.bioPhotoScale ?? boardMember?.photoScale ?? 1;
 
   if (!name || !title) {
     return (
@@ -35,23 +43,63 @@ export default async function BioPage({ params }: Props) {
     );
   }
 
+  const imageStyle: CSSProperties = { objectPosition: `50% ${photoOffsetY}%` };
+  if (photoScale !== 1) {
+    imageStyle.transform = `scale(${photoScale})`;
+  }
+
+  const initials = name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2);
+
   return (
     <PageLayout>
-      <section className="w-full bg-[var(--color-footer-bg)] px-12 py-28 md:px-20">
-        <div className="flex flex-col items-center text-center space-y-3">
-          <h1 className="text-4xl font-semibold tracking-tight text-[var(--color-footer-text)] md:text-5xl">
-            {name}
-          </h1>
-          <p className="text-base text-[var(--color-footer-text)] opacity-75">
-            {title}
-          </p>
-        </div>
-      </section>
+      <section className="w-full bg-[var(--color-footer-bg)] px-8 py-20 md:px-12 md:py-28">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:items-start md:gap-14">
+            <div className="relative aspect-square w-full overflow-hidden bg-[var(--color-surface-muted)]">
+              {photo ? (
+                <Image
+                  src={photo}
+                  alt={name}
+                  fill
+                  className="object-cover"
+                  style={imageStyle}
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  priority
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center">
+                  <span className="text-6xl font-semibold text-[var(--color-border-strong)]">
+                    {initials}
+                  </span>
+                </div>
+              )}
+            </div>
 
-      <section className="w-full bg-[var(--color-surface)] px-12 py-20 md:px-20">
-        <p className="text-base leading-7 text-[var(--color-text-soft)]">
-          Bio coming soon.
-        </p>
+            <div className="space-y-5">
+              <h1 className="text-4xl font-semibold tracking-tight text-[var(--color-footer-text)] md:text-5xl">
+                {name}
+              </h1>
+              <p className="text-lg italic text-[var(--color-footer-text)] opacity-75">
+                {title}
+              </p>
+              <p className="text-base leading-7 text-[var(--color-footer-text)] opacity-90">
+                {bio ?? "Bio coming soon."}
+              </p>
+              <div className="pt-4">
+                <Link
+                  href="/team"
+                  className="inline-flex items-center text-sm font-medium uppercase tracking-[0.08em] text-[var(--color-footer-text)] opacity-75 hover:opacity-100 transition-opacity"
+                >
+                  ← Back to Members
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </PageLayout>
   );

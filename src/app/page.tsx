@@ -34,11 +34,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feature highlights */}
+      {/* How we work */}
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
-            title="What We Do"
+            title="How we work"
             subtitle="The work is structured around idea generation, formal pitch development, and ongoing sector coverage."
           />
           <div className="grid gap-6 md:grid-cols-3">
@@ -49,11 +49,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Output */}
+      {/* Our work */}
       <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
-            title="Our Work"
+            title="Our work"
             subtitle={output.goal}
           />
           <div className="grid gap-6 md:grid-cols-2">
@@ -72,14 +72,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core edge */}
+      {/* What makes us different */}
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="flex flex-col items-center text-center space-y-6">
-          <SectionHeading title={site.coreEdge.title} center />
-          <p className="max-w-2xl text-base leading-8 text-[var(--color-text-soft)]">
-            {site.coreEdge.summary}
+          <SectionHeading title="What makes us different" center />
+          <p className="max-w-3xl text-base leading-8 text-[var(--color-text-soft)]">
+            {site.differentiationParagraph}
           </p>
-          <div className="space-y-3">
+          <div className="space-y-3 pt-2">
             <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-text)]">How We Do It</p>
             <ul className="space-y-2">
               {site.coreEdge.methods.map((method) => (
@@ -92,6 +92,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Who ERG is for */}
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+        <div className="flex flex-col items-center text-center space-y-8">
+          <SectionHeading title="Who ERG is for" center />
+          <p className="max-w-3xl text-base leading-8 text-[var(--color-text-soft)]">
+            {site.recruitingBlock}
+          </p>
+          <Button href="/join" label="Apply to ERG" variant="primary" large />
+        </div>
+      </section>
 
     </div>
   );

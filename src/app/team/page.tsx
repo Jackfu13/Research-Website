@@ -21,7 +21,8 @@ export default function TeamPage() {
               title={role.title}
               slug={role.slug}
               photo={role.photo}
-              photoPosition={role.photoPosition}
+              photoOffsetY={role.photoOffsetY}
+              photoScale={role.photoScale}
               bio={role.bio}
             />
           ))}

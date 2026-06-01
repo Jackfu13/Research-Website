@@ -19,13 +19,14 @@ export const site = {
   heroEyebrow: "Student-run equity research",
   tagline:
     "Student-run equity research focused on under-covered small and mid-cap companies.",
-  heroSummary:
-    "The group produces institutional-quality research on names that receive little Wall Street coverage.",
   mission:
-    "The Equity Research Group (ERG) is a student-run equity research organization at Northeastern University focused on under-covered small and mid-cap companies. ERG produces institutional-quality research on names that receive little Wall Street coverage, developing members into rigorous fundamental analysts.",
-  footerNote: "Student-run equity research organization.",
-  homepageCta:
-    "Admission is based on application, stock pitch submission, and interview.",
+    "The Equity Research Group is a student-run equity research organization at Northeastern focused on under-covered small and mid-cap companies. ERG develops members into rigorous fundamental analysts through deep sector ownership, original bottom-up research, and a published track record built semester by semester.",
+  valueProposition:
+    "ERG covers small and mid-cap companies where sell-side attention is thin. Members own a sector, build original research through primary work and financial modeling, and defend their ideas before an investment committee. Each semester, the strongest pitches are published, giving members a body of work they can point to in recruiting.",
+  recruitingBlock:
+    "ERG is for students serious about equity research, asset management, or hedge funds. You'll be assigned a sector, expected to develop a real view on the companies in it, and held accountable for the ideas you bring to the investment committee. Each semester, members add to a portfolio of published research, build sector expertise, and develop the analytical foundation that real investing requires.",
+  differentiationParagraph:
+    "Most equity research happens above $10 billion in market cap. ERG works below it. Our members own coverage of small and mid-cap companies where sell-side attention is thin, building original research through primary work, financial modeling, and bottom-up analysis. Every pitch is defended in front of an investment committee that decides what enters the portfolio. Each semester adds to a public body of work members can point to, with sector expertise they actually own.",
   investmentUniverse: [
     { label: "Market cap", value: "$300M–$10B" },
     { label: "Listing", value: "US-listed companies" },
@@ -56,8 +57,8 @@ export const site = {
     {
       title: "Mission",
       body: [
-        "The Equity Research Group (ERG) is a student-run equity research organization at Northeastern University focused on under-covered small and mid-cap companies.",
-        "ERG produces institutional-quality research on names that receive little Wall Street coverage, developing members into rigorous fundamental analysts.",
+        "The Equity Research Group is a student-run equity research organization at Northeastern focused on under-covered small and mid-cap companies.",
+        "ERG develops members into rigorous fundamental analysts through deep sector ownership, original bottom-up research, and a published track record built semester by semester.",
       ],
     },
     {
@@ -65,13 +66,6 @@ export const site = {
       body: [
         "ERG operates under a vertical leadership model, organizing coverage across five verticals each led by a designated Vertical Lead.",
         "The executive board holds functional administrative roles, but all board members maintain sector coverage and pitch like everyone else.",
-      ],
-    },
-    {
-      title: "Differentiation",
-      body: [
-        "Unlike broader investment clubs that rotate members through generic projects, the group gives each member ownership of a coverage universe.",
-        "The small-cap focus is designed to generate original research rather than repeat Wall Street consensus.",
       ],
     },
   ] satisfies SiteSection[],

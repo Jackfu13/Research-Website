@@ -8,7 +8,7 @@ import { membership } from "@/content/membership";
 export default function JoinPage() {
   return (
     <PageLayout>
-      <PageHeader title="Recruitment" intro="Admission is by application, stock pitch submission, and interview." large photo="/northeastern-5.jpg" />
+      <PageHeader title="Apply" intro="Admission is by application, stock pitch submission, and interview." large photo="/ISEC_Photo_61.jpg" />
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="space-y-8">
