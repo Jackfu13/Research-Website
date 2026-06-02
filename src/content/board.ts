@@ -158,7 +158,7 @@ export const board = {
       photoScale: 1.2,
       bioPhotoOffsetY: 20,
       bioPhotoScale: 1,
-      bio: "I am a second-year Finance and Marketing student at Northeastern University, originally from Seattle. I joined the ERG team to deepen my understanding of equity research and financial analysis. Outside of academics, I have a passion for photography and tennis.",
+      bio: "Steele Shapiro is a second-year Finance and Marketing student at Northeastern University, originally from Seattle. He joined the ERG team to deepen his understanding of equity research and financial analysis. Outside of academics, he has a passion for photography and tennis.",
     },
   ] satisfies BoardRole[],
   futureStructure: {
