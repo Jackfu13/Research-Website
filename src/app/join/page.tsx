@@ -16,7 +16,7 @@ export default function JoinPage() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 flex flex-col items-center text-center space-y-6">
           <h1
             className="text-3xl font-semibold tracking-tight text-[var(--color-footer-text)] md:text-5xl"
@@ -25,8 +25,8 @@ export default function JoinPage() {
             Recruitment
           </h1>
           <p
-            className="max-w-3xl text-base leading-8 text-[var(--color-footer-text)] opacity-90 md:text-lg"
-            style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
+            className="max-w-3xl text-base leading-8 text-[var(--color-footer-text)] md:text-lg"
+            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.75)" }}
           >
             Admission is by application, stock pitch submission, and interview.
           </p>

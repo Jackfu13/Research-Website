@@ -13,7 +13,7 @@ export default function AboutPage() {
     <PageLayout>
       <PageHeader
         title="About"
-        intro="The Equity Research Group is built as a serious student-run research organization with an industry leadership model, clear sub-sector ownership, and a deliberate focus on under-covered companies."
+        intro="The Equity Research Group is a student-run organization that studies public companies to judge whether their stock is a good investment. We focus on smaller, under-covered businesses that get little attention from Wall Street, with each member owning research on a specific industry."
         large
         photo="/northeastern-5.jpg"
       />
