@@ -5,7 +5,8 @@ export type SiteFeature = {
 
 export type SiteSection = {
   title: string;
-  body: string[];
+  intro: string;
+  items: string[];
 };
 
 export type InvestmentUniverseItem = {
@@ -46,7 +47,7 @@ export const site = {
     {
       title: "Deep Primary Research",
       description:
-        "Sell-side coverage drops off dramatically below $10B market cap, so the group focuses on work others often do not do.",
+        "Sell-side coverage drops off below $10B in market cap, leaving room for original work. That gap is where ERG operates.",
     },
     {
       title: "Sector Ownership",
@@ -62,16 +63,12 @@ export const site = {
   aboutSections: [
     {
       title: "Mission",
-      body: [
-        "The Equity Research Group is a student-run equity research organization at Northeastern focused on under-covered small and mid-cap companies.",
-        "ERG develops members into rigorous fundamental analysts through deep sector ownership, original bottom-up research, and a published track record built semester by semester.",
-      ],
-    },
-    {
-      title: "Structure",
-      body: [
-        "ERG operates under a vertical leadership model, organizing coverage across five verticals each led by a designated Vertical Lead.",
-        "The executive board holds functional administrative roles, but all board members maintain sector coverage and pitch like everyone else.",
+      intro: "ERG is a student-run equity research organization at Northeastern, focused on under-covered small and mid-cap companies.",
+      items: [
+        "Deep sector ownership and original bottom-up research",
+        "Published track record built semester by semester",
+        "Five verticals: Technology, Industrials & Defense, Financials, Resources & Real Assets, Consumer & Services",
+        "Each vertical led by a designated Vertical Lead",
       ],
     },
   ] satisfies SiteSection[],

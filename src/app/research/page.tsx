@@ -1,10 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Card } from "@/components/Card";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
-import { portfolio } from "@/content/portfolio";
 import { process } from "@/content/process";
 import { site } from "@/content/site";
 
@@ -70,20 +68,6 @@ export default function ResearchPage() {
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
-            title="Idea Sources"
-            subtitle={`${process.ideaGeneration.watchlistExpectation} ${process.ideaGeneration.weeklyUpdateNote}`}
-          />
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {process.ideaGeneration.sources.map((source) => (
-              <Card key={source} title={source} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
             title="Research Standards"
             subtitle="Every pitch must cover the following components before it is scheduled for presentation."
           />
@@ -108,19 +92,6 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-accent-soft)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="Portfolio Structure"
-            subtitle={portfolio.intro}
-          />
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-            {portfolio.rules.map((spec) => (
-              <Card key={spec.label} title={spec.value} meta={spec.label} />
-            ))}
-          </div>
-        </div>
-      </section>
     </PageLayout>
   );
 }

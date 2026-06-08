@@ -14,10 +14,10 @@ export default function ApplyPage() {
             </p>
           </div>
           <h1 className="text-4xl font-semibold tracking-tight text-[var(--color-text)] md:text-5xl">
-            Applications are not open right now.
+            Applications open in the fall.
           </h1>
           <p className="text-base leading-7 text-[var(--color-text-soft)] md:text-lg">
-            The next recruiting cycle has not yet been announced. Check back here, or follow ERG on our channels for updates.
+            The next recruiting cycle opens this fall. Check back here, or follow ERG on our channels for updates.
           </p>
         </div>
       </section>

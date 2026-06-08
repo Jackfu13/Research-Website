@@ -19,17 +19,14 @@ export default function AboutPage() {
       />
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="grid gap-6 md:grid-cols-2">
-          {site.aboutSections.map((section) => (
-            <Card key={section.title} title={section.title}>
-              <div className="space-y-3 text-base leading-7 text-[var(--color-text-soft)]">
-                {section.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            </Card>
-          ))}
-        </div>
+        {site.aboutSections.map((section) => (
+          <ListCard
+            key={section.title}
+            title={section.title}
+            intro={section.intro}
+            items={section.items}
+          />
+        ))}
       </section>
 
       <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">

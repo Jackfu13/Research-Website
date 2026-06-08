@@ -24,7 +24,6 @@ export const board = {
     points: [
       "No junior analysts are added until the model is proven",
       "Eight functional executive board roles cover leadership, research oversight, education, operations, technology, and marketing",
-      "All executive board members maintain sector coverage and pitch alongside sector leads",
     ],
   },
   executiveBoardIntro:

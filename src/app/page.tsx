@@ -3,9 +3,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { ListCard } from "@/components/ListCard";
 import { SectionHeading } from "@/components/SectionHeading";
-import { output } from "@/content/output";
 import { site } from "@/content/site";
 
 export default function Home() {
@@ -85,31 +83,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our work */}
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="Our work"
-            subtitle={output.goal}
-          />
-          <div className="grid gap-6 md:grid-cols-2">
-            <ListCard
-              title="Internal"
-              items={output.channels[0].items}
-            />
-            <ListCard
-              title="External"
-              items={output.channels[1].items}
-            />
-          </div>
-          <div className="flex justify-center">
-            <Button href="/research#published-research" label="View Research" variant="primary" />
-          </div>
-        </div>
-      </section>
-
       {/* What makes us different */}
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
         <div className="flex flex-col items-center text-center space-y-6">
           <SectionHeading title="What makes us different" center />
           <p className="max-w-3xl text-base leading-8 text-[var(--color-text-soft)]">
