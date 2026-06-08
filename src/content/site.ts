@@ -13,10 +13,16 @@ export type InvestmentUniverseItem = {
   value: string;
 };
 
+export type FeaturedPublication = {
+  title: string;
+  issue: string;
+  cover: string | null;
+  href: string;
+};
+
 export const site = {
   name: "Equity Research Group",
   shortName: "ERG",
-  heroEyebrow: "Student-run equity research",
   tagline:
     "Student-run equity research focused on under-covered small and mid-cap companies.",
   mission:
@@ -85,4 +91,20 @@ export const site = {
     "The small-cap focus ensures original research rather than regurgitation of Street consensus.",
     "The vertical structure creates clear accountability and specialization — every role has a defined owner, and there is nowhere to hide.",
   ],
+  // Featured publication on the homepage. When a real cover image exists, set `cover` to its public path (e.g., "/featured-fall-2026.jpg"). Until then, the section renders a styled placeholder.
+  featuredPublication: {
+    title: "Inaugural Research Report",
+    issue: "Coming Soon",
+    cover: null as string | null,
+    href: "/research",
+  } satisfies FeaturedPublication,
+  // Research page publications archive. Add new entries as publications go live.
+  publications: [
+    {
+      title: "Inaugural Research Report",
+      issue: "Coming Soon",
+      cover: null as string | null,
+      href: "/research",
+    },
+  ] satisfies FeaturedPublication[],
 } as const;

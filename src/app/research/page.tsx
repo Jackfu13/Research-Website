@@ -1,15 +1,71 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import { Card } from "@/components/Card";
-import { PageHeader } from "@/components/PageHeader";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
-import { output } from "@/content/output";
 import { portfolio } from "@/content/portfolio";
 import { process } from "@/content/process";
+import { site } from "@/content/site";
 
 export default function ResearchPage() {
   return (
     <PageLayout>
-      <PageHeader title="Research" intro={process.intro} large photo="/northeastern-5.jpg" />
+      <section className="relative w-full px-8 pt-28 pb-24 md:px-12 md:pt-32 md:pb-32">
+        <img
+          src="/adrien-olichon-RCAhiGJsUUE-unsplash.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative z-10 mx-auto max-w-6xl space-y-14">
+          <div className="flex flex-col items-center text-center space-y-4">
+            <h1 className="text-3xl font-semibold tracking-tight text-white md:text-5xl" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
+              Research
+            </h1>
+            <p className="max-w-3xl text-base leading-8 text-white opacity-90 md:text-lg" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
+              {process.intro}
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <p className="text-center text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent-soft)]">
+              Publications
+            </p>
+            <div className="flex flex-wrap justify-center gap-8">
+              {site.publications.map((pub) => (
+                <Link
+                  key={pub.title}
+                  href={pub.href}
+                  className="group block w-full max-w-xs"
+                >
+                  <div className="relative aspect-[3/4] w-full overflow-hidden border-2 border-[var(--color-accent-soft)]/50 transition-colors group-hover:border-[var(--color-accent-soft)]">
+                    {pub.cover ? (
+                      <Image
+                        src={pub.cover}
+                        alt={pub.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 80vw, 320px"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[var(--color-surface)] px-6">
+                        <p className="text-4xl font-semibold tracking-tight text-[var(--color-accent)]">ERG</p>
+                        <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-text-soft)]">
+                          Cover coming soon
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                  <p className="mt-4 text-center text-sm font-medium uppercase tracking-[0.12em] text-white opacity-80">
+                    {pub.issue}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="space-y-8">
@@ -25,7 +81,7 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
             title="Research Standards"
@@ -52,7 +108,7 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-accent-soft)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
             title="Portfolio Structure"
@@ -65,24 +121,6 @@ export default function ResearchPage() {
           </div>
         </div>
       </section>
-
-      <section id="published-research" className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="Published Research"
-            subtitle={output.goal}
-          />
-          <Card
-            title={output.publishedResearchPreview.title}
-            meta="Coming Soon"
-          >
-            <p className="border border-dashed border-[var(--color-border-strong)] px-4 py-5 text-sm leading-6 text-[var(--color-text-soft)]">
-              {output.publishedResearchPreview.emptyState}
-            </p>
-          </Card>
-        </div>
-      </section>
-
     </PageLayout>
   );
 }

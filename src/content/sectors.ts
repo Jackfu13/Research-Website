@@ -26,7 +26,7 @@ export const verticals: Vertical[] = [
       { name: "Internet & Platforms", lead: "Caelyn Casey", status: "named" },
       { name: "Gaming & Interactive Media", lead: "Theo Brown", status: "named" },
       { name: "Cybersecurity", lead: "Joy Shome", status: "named" },
-      { name: "AI & Data Infrastructure", lead: "Hasith Soon", status: "named" },
+      { name: "AI & Data Infrastructure", lead: "Hasith Kadiyala", status: "named" },
     ],
     photo: null,
     bio: null,
@@ -34,11 +34,11 @@ export const verticals: Vertical[] = [
   {
     name: "Industrials & Defense",
     slug: "vertical-industrials-defense",
-    lead: "Aiden",
+    lead: "Aiden Schachter",
     subSectors: [
-      { name: "Machinery & Industrial Equipment", lead: "Steele", status: "named" },
+      { name: "Machinery & Industrial Equipment", lead: "Steele Shapiro", status: "named" },
       { name: "Defense", lead: "Edan Winter", status: "named" },
-      { name: "Aerospace", lead: "Aiden Schacter", status: "named" },
+      { name: "Aerospace", lead: "Aiden Schachter", status: "named" },
       { name: "Transportation & Logistics", lead: null, status: "open" },
       { name: "Commercial & Professional Services", lead: "Keaton Lai", status: "named" },
     ],
@@ -48,12 +48,13 @@ export const verticals: Vertical[] = [
   {
     name: "Financials",
     slug: "vertical-financials",
-    lead: "Eli Goldstien",
+    lead: "Eli Goldstein",
     subSectors: [
       { name: "Banks", lead: "Anthony Gibbs", status: "named" },
       { name: "Fintech", lead: "Luana Case", status: "named" },
-      { name: "Asset & Wealth Management", lead: "Isaac Rocha", status: "named" },
-      { name: "Real Estate", lead: "Eli G", status: "named" },
+      // Lead unconfirmed — asterisk in name marks it for review
+      { name: "Asset & Wealth Management", lead: "Isaac Rocha*", status: "named" },
+      { name: "Real Estate", lead: "Eli Goldstein", status: "named" },
       { name: "Capital Markets", lead: "Chris Chen", status: "named" },
       { name: "Private Credit", lead: "Bryce Huang", status: "named" },
     ],
@@ -77,10 +78,10 @@ export const verticals: Vertical[] = [
   {
     name: "Consumer & Services",
     slug: "vertical-consumer-services",
-    lead: "Derek Z",
+    lead: "TBA",
     subSectors: [
       { name: "Consumer Staples & Agriculture", lead: "Orestes Blades", status: "named" },
-      { name: "Consumer Discretionary", lead: "Derek", status: "named" },
+      { name: "Consumer Discretionary", lead: "TBA", status: "named" },
       { name: "Business Services", lead: "Ben Rosenblatt", status: "named" },
       { name: "E-commerce & Retail", lead: null, status: "open" },
       { name: "Restaurants & Food Service", lead: "Dominic Romero", status: "named" },

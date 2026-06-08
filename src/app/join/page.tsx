@@ -1,16 +1,25 @@
+import Link from "next/link";
+
+import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { InterestForm } from "@/components/InterestForm";
 import { PageHeader } from "@/components/PageHeader";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { membership } from "@/content/membership";
+import { site } from "@/content/site";
 
 export default function JoinPage() {
   return (
     <PageLayout>
-      <PageHeader title="Apply" intro="Admission is by application, stock pitch submission, and interview." large photo="/ISEC_Photo_61.jpg" />
+      <PageHeader title="Recruitment" intro="Admission is by application, stock pitch submission, and interview." large photo="/ISEC_Photo_61.jpg" />
 
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-surface)] px-8 py-12 md:px-12">
+        <div className="flex justify-center">
+          <Button href="/join/apply" label="Apply" variant="primary" large />
+        </div>
+      </section>
+
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading
             title="Admissions Process"
@@ -24,7 +33,7 @@ export default function JoinPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <SectionHeading title="The Commitment" />
           <div className="grid gap-8 sm:grid-cols-3">
@@ -56,12 +65,32 @@ export default function JoinPage() {
       </section>
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="Express Interest"
-            subtitle="Applications open each semester. Submit your information below and we will reach out when the next cycle begins."
-          />
-          <InterestForm />
+        <div className="flex flex-col items-center text-center space-y-6">
+          <SectionHeading title="Who ERG is for" center />
+          <p className="max-w-3xl text-base leading-8 text-[var(--color-text-soft)]">
+            {site.recruitingBlock}
+          </p>
+        </div>
+      </section>
+
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
+        <div className="mx-auto max-w-3xl text-center space-y-4">
+          <h2 className="text-2xl font-semibold tracking-tight text-[var(--color-text)] md:text-3xl">Questions?</h2>
+          <p className="text-base leading-7 text-[var(--color-text-soft)]">
+            For questions about ERG, reach out to{" "}
+            <Link href="/team/isaac-toffel" className="font-medium text-[var(--color-accent)] underline">
+              Isaac Toffel
+            </Link>
+            ,{" "}
+            <Link href="/team/lucas-davis" className="font-medium text-[var(--color-accent)] underline">
+              Lucas Davis
+            </Link>
+            , or{" "}
+            <Link href="/team/steele-shapiro" className="font-medium text-[var(--color-accent)] underline">
+              Steele Shapiro
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </PageLayout>

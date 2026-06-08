@@ -56,7 +56,7 @@ export default async function BioPage({ params }: Props) {
 
   return (
     <PageLayout>
-      <section className="w-full bg-[var(--color-footer-bg)] px-8 py-20 md:px-12 md:py-28">
+      <section className="w-full bg-[var(--color-footer-bg)] px-8 pt-32 pb-20 md:px-12 md:pt-40 md:pb-28">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:items-start md:gap-14">
             <div className="relative aspect-square w-full overflow-hidden bg-[var(--color-surface-muted)]">
