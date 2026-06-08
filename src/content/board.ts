@@ -14,6 +14,10 @@ export type BoardRole = {
   // Bio page photo zoom. Same scale as photoScale.
   bioPhotoScale: number;
   bio: string | null;
+  // Northeastern email (without mailto:). Optional — bio page shows the contact block only if present.
+  email?: string;
+  // Full LinkedIn profile URL (https://www.linkedin.com/in/...). Optional.
+  linkedin?: string;
 };
 
 export const board = {
@@ -45,6 +49,8 @@ export const board = {
       bioPhotoOffsetY: 0,
       bioPhotoScale: 1,
       bio: null,
+      email: "toffel.i@northeastern.edu",
+      linkedin: "https://www.linkedin.com/in/isaac-toffel",
     },
     {
       title: "Executive VP",
@@ -56,12 +62,14 @@ export const board = {
       note: "",
       name: "Lucas Davis",
       slug: "lucas-davis",
-      photo: null,
-      photoOffsetY: 0,
-      photoScale: 1,
-      bioPhotoOffsetY: 0,
-      bioPhotoScale: 1,
-      bio: null,
+      photo: "/Lucas-Davis.jpeg",
+      photoOffsetY: 20,
+      photoScale: 1.6,
+      bioPhotoOffsetY: 20,
+      bioPhotoScale: 1.6,
+      bio: "Lucas Davis is a third-year at Northeastern University from Millburn, New Jersey, studying Business Administration and Economics with a concentration in FinTech. He spent his first year abroad in London and is a founding member of the Equity Research Group at Northeastern and a member of the Entrepreneurs Club. This summer, he is joining Wellington Management in Boston. Outside of academics, Lucas enjoys working out, poker, and rooting for the Philadelphia Eagles.",
+      email: "davis.luc@northeastern.edu",
+      linkedin: "https://www.linkedin.com/in/lucas-davis-745880246/",
     },
     {
       title: "Co-Director of Research",
@@ -78,6 +86,8 @@ export const board = {
       bioPhotoOffsetY: 0,
       bioPhotoScale: 1,
       bio: null,
+      email: "dalton.ja@northeastern.edu",
+      linkedin: "https://www.linkedin.com/in/jackdaltonnu/",
     },
     {
       title: "Co-Director of Research",
@@ -94,6 +104,8 @@ export const board = {
       bioPhotoOffsetY: 0,
       bioPhotoScale: 1,
       bio: "Braden Benzan is a sophomore at Northeastern University pursuing a combined B.S. in Business Administration and M.S. in Finance. He works in Asset & Liability Management Reporting at State Street and co-leads the organization's research across 20+ analysts and 23 sectors. His focus is macro-driven equity research, with research experience across TMT and Financials.",
+      email: "benzan.b@northeastern.edu",
+      linkedin: "https://www.linkedin.com/in/bbenzan/",
     },
     {
       title: "Director of Education",
@@ -110,6 +122,8 @@ export const board = {
       bioPhotoOffsetY: 0,
       bioPhotoScale: 1,
       bio: null,
+      email: "duckworth.co@northeastern.edu",
+      linkedin: "https://www.linkedin.com/in/corbin-duckworth",
     },
     {
       title: "Director of Technology",
@@ -126,6 +140,8 @@ export const board = {
       bioPhotoOffsetY: 30,
       bioPhotoScale: 1.1,
       bio: null,
+      email: "fu.jac@northeastern.edu",
+      linkedin: "https://www.linkedin.com/in/jackfu13/",
     },
     {
       title: "Chief Editor",
@@ -142,6 +158,8 @@ export const board = {
       bioPhotoOffsetY: 0,
       bioPhotoScale: 1.4,
       bio: "Pablo Velazquez de Leon is an International Affairs and Criminal Justice major at Northeastern University, where he focuses on International Law. In addition to leading the publishing process at ERG, he serves as President of the Global Journal Magazine and COO of Auster Inc., and works as a Legislative Aide at the Massachusetts State Senate.",
+      email: "velazquezdeleon.p@northeastern.edu",
+      linkedin: "https://www.linkedin.com/in/pablovelazquezdeleon/",
     },
     {
       title: "Director of Marketing",
@@ -158,6 +176,8 @@ export const board = {
       bioPhotoOffsetY: 20,
       bioPhotoScale: 1,
       bio: "Steele Shapiro is a second-year Finance and Marketing student at Northeastern University, originally from Seattle. He joined the ERG team to deepen his understanding of equity research and financial analysis. Outside of academics, he has a passion for photography and tennis.",
+      email: "shapiro.ste@northeastern.edu",
+      linkedin: "https://www.linkedin.com/in/steele-shapiro",
     },
   ] satisfies BoardRole[],
   futureStructure: {

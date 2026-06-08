@@ -28,6 +28,8 @@ export default async function BioPage({ params }: Props) {
   const photo = boardMember?.photo ?? vertical?.photo ?? null;
   const photoOffsetY = boardMember?.bioPhotoOffsetY ?? boardMember?.photoOffsetY ?? 0;
   const photoScale = boardMember?.bioPhotoScale ?? boardMember?.photoScale ?? 1;
+  const email = boardMember?.email;
+  const linkedin = boardMember?.linkedin;
 
   if (!name || !title) {
     return (
@@ -89,6 +91,28 @@ export default async function BioPage({ params }: Props) {
               <p className="text-base leading-7 text-[var(--color-footer-text)] opacity-90">
                 {bio ?? "Bio coming soon."}
               </p>
+              {(email || linkedin) ? (
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  {linkedin ? (
+                    <a
+                      href={linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 border border-[var(--color-footer-text)] px-4 py-2 text-xs font-medium uppercase tracking-[0.1em] text-[var(--color-footer-text)] transition-colors hover:bg-[var(--color-footer-text)] hover:text-[var(--color-accent-strong)]"
+                    >
+                      LinkedIn ↗
+                    </a>
+                  ) : null}
+                  {email ? (
+                    <a
+                      href={`mailto:${email}`}
+                      className="text-sm text-[var(--color-footer-text)] opacity-80 underline hover:opacity-100 transition-opacity"
+                    >
+                      {email}
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
               <div className="pt-4">
                 <Link
                   href="/team"
