@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { PageLayout } from "@/components/PageLayout";
 import { board } from "@/content/board";
-import { verticals } from "@/content/sectors";
+import { industries } from "@/content/sectors";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -12,20 +12,20 @@ type Props = {
 
 export async function generateStaticParams() {
   const boardSlugs = board.roles.map((r) => ({ slug: r.slug }));
-  const verticalSlugs = verticals.map((v) => ({ slug: v.slug }));
-  return [...boardSlugs, ...verticalSlugs];
+  const industrySlugs = industries.map((i) => ({ slug: i.slug }));
+  return [...boardSlugs, ...industrySlugs];
 }
 
 export default async function BioPage({ params }: Props) {
   const { slug } = await params;
 
   const boardMember = board.roles.find((r) => r.slug === slug);
-  const vertical = verticals.find((v) => v.slug === slug);
+  const industry = industries.find((i) => i.slug === slug);
 
-  const name = boardMember?.name ?? vertical?.lead ?? null;
-  const title = boardMember?.title ?? vertical?.name ?? null;
-  const bio = boardMember?.bio ?? vertical?.bio ?? null;
-  const photo = boardMember?.photo ?? vertical?.photo ?? null;
+  const name = boardMember?.name ?? industry?.lead ?? null;
+  const title = boardMember?.title ?? industry?.name ?? null;
+  const bio = boardMember?.bio ?? industry?.bio ?? null;
+  const photo = boardMember?.photo ?? industry?.photo ?? null;
   const photoOffsetY = boardMember?.bioPhotoOffsetY ?? boardMember?.photoOffsetY ?? 0;
   const photoScale = boardMember?.bioPhotoScale ?? boardMember?.photoScale ?? 1;
   const email = boardMember?.email;

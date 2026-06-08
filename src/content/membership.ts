@@ -47,7 +47,7 @@ export const membership = {
     },
     {
       title: "Sector Expertise",
-      description: "Own a vertical end-to-end — coverage, watchlist, and a working understanding of what moves it.",
+      description: "Own an industry end-to-end — coverage, watchlist, and a working understanding of what moves it.",
     },
     {
       title: "A Public Track Record",

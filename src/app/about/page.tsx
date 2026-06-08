@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { board } from "@/content/board";
-import { verticals } from "@/content/sectors";
+import { industries } from "@/content/sectors";
 import { site } from "@/content/site";
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
     <PageLayout>
       <PageHeader
         title="About"
-        intro="The Equity Research Group is built as a serious student-run research organization with a vertical leadership model, clear sub-sector ownership, and a deliberate focus on under-covered companies."
+        intro="The Equity Research Group is built as a serious student-run research organization with an industry leadership model, clear sub-sector ownership, and a deliberate focus on under-covered companies."
         large
         photo="/northeastern-5.jpg"
       />
@@ -44,17 +44,17 @@ export default function AboutPage() {
         <div className="space-y-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeading
-              title="Vertical Coverage"
-              subtitle="ERG organizes its coverage universe into five verticals, each owned by a dedicated vertical lead."
+              title="Industry Coverage"
+              subtitle="ERG organizes its coverage universe into five industries, each owned by a dedicated industry lead."
             />
             <Button href="/team" label="View Members" variant="outline" />
           </div>
           <div className="grid gap-px overflow-hidden border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-3 xl:grid-cols-5">
-            {verticals.map((v) => (
-              <div key={v.name} className="bg-[var(--color-surface)] px-5 py-4">
-                <p className="text-sm font-semibold leading-6 text-[var(--color-text)]">{v.name}</p>
+            {industries.map((i) => (
+              <div key={i.name} className="bg-[var(--color-surface)] px-5 py-4">
+                <p className="text-sm font-semibold leading-6 text-[var(--color-text)]">{i.name}</p>
                 <p className="mt-1 text-sm leading-6 text-[var(--color-text-soft)]">
-                  {v.subSectors.map((subSector) => subSector.name).join(", ")}
+                  {i.subSectors.map((subSector) => subSector.name).join(", ")}
                 </p>
               </div>
             ))}

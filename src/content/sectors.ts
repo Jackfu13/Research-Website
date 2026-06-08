@@ -6,7 +6,7 @@ export type SubSectorCoverage = {
   status: SectorLeadStatus;
 };
 
-export type Vertical = {
+export type Industry = {
   name: string;
   slug: string;
   lead: string;
@@ -15,10 +15,10 @@ export type Vertical = {
   bio: string | null;
 };
 
-export const verticals: Vertical[] = [
+export const industries: Industry[] = [
   {
     name: "Technology",
-    slug: "vertical-technology",
+    slug: "industry-technology",
     lead: "Mia Patel / Corbin Duckworth",
     subSectors: [
       { name: "Software (Enterprise / SaaS)", lead: "Danny Schwartz", status: "named" },
@@ -33,7 +33,7 @@ export const verticals: Vertical[] = [
   },
   {
     name: "Industrials & Defense",
-    slug: "vertical-industrials-defense",
+    slug: "industry-industrials-defense",
     lead: "Aiden Schachter",
     subSectors: [
       { name: "Machinery & Industrial Equipment", lead: "Steele Shapiro", status: "named" },
@@ -47,7 +47,7 @@ export const verticals: Vertical[] = [
   },
   {
     name: "Financials",
-    slug: "vertical-financials",
+    slug: "industry-financials",
     lead: "Eli Goldstein",
     subSectors: [
       { name: "Banks", lead: "Anthony Gibbs", status: "named" },
@@ -63,7 +63,7 @@ export const verticals: Vertical[] = [
   },
   {
     name: "Resources & Real Assets",
-    slug: "vertical-resources-real-assets",
+    slug: "industry-resources-real-assets",
     lead: "Jack Dalton",
     subSectors: [
       { name: "Energy", lead: "Jack Dalton", status: "named" },
@@ -77,7 +77,7 @@ export const verticals: Vertical[] = [
   },
   {
     name: "Consumer & Services",
-    slug: "vertical-consumer-services",
+    slug: "industry-consumer-services",
     lead: "TBA",
     subSectors: [
       { name: "Consumer Staples & Agriculture", lead: "Orestes Blades", status: "named" },

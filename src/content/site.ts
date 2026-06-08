@@ -67,8 +67,8 @@ export const site = {
       items: [
         "Deep sector ownership and original bottom-up research",
         "Published track record built semester by semester",
-        "Five verticals: Technology, Industrials & Defense, Financials, Resources & Real Assets, Consumer & Services",
-        "Each vertical led by a designated Vertical Lead",
+        "Five industries: Technology, Industrials & Defense, Financials, Resources & Real Assets, Consumer & Services",
+        "Each industry led by a designated Industry Lead",
       ],
     },
   ] satisfies SiteSection[],
@@ -86,7 +86,7 @@ export const site = {
   differentiation: [
     "Unlike broad investment clubs that rotate members through generic projects, the group gives each member true ownership of a coverage universe.",
     "The small-cap focus ensures original research rather than regurgitation of Street consensus.",
-    "The vertical structure creates clear accountability and specialization — every role has a defined owner, and there is nowhere to hide.",
+    "The industry structure creates clear accountability and specialization — every role has a defined owner, and there is nowhere to hide.",
   ],
   // Featured publication on the homepage. When a real cover image exists, set `cover` to its public path (e.g., "/featured-fall-2026.jpg"). Until then, the section renders a styled placeholder.
   featuredPublication: {

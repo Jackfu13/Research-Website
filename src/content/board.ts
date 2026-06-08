@@ -22,9 +22,9 @@ export type BoardRole = {
 
 export const board = {
   yearOneStructure: {
-    title: "Year One: Vertical Leadership Model",
+    title: "Year One: Industry Leadership Model",
     summary:
-      "The group launches with five verticals — Technology, Industrials & Defense, Financials, Resources & Real Assets, and Consumer & Services — each led by a designated Vertical Lead.",
+      "The group launches with five industries — Technology, Industrials & Defense, Financials, Resources & Real Assets, and Consumer & Services — each led by a designated Industry Lead.",
     points: [
       "No junior analysts are added until the model is proven",
       "Eight functional executive board roles cover leadership, research oversight, education, operations, technology, and marketing",

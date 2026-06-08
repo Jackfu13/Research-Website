@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { verticals } from "@/content/sectors";
+import { industries } from "@/content/sectors";
 
 const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
 
@@ -165,9 +165,9 @@ export function InterestForm() {
             className={inputClass}
           >
             <option value="">No preference</option>
-            {verticals.map((vertical) => (
-              <optgroup key={vertical.name} label={vertical.name}>
-                {vertical.subSectors.map((subSector) => (
+            {industries.map((industry) => (
+              <optgroup key={industry.name} label={industry.name}>
+                {industry.subSectors.map((subSector) => (
                   <option key={subSector.name} value={subSector.name}>
                     {subSector.name}
                   </option>

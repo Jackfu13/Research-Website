@@ -2,7 +2,7 @@ import { BoardMemberCard } from "@/components/BoardMemberCard";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { board } from "@/content/board";
-import { verticals } from "@/content/sectors";
+import { industries } from "@/content/sectors";
 
 export default function TeamPage() {
   return (
@@ -29,9 +29,9 @@ export default function TeamPage() {
 
       <section className="w-full bg-[var(--color-accent-soft)] px-8 py-16 md:px-12">
         <div className="space-y-10">
-          <SectionHeading title="Vertical Leads" center />
+          <SectionHeading title="Industry Leads" center />
           <div className="mx-auto grid w-full max-w-[86rem] grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-            {verticals.map((v) => (
+            {industries.map((v) => (
               <BoardMemberCard
                 key={v.name}
                 name={v.lead}

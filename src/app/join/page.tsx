@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { PageHeader } from "@/components/PageHeader";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { membership } from "@/content/membership";
@@ -11,11 +10,29 @@ import { site } from "@/content/site";
 export default function JoinPage() {
   return (
     <PageLayout>
-      <PageHeader title="Recruitment" intro="Admission is by application, stock pitch submission, and interview." large photo="/ISEC_Photo_61.jpg" />
-
-      <section className="w-full bg-[var(--color-surface)] px-8 py-12 md:px-12">
-        <div className="flex justify-center">
-          <Button href="/join/apply" label="Apply" variant="primary" large />
+      <section className="relative w-full px-8 pt-40 pb-28 md:px-12 md:pt-52 md:pb-36">
+        <img
+          src="/ISEC_Photo_61.jpg"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 flex flex-col items-center text-center space-y-6">
+          <h1
+            className="text-3xl font-semibold tracking-tight text-[var(--color-footer-text)] md:text-5xl"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
+          >
+            Recruitment
+          </h1>
+          <p
+            className="max-w-3xl text-base leading-8 text-[var(--color-footer-text)] opacity-90 md:text-lg"
+            style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
+          >
+            Admission is by application, stock pitch submission, and interview.
+          </p>
+          <div className="pt-2">
+            <Button href="/join/apply" label="Apply" variant="primary" large />
+          </div>
         </div>
       </section>
 
