@@ -11,16 +11,19 @@ export function Navbar() {
   const hasPhotoHeader =
     ["/", "/about", "/research", "/join"].includes(pathname) ||
     pathname.startsWith("/team/");
+  const isGreen = pathname === "/team";
 
   const containerClass = hasPhotoHeader
     ? "absolute top-0 left-0 right-0 bg-transparent"
+    : isGreen
+    ? "bg-[var(--color-footer-bg)]"
     : "bg-[var(--color-bg)] border-b border-[var(--color-border)]";
 
-  const textColor = hasPhotoHeader
+  const textColor = hasPhotoHeader || isGreen
     ? "text-[var(--color-footer-text)]"
     : "text-[var(--color-text)]";
 
-  const activeBorder = hasPhotoHeader
+  const activeBorder = hasPhotoHeader || isGreen
     ? "border-[var(--color-footer-text)]"
     : "border-[var(--color-text)]";
 

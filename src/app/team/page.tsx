@@ -7,8 +7,8 @@ import { industries } from "@/content/sectors";
 export default function TeamPage() {
   return (
     <PageLayout>
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <h2 className="text-center text-3xl font-semibold tracking-tight text-[var(--color-text)] md:text-4xl">
+      <section className="w-full bg-[var(--color-footer-bg)] px-8 py-16 md:px-12">
+        <h2 className="text-center text-3xl font-semibold tracking-tight text-[var(--color-footer-text)] md:text-4xl">
           Executive Board
         </h2>
         <div className="mt-10 mx-auto grid w-full max-w-[77rem] grid-cols-2 gap-6 sm:grid-cols-4">

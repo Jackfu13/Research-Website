@@ -139,7 +139,7 @@ export const board = {
       photoScale: 1,
       bioPhotoOffsetY: 30,
       bioPhotoScale: 1.1,
-      bio: null,
+      bio: "Jack Fu is a sophomore studying Computer Science with a concentration in AI at Northeastern University. He is originally from the Bay Area. Currently, Jack is working as a Software Engineer co-op at Smartleaf, where he combines his passion for Computer Science with FinTech. Outside of academics, Jack has a passion for basketball and hiking.",
       email: "fu.jac@northeastern.edu",
       linkedin: "https://www.linkedin.com/in/jackfu13/",
     },
