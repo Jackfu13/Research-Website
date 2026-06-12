@@ -17,7 +17,7 @@ export function Navbar() {
     ? "absolute top-0 left-0 right-0 bg-transparent"
     : isGreen
     ? "bg-[var(--color-footer-bg)]"
-    : "bg-[var(--color-bg)] border-b border-[var(--color-border)]";
+    : "bg-[var(--color-bg)] shadow-sm";
 
   const textColor = hasPhotoHeader || isGreen
     ? "text-[var(--color-footer-text)]"

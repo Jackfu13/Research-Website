@@ -1,10 +1,8 @@
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { ListCard } from "@/components/ListCard";
 import { PageHeader } from "@/components/PageHeader";
 import { PageLayout } from "@/components/PageLayout";
 import { SectionHeading } from "@/components/SectionHeading";
-import { board } from "@/content/board";
 import { industries } from "@/content/sectors";
 import { site } from "@/content/site";
 
@@ -19,14 +17,22 @@ export default function AboutPage() {
       />
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        {site.aboutSections.map((section) => (
-          <ListCard
-            key={section.title}
-            title={section.title}
-            intro={section.intro}
-            items={section.items}
-          />
-        ))}
+        <div className="grid gap-6 md:grid-cols-2">
+          <article className="border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-border-strong)] hover:bg-[var(--color-accent-faint)]">
+            <h3 className="text-xl font-semibold tracking-tight text-[var(--color-text)]">Mission</h3>
+            <p className="mt-3 text-base leading-7 text-[var(--color-text-soft)]">
+              {site.missionStatement}
+            </p>
+          </article>
+          <article className="border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-border-strong)] hover:bg-[var(--color-accent-faint)]">
+            <h3 className="text-xl font-semibold tracking-tight text-[var(--color-text)]">Differentiation</h3>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-soft)] marker:text-[var(--color-accent)]">
+              {site.differentiation.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+        </div>
       </section>
 
       <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
@@ -62,20 +68,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
-        <div className="grid gap-6 md:grid-cols-[minmax(0,1.15fr)_minmax(18rem,1fr)] md:items-start">
-          <ListCard
-            title="Differentiation"
-            intro="The group's structure is designed to produce ownership and accountability rather than generic club participation."
-            items={site.differentiation}
-          />
-          <ListCard
-            title={board.yearOneStructure.title}
-            intro={board.yearOneStructure.summary}
-            items={board.yearOneStructure.points}
-          />
-        </div>
-      </section>
     </PageLayout>
   );
 }

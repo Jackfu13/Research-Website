@@ -3,11 +3,6 @@ export type SiteFeature = {
   description: string;
 };
 
-export type SiteSection = {
-  title: string;
-  intro: string;
-  items: string[];
-};
 
 export type InvestmentUniverseItem = {
   label: string;
@@ -60,18 +55,8 @@ export const site = {
         "Every pitch requires a written memo, presentation, valuation work, defined risks, and a clear catalyst or timeline before a portfolio vote.",
     },
   ] satisfies SiteFeature[],
-  aboutSections: [
-    {
-      title: "Mission",
-      intro: "ERG is a student-run equity research organization at Northeastern, focused on under-covered small and mid-cap companies.",
-      items: [
-        "Deep sector ownership and original bottom-up research",
-        "Published track record built semester by semester",
-        "Five industries: Technology, Industrials & Defense, Financials, Resources & Real Assets, Consumer & Services",
-        "Each industry led by a designated Industry Lead",
-      ],
-    },
-  ] satisfies SiteSection[],
+  missionStatement:
+    "ERG aims to be one of Northeastern's most premier clubs, producing institutional research and developing students' equity research skills to prepare them for Wall Street and beyond.",
   coreEdge: {
     title: "Our Edge",
     summary:
