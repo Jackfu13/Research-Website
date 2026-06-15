@@ -26,8 +26,9 @@ export default async function BioPage({ params }: Props) {
   const title = boardMember?.title ?? industry?.name ?? null;
   const bio = boardMember?.bio ?? industry?.bio ?? null;
   const photo = boardMember?.photo ?? industry?.photo ?? null;
-  const photoOffsetY = boardMember?.bioPhotoOffsetY ?? boardMember?.photoOffsetY ?? 0;
-  const photoScale = boardMember?.bioPhotoScale ?? boardMember?.photoScale ?? 1;
+  const photoOffsetY = boardMember?.bioPhotoOffsetY ?? boardMember?.photoOffsetY ?? industry?.bioPhotoOffsetY ?? industry?.photoOffsetY ?? 0;
+  const photoScale = boardMember?.bioPhotoScale ?? boardMember?.photoScale ?? industry?.bioPhotoScale ?? industry?.photoScale ?? 1;
+  const photoOffsetX = boardMember?.bioPhotoOffsetX ?? boardMember?.photoOffsetX ?? industry?.bioPhotoOffsetX ?? industry?.photoOffsetX ?? 50;
   const email = boardMember?.email;
   const linkedin = boardMember?.linkedin;
 
@@ -45,7 +46,7 @@ export default async function BioPage({ params }: Props) {
     );
   }
 
-  const imageStyle: CSSProperties = { objectPosition: `50% ${photoOffsetY}%` };
+  const imageStyle: CSSProperties = { objectPosition: `${photoOffsetX}% ${photoOffsetY}%` };
   if (photoScale !== 1) {
     imageStyle.transform = `scale(${photoScale})`;
   }

@@ -11,11 +11,12 @@ type BoardMemberCardProps = {
   compact?: boolean;
   photoOffsetY?: number;
   photoScale?: number;
+  photoOffsetX?: number;
 };
 
-export function BoardMemberCard({ name, title, slug, photo, compact = false, photoOffsetY = 0, photoScale = 1 }: BoardMemberCardProps) {
+export function BoardMemberCard({ name, title, slug, photo, compact = false, photoOffsetY = 0, photoScale = 1, photoOffsetX = 50 }: BoardMemberCardProps) {
   const displayName = name ?? "TBD";
-  const imageStyle: CSSProperties = { objectPosition: `50% ${photoOffsetY}%` };
+  const imageStyle: CSSProperties = { objectPosition: `${photoOffsetX}% ${photoOffsetY}%` };
   if (photoScale !== 1) {
     imageStyle.transform = `scale(${photoScale})`;
   }

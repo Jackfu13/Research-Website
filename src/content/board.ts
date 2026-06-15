@@ -9,10 +9,14 @@ export type BoardRole = {
   photoOffsetY: number;
   // Team card photo zoom. 1 = no zoom; 1.1 = 10% in. Default 1.
   photoScale: number;
+  // Team card horizontal crop. 50 = centered (default), <50 shifts image right, >50 shifts image left.
+  photoOffsetX?: number;
   // Bio page photo crop. Same scale as photoOffsetY.
   bioPhotoOffsetY: number;
   // Bio page photo zoom. Same scale as photoScale.
   bioPhotoScale: number;
+  // Bio page horizontal crop. Same scale as photoOffsetX.
+  bioPhotoOffsetX?: number;
   bio: string | null;
   // Northeastern email (without mailto:). Optional — bio page shows the contact block only if present.
   email?: string;
@@ -48,7 +52,7 @@ export const board = {
       photoScale: 1,
       bioPhotoOffsetY: 0,
       bioPhotoScale: 1,
-      bio: null,
+      bio: "Isaac Toffel is a Data Science and Economics student at Northeastern University and the Founder & President of the Equity Research Group. He leads the organization's research strategy, analyst education, and coverage development across small and mid-cap public companies. His work focuses on equity research, valuation, portfolio construction, and financial data analysis. He also leads fintech coverage and has authored research on dLocal, including a multi-method valuation model focused on emerging market payments, FX sensitivity, customer concentration, and platform scalability. Outside of ERG, Isaac completed his first co-op at State Street, supporting research and market analysis across asset managers, private markets, hedge funds, private credit managers, and ETF issuers. Isaac is interested in equity research, asset management, investment strategy, and using data-driven analysis to better understand public markets.",
       email: "toffel.i@northeastern.edu",
       linkedin: "https://www.linkedin.com/in/isaac-toffel",
     },
@@ -80,12 +84,14 @@ export const board = {
       note: "",
       name: "Jack Dalton",
       slug: "jack-dalton",
-      photo: null,
+      photo: "/Jack-Dalton.jpeg",
       photoOffsetY: 0,
-      photoScale: 1,
+      photoScale: 1.2,
+      photoOffsetX: 42,
       bioPhotoOffsetY: 0,
-      bioPhotoScale: 1,
-      bio: null,
+      bioPhotoScale: 1.2,
+      bioPhotoOffsetX: 42,
+      bio: "Jack Dalton is a sophomore at Northeastern University studying Business and Political Science with a concentration in Finance and minors in Middle Eastern & Mediterranean Studies, and Emerging Markets. He serves as Co-Director of Research at the Equity Research Group. This summer, Jack will be joining State Street as a Macro Strategist on their FX Sales and Trading team, and the following summer he will be joining Wells Fargo as an Investment Banking Summer Analyst.",
       email: "dalton.ja@northeastern.edu",
       linkedin: "https://www.linkedin.com/in/jackdaltonnu/",
     },

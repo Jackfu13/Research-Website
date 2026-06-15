@@ -21,6 +21,7 @@ export default function TeamPage() {
               photo={role.photo}
               photoOffsetY={role.photoOffsetY}
               photoScale={role.photoScale}
+              photoOffsetX={role.photoOffsetX}
               bio={role.bio}
             />
           ))}
@@ -38,6 +39,9 @@ export default function TeamPage() {
                 title={v.name}
                 slug={v.slug}
                 photo={v.photo}
+                photoOffsetY={v.photoOffsetY}
+                photoScale={v.photoScale}
+                photoOffsetX={v.photoOffsetX}
                 bio={v.bio}
               />
             ))}

@@ -13,6 +13,14 @@ export type Industry = {
   subSectors: SubSectorCoverage[];
   photo: string | null;
   bio: string | null;
+  // Team card photo crop and zoom. Defaults: offsetY 0, scale 1, offsetX 50 (centered).
+  photoOffsetY?: number;
+  photoScale?: number;
+  photoOffsetX?: number;
+  // Bio page overrides (fall back to the team-card values if unset).
+  bioPhotoOffsetY?: number;
+  bioPhotoScale?: number;
+  bioPhotoOffsetX?: number;
 };
 
 export const industries: Industry[] = [
@@ -42,7 +50,7 @@ export const industries: Industry[] = [
       { name: "Transportation & Logistics", lead: null, status: "open" },
       { name: "Commercial & Professional Services", lead: "Keaton Lai", status: "named" },
     ],
-    photo: null,
+    photo: "/Aiden-Schachter.jpeg",
     bio: null,
   },
   {
@@ -58,8 +66,10 @@ export const industries: Industry[] = [
       { name: "Capital Markets", lead: "Chris Chen", status: "named" },
       { name: "Private Credit", lead: "Bryce Huang", status: "named" },
     ],
-    photo: null,
-    bio: null,
+    photo: "/Eli-Goldstein.JPEG",
+    photoScale: 1.2,
+    bioPhotoScale: 1.2,
+    bio: "Eli is a third-year at Northeastern University pursuing a B.S. in Finance with a minor in Economics. He works on the Internal Financial Controls team at Natixis Investment Managers and serves as Sector Lead for the Financials team at ERG. Outside of academics, Eli enjoys hiking and bouldering.",
   },
   {
     name: "Resources & Real Assets",
@@ -72,7 +82,11 @@ export const industries: Industry[] = [
       { name: "Exploration & Production", lead: null, status: "open" },
       { name: "Oilfield Services & Equipment", lead: null, status: "open" },
     ],
-    photo: null,
+    photo: "/Jack-Dalton.jpeg",
+    photoScale: 1.2,
+    photoOffsetX: 42,
+    bioPhotoScale: 1.2,
+    bioPhotoOffsetX: 42,
     bio: null,
   },
   {
