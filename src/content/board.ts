@@ -127,7 +127,7 @@ export const board = {
       photoScale: 1,
       bioPhotoOffsetY: 0,
       bioPhotoScale: 1,
-      bio: null,
+      bio: "Corbin Duckworth serves as Director of Education at the Equity Research Group, where he designs onboarding for new members and leads skill sessions in financial modeling, valuation, and memo writing. He also co-leads coverage of the Technology industry alongside Mia Patel.",
       email: "duckworth.co@northeastern.edu",
       linkedin: "https://www.linkedin.com/in/corbin-duckworth",
     },

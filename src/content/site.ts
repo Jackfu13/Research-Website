@@ -13,7 +13,8 @@ export type FeaturedPublication = {
   title: string;
   issue: string;
   cover: string | null;
-  href: string;
+  slug: string;     // URL slug for the in-app reader (/research/<slug>)
+  pdf: string;      // path to the PDF file in /public
 };
 
 export const site = {
@@ -73,20 +74,22 @@ export const site = {
     "The small-cap focus ensures original research rather than regurgitation of Street consensus.",
     "The industry structure creates clear accountability and specialization — every role has a defined owner, and there is nowhere to hide.",
   ],
-  // Featured publication on the homepage. When a real cover image exists, set `cover` to its public path (e.g., "/featured-fall-2026.jpg"). Until then, the section renders a styled placeholder.
+  // Featured publication on the homepage. The home cover always links to /research; the slug/pdf fields are used when this entry surfaces in the publications archive reader.
   featuredPublication: {
-    title: "Inaugural Research Report",
-    issue: "Coming Soon",
-    cover: null as string | null,
-    href: "/research",
+    title: "Initiating Coverage: dLocal Limited",
+    issue: "June 2026",
+    cover: "/dlocal-cover.jpg" as string | null,
+    slug: "dlocal-june-2026",
+    pdf: "/Final_DLO_Toffel.pdf",
   } satisfies FeaturedPublication,
-  // Research page publications archive. Add new entries as publications go live.
+  // Research page publications archive. Append new entries as publications go live; the grid auto-wraps. Each entry gets its own in-app reader at /research/<slug>.
   publications: [
     {
-      title: "Inaugural Research Report",
-      issue: "Coming Soon",
-      cover: null as string | null,
-      href: "/research",
+      title: "Initiating Coverage: dLocal Limited",
+      issue: "June 2026",
+      cover: "/dlocal-cover.jpg" as string | null,
+      slug: "dlocal-june-2026",
+      pdf: "/Final_DLO_Toffel.pdf",
     },
   ] satisfies FeaturedPublication[],
 } as const;

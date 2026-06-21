@@ -10,7 +10,8 @@ export function Navbar() {
   const pathname = usePathname();
   const hasPhotoHeader =
     ["/", "/about", "/research", "/join"].includes(pathname) ||
-    pathname.startsWith("/team/");
+    pathname.startsWith("/team/") ||
+    pathname.startsWith("/research/");
   const isGreen = pathname === "/team";
 
   const containerClass = hasPhotoHeader

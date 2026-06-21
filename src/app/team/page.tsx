@@ -38,7 +38,7 @@ export default function TeamPage() {
                   key={`${v.name}-primary`}
                   name={v.lead}
                   title={v.name}
-                  slug={v.slug}
+                  slug={v.leadSlug ?? v.slug}
                   photo={v.photo}
                   photoOffsetY={v.photoOffsetY}
                   photoScale={v.photoScale}

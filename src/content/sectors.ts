@@ -22,6 +22,8 @@ export type IndustryCoLead = {
 export type Industry = {
   name: string;
   slug: string;
+  // Optional override for the lead's bio link. Set to an existing board member's slug (e.g., "jack-dalton") so clicking the industry-leads card routes to that board bio instead of the industry placeholder.
+  leadSlug?: string;
   lead: string;
   // Optional second lead, rendered as its own card on /team. Links to its own bio slug (which can be an existing board member's slug to reuse their bio).
   coLead?: IndustryCoLead;
@@ -38,6 +40,9 @@ export type Industry = {
   bioPhotoOffsetY?: number;
   bioPhotoScale?: number;
   bioPhotoOffsetX?: number;
+  // Optional contact info for the industry lead — used by the bio page when the lead doesn't have a board entry.
+  email?: string;
+  linkedin?: string;
 };
 
 export const industries: Industry[] = [
@@ -59,8 +64,12 @@ export const industries: Industry[] = [
       { name: "Cybersecurity", lead: "Joy Shome", status: "named" },
       { name: "AI & Data Infrastructure", lead: "Hasith Kadiyala", status: "named" },
     ],
-    photo: null,
-    bio: null,
+    photo: "/Mia-Patel-headshot.jpg",
+    photoScale: 1.2,
+    photoOffsetY: 0,
+    bio: "Mia Patel serves as Industry Lead for Technology at the Equity Research Group, overseeing coverage across Software, Semiconductors, Internet & Platforms, Gaming, Cybersecurity, and AI & Data Infrastructure. She co-leads the Technology team alongside Corbin Duckworth.",
+    email: "patel.mia1@northeastern.edu",
+    linkedin: "https://www.linkedin.com/in/miapatel858/",
   },
   {
     name: "Industrials & Defense",
@@ -74,7 +83,9 @@ export const industries: Industry[] = [
       { name: "Commercial & Professional Services", lead: "Keaton Lai", status: "named" },
     ],
     photo: "/Aiden-Schachter.jpeg",
-    bio: null,
+    bio: "Aiden Schachter serves as Industry Lead for Industrials & Defense at the Equity Research Group, overseeing coverage across Machinery, Defense, Aerospace, Transportation, and Commercial & Professional Services. He also leads the Aerospace sub-sector directly.",
+    email: "schachter.a@northeastern.edu",
+    linkedin: "https://www.linkedin.com/in/aiden-schachter-855589249/",
   },
   {
     name: "Financials",
@@ -90,13 +101,14 @@ export const industries: Industry[] = [
       { name: "Private Credit", lead: "Bryce Huang", status: "named" },
     ],
     photo: "/Eli-Goldstein.JPEG",
-    photoScale: 1.2,
-    bioPhotoScale: 1.2,
+    photoScale: 1.4,
+    bioPhotoScale: 1.4,
     bio: "Eli is a third-year at Northeastern University pursuing a B.S. in Finance with a minor in Economics. He works on the Internal Financial Controls team at Natixis Investment Managers and serves as Sector Lead for the Financials team at ERG. Outside of academics, Eli enjoys hiking and bouldering.",
   },
   {
     name: "Resources & Real Assets",
     slug: "industry-resources-real-assets",
+    leadSlug: "jack-dalton",
     lead: "Jack Dalton",
     subSectors: [
       { name: "Energy", lead: "Jack Dalton", status: "named" },

@@ -29,8 +29,8 @@ export default async function BioPage({ params }: Props) {
   const photoOffsetY = boardMember?.bioPhotoOffsetY ?? boardMember?.photoOffsetY ?? industry?.bioPhotoOffsetY ?? industry?.photoOffsetY ?? 0;
   const photoScale = boardMember?.bioPhotoScale ?? boardMember?.photoScale ?? industry?.bioPhotoScale ?? industry?.photoScale ?? 1;
   const photoOffsetX = boardMember?.bioPhotoOffsetX ?? boardMember?.photoOffsetX ?? industry?.bioPhotoOffsetX ?? industry?.photoOffsetX ?? 50;
-  const email = boardMember?.email;
-  const linkedin = boardMember?.linkedin;
+  const email = boardMember?.email ?? industry?.email;
+  const linkedin = boardMember?.linkedin ?? industry?.linkedin;
 
   if (!name || !title) {
     return (

@@ -34,7 +34,7 @@ export default function ResearchPage() {
               {site.publications.map((pub) => (
                 <Link
                   key={pub.title}
-                  href={pub.href}
+                  href={`/research/${pub.slug}`}
                   className="group block w-full max-w-xs"
                 >
                   <div className="relative aspect-[3/4] w-full overflow-hidden border-2 border-[var(--color-accent-soft)]/50 transition-colors group-hover:border-[var(--color-accent-soft)]">

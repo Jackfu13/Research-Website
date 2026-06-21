@@ -50,10 +50,10 @@ export default function JoinPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
+      <section className="w-full bg-[var(--color-surface)] px-8 py-10 md:px-12">
+        <div className="space-y-6">
           <SectionHeading title="The Commitment" />
-          <div className="grid gap-8 sm:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-3">
             {membership.memberExpectations.map((item, i) => (
               <div key={item}>
                 <p className="text-3xl font-semibold text-[var(--color-accent)] opacity-40">{String(i + 1).padStart(2, "0")}</p>
@@ -64,8 +64,8 @@ export default function JoinPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-footer-bg)] px-8 py-16 md:px-12">
-        <div className="space-y-10">
+      <section className="w-full bg-[var(--color-footer-bg)] px-8 py-10 md:px-12">
+        <div className="space-y-6">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-[var(--color-footer-text)]">What You Build</h2>
             <p className="mt-2 text-sm text-[var(--color-footer-text)] opacity-60">Members graduate with more than experience — they leave with a record.</p>

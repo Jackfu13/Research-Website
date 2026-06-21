@@ -44,7 +44,7 @@ export default function Home() {
               Featured Publication
             </p>
             <Link
-              href={site.featuredPublication.href}
+              href="/research"
               className="relative block aspect-[3/4] w-full max-w-sm overflow-hidden border border-[var(--color-border)] transition-colors hover:border-[var(--color-accent)]"
             >
               {site.featuredPublication.cover ? (
