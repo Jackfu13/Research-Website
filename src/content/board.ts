@@ -28,7 +28,7 @@ export const board = {
   yearOneStructure: {
     title: "Year One: Industry Leadership Model",
     summary:
-      "The group launches with five industries — Technology, Industrials & Defense, Financials, Resources & Real Assets, and Consumer & Services — each led by a designated Industry Lead.",
+      "The group launches with four industries — Technology, Industrials & Defense, Financials, and Resources & Real Assets — each led by a designated Industry Lead.",
     points: [
       "No junior analysts are added until the model is proven",
       "Eight functional executive board roles cover leadership, research oversight, education, operations, technology, and marketing",
@@ -122,7 +122,7 @@ export const board = {
       note: "",
       name: "Corbin Duckworth",
       slug: "corbin-duckworth",
-      photo: null,
+      photo: "/Corbin-Headshot.png",
       photoOffsetY: 0,
       photoScale: 1,
       bioPhotoOffsetY: 0,

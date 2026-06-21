@@ -6,13 +6,30 @@ export type SubSectorCoverage = {
   status: SectorLeadStatus;
 };
 
+export type IndustryCoLead = {
+  name: string;
+  slug: string;
+  photo: string | null;
+  bio: string | null;
+  photoOffsetY?: number;
+  photoScale?: number;
+  photoOffsetX?: number;
+  bioPhotoOffsetY?: number;
+  bioPhotoScale?: number;
+  bioPhotoOffsetX?: number;
+};
+
 export type Industry = {
   name: string;
   slug: string;
   lead: string;
+  // Optional second lead, rendered as its own card on /team. Links to its own bio slug (which can be an existing board member's slug to reuse their bio).
+  coLead?: IndustryCoLead;
   subSectors: SubSectorCoverage[];
   photo: string | null;
   bio: string | null;
+  // Upcoming industries appear on the About page's Industry Coverage section but are filtered out of the Industry Leads section on /team.
+  upcoming?: boolean;
   // Team card photo crop and zoom. Defaults: offsetY 0, scale 1, offsetX 50 (centered).
   photoOffsetY?: number;
   photoScale?: number;
@@ -27,7 +44,13 @@ export const industries: Industry[] = [
   {
     name: "Technology",
     slug: "industry-technology",
-    lead: "Mia Patel / Corbin Duckworth",
+    lead: "Mia Patel",
+    coLead: {
+      name: "Corbin Duckworth",
+      slug: "corbin-duckworth",
+      photo: "/Corbin-Headshot.png",
+      bio: null,
+    },
     subSectors: [
       { name: "Software (Enterprise / SaaS)", lead: "Danny Schwartz", status: "named" },
       { name: "Semiconductors", lead: "Avi Nathan", status: "named" },
@@ -103,5 +126,6 @@ export const industries: Industry[] = [
     ],
     photo: null,
     bio: null,
+    upcoming: true,
   },
 ];

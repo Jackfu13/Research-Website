@@ -32,19 +32,37 @@ export default function TeamPage() {
         <div className="space-y-10">
           <SectionHeading title="Industry Leads" center />
           <div className="mx-auto grid w-full max-w-[86rem] grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-            {industries.map((v) => (
-              <BoardMemberCard
-                key={v.name}
-                name={v.lead}
-                title={v.name}
-                slug={v.slug}
-                photo={v.photo}
-                photoOffsetY={v.photoOffsetY}
-                photoScale={v.photoScale}
-                photoOffsetX={v.photoOffsetX}
-                bio={v.bio}
-              />
-            ))}
+            {industries.filter((v) => !v.upcoming).flatMap((v) => {
+              const cards = [
+                <BoardMemberCard
+                  key={`${v.name}-primary`}
+                  name={v.lead}
+                  title={v.name}
+                  slug={v.slug}
+                  photo={v.photo}
+                  photoOffsetY={v.photoOffsetY}
+                  photoScale={v.photoScale}
+                  photoOffsetX={v.photoOffsetX}
+                  bio={v.bio}
+                />,
+              ];
+              if (v.coLead) {
+                cards.push(
+                  <BoardMemberCard
+                    key={`${v.name}-${v.coLead.slug}`}
+                    name={v.coLead.name}
+                    title={v.name}
+                    slug={v.coLead.slug}
+                    photo={v.coLead.photo}
+                    photoOffsetY={v.coLead.photoOffsetY}
+                    photoScale={v.coLead.photoScale}
+                    photoOffsetX={v.coLead.photoOffsetX}
+                    bio={v.coLead.bio}
+                  />
+                );
+              }
+              return cards;
+            })}
           </div>
         </div>
       </section>
