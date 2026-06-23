@@ -10,10 +10,13 @@ export default function ResearchPage() {
   return (
     <PageLayout>
       <section className="relative w-full px-8 pt-28 pb-24 md:px-12 md:pt-32 md:pb-32">
-        <img
+        <Image
           src="/adrien-olichon-RCAhiGJsUUE-unsplash.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 mx-auto max-w-6xl space-y-14">

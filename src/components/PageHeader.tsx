@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type PageHeaderProps = {
   title: string;
   intro: string;
@@ -10,7 +12,7 @@ export function PageHeader({ title, intro, large = false, photo }: PageHeaderPro
     <section className={`relative w-full px-8 md:px-12 ${large ? "pt-40 pb-28 md:pt-52 md:pb-36" : "py-20 md:py-28"}`}>
       {photo ? (
         <>
-          <img src={photo} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <Image src={photo} alt="" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-black/70" />
         </>
       ) : (

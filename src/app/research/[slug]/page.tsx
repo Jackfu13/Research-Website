@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -21,10 +22,13 @@ export default async function PublicationPage({ params }: Props) {
   return (
     <PageLayout>
       <section className="relative w-full px-8 pt-28 pb-6 md:px-12 md:pt-32 md:pb-6">
-        <img
+        <Image
           src="/adrien-olichon-RCAhiGJsUUE-unsplash.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 mx-auto max-w-6xl space-y-5">
@@ -60,10 +64,13 @@ export default async function PublicationPage({ params }: Props) {
         </div>
       </section>
       <section className="relative w-full px-4 pb-16 pt-0 md:px-12">
-        <img
+        <Image
           src="/adrien-olichon-RCAhiGJsUUE-unsplash.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 mx-auto max-w-6xl">

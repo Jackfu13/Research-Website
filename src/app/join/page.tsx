@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/Button";
@@ -11,10 +12,13 @@ export default function JoinPage() {
   return (
     <PageLayout>
       <section className="relative w-full px-8 pt-40 pb-28 md:px-12 md:pt-52 md:pb-36">
-        <img
+        <Image
           src="/ISEC_Photo_61.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 flex flex-col items-center text-center space-y-6">

@@ -12,10 +12,13 @@ export default function Home() {
 
       {/* Hero with featured publication */}
       <section className="relative w-full px-8 pt-32 pb-20 md:px-12 md:pt-40 md:pb-24 lg:pt-48 lg:pb-28">
-        <img
+        <Image
           src="/NEU-Bridge-Shot.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-2 md:items-start md:gap-16">
