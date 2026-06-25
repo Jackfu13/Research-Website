@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
-import { SectionHeading } from "@/components/SectionHeading";
 import { site } from "@/content/site";
 
 export default function Home() {
@@ -67,41 +65,6 @@ export default function Home() {
                 </div>
               )}
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* How we work */}
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="How we work"
-            subtitle="The work is structured around idea generation, formal pitch development, and ongoing sector coverage."
-          />
-          <div className="grid gap-6 md:grid-cols-3">
-            {site.featureHighlights.map((item) => (
-              <Card key={item.title} title={item.title} body={item.description} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What makes us different */}
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
-        <div className="flex flex-col items-center text-center space-y-6">
-          <SectionHeading title="What makes us different" center />
-          <p className="max-w-3xl text-base leading-8 text-[var(--color-text-soft)]">
-            {site.differentiationParagraph}
-          </p>
-          <div className="space-y-3 pt-2">
-            <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-text)]">How We Do It</p>
-            <ul className="space-y-2">
-              {site.coreEdge.methods.map((method) => (
-                <li key={method} className="text-sm font-medium text-[var(--color-text-soft)]">
-                  — {method}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>

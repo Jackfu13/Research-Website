@@ -18,15 +18,15 @@ export default function AboutPage() {
 
       <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
         <div className="grid gap-6 md:grid-cols-2">
-          <article className="border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-border-strong)] hover:bg-[var(--color-accent-faint)]">
-            <h3 className="text-xl font-semibold tracking-tight text-[var(--color-text)]">Mission</h3>
-            <p className="mt-3 text-base leading-7 text-[var(--color-text-soft)]">
+          <article className="border border-[var(--color-border)] bg-[var(--color-surface)] p-8 transition-colors hover:border-[var(--color-border-strong)] hover:bg-[var(--color-accent-faint)]">
+            <h3 className="text-2xl font-semibold tracking-tight text-[var(--color-text)]">Mission</h3>
+            <p className="mt-4 text-lg leading-8 text-[var(--color-text)]">
               {site.missionStatement}
             </p>
           </article>
-          <article className="border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-colors hover:border-[var(--color-border-strong)] hover:bg-[var(--color-accent-faint)]">
-            <h3 className="text-xl font-semibold tracking-tight text-[var(--color-text)]">Differentiation</h3>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-soft)] marker:text-[var(--color-accent)]">
+          <article className="border border-[var(--color-border)] bg-[var(--color-surface)] p-8 transition-colors hover:border-[var(--color-border-strong)] hover:bg-[var(--color-accent-faint)]">
+            <h3 className="text-2xl font-semibold tracking-tight text-[var(--color-text)]">Differentiation</h3>
+            <ul className="mt-5 list-disc space-y-3 pl-5 text-base leading-7 text-[var(--color-text)] marker:text-[var(--color-accent)]">
               {site.differentiation.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -37,6 +37,20 @@ export default function AboutPage() {
 
       <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
         <div className="space-y-8">
+          <SectionHeading
+            title="How we work"
+            subtitle="The work is structured around idea generation, formal pitch development, and ongoing sector coverage."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {site.featureHighlights.map((item) => (
+              <Card key={item.title} title={item.title} body={item.description} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
+        <div className="space-y-8">
           <SectionHeading title="Investment Universe" />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {site.investmentUniverse.map((item) => (
@@ -46,7 +60,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12">
         <div className="space-y-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeading
