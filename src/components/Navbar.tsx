@@ -12,7 +12,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const hasPhotoHeader =
-    ["/", "/about", "/research", "/join", "/team"].includes(pathname) ||
+    ["/", "/about", "/research", "/join", "/team", "/join/apply"].includes(pathname) ||
     pathname.startsWith("/team/") ||
     pathname.startsWith("/research/");
 

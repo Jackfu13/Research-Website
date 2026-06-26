@@ -5,18 +5,18 @@ import { PageLayout } from "@/components/PageLayout";
 export default function ApplyPage() {
   return (
     <PageLayout>
-      <section className="w-full bg-[var(--color-bg)] px-8 pt-16 pb-20 md:px-12 md:pt-20 md:pb-24">
+      <section className="w-full bg-[#4a4a4a] px-8 pt-40 pb-24 md:px-12 md:pt-52 md:pb-32">
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center space-y-8">
           <div className="flex flex-col items-center gap-3">
-            <span aria-hidden className="block h-0.5 w-12 bg-[var(--color-accent)]" />
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">
+            <span aria-hidden className="block h-0.5 w-12 bg-white/50" />
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/60">
               Recruitment Status
             </p>
           </div>
-          <h1 className="text-4xl font-semibold tracking-tight text-[var(--color-text)] md:text-5xl">
+          <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}>
             Applications open in the fall.
           </h1>
-          <p className="text-base leading-7 text-[var(--color-text-soft)] md:text-lg">
+          <p className="text-base leading-7 text-white/75 md:text-lg">
             The next recruiting cycle opens this fall. Check back here, or follow ERG on our channels for updates.
           </p>
         </div>
