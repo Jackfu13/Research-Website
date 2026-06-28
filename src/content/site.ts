@@ -82,8 +82,15 @@ export const site = {
     slug: "dlocal-june-2026",
     pdf: "/Final_DLO_Toffel.pdf",
   } satisfies FeaturedPublication,
-  // Research page publications archive. Append new entries as publications go live; the grid auto-wraps. Each entry gets its own in-app reader at /research/<slug>.
+  // Research page publications archive. Newest first — also drives the homepage Featured Publication carousel. Each entry gets its own in-app reader at /research/<slug>.
   publications: [
+    {
+      title: "Initiating Coverage: Independent Bank Corp",
+      issue: "June 2026",
+      cover: "/independent-bank-corp-cover.jpg" as string | null,
+      slug: "independent-bank-corp-june-2026",
+      pdf: "/Independent-Bank-Corp.pdf",
+    },
     {
       title: "Initiating Coverage: dLocal Limited",
       issue: "June 2026",

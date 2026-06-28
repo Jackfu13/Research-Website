@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Button } from "@/components/Button";
+import { FeaturedPublicationCarousel } from "@/components/FeaturedPublicationCarousel";
 import { site } from "@/content/site";
 
 export default function Home() {
@@ -39,33 +39,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: featured publication cover */}
-          <div className="flex w-full flex-col items-center gap-4 md:items-end">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-white opacity-80">
-              Featured Publication
-            </p>
-            <Link
-              href="/research"
-              className="relative block aspect-[3/4] w-full max-w-sm overflow-hidden border border-[var(--color-border)] transition-colors hover:border-[var(--color-accent)]"
-            >
-              {site.featuredPublication.cover ? (
-                <Image
-                  src={site.featuredPublication.cover}
-                  alt={site.featuredPublication.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 80vw, 380px"
-                />
-              ) : (
-                <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[var(--color-surface)] px-6">
-                  <p className="text-4xl font-semibold tracking-tight text-[var(--color-accent)]">ERG</p>
-                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-text-soft)]">
-                    Cover coming soon
-                  </p>
-                </div>
-              )}
-            </Link>
-          </div>
+          {/* Right: featured publication carousel */}
+          <FeaturedPublicationCarousel publications={site.publications} />
         </div>
       </section>
 
