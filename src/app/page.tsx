@@ -9,7 +9,7 @@ export default function Home() {
     <div className="flex w-full flex-col">
 
       {/* Hero with featured publication */}
-      <section className="relative w-full px-8 pt-32 pb-20 md:px-12 md:pt-40 md:pb-24 lg:pt-48 lg:pb-28">
+      <section className="relative flex min-h-svh w-full items-center px-8 pt-28 pb-16 md:px-12 md:pt-32 md:pb-20">
         <Image
           src="/NEU-Bridge-Shot.jpg"
           alt=""
