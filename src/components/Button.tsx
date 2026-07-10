@@ -17,8 +17,8 @@ export function Button({
     variant === "primary"
       ? "border-[var(--color-accent)] bg-[var(--color-accent)] text-white hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-strong)]"
       : variant === "outline"
-        ? "border-[var(--color-accent-mid)] bg-[var(--color-accent-mid)] text-white hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]"
-        : "border-[var(--color-accent-mid)] bg-[var(--color-accent-mid)] text-white hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]";
+        ? "border-[var(--color-accent)] bg-transparent text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
+        : "border-white bg-transparent text-white hover:bg-white hover:text-[var(--color-accent-strong)]";
 
   const sizeClass = large
     ? "min-h-14 px-10 py-3 text-base"
@@ -26,7 +26,7 @@ export function Button({
 
   return (
     <Link
-      className={`inline-flex items-center justify-center border font-medium uppercase tracking-[0.08em] transition-colors ${sizeClass} ${className}`}
+      className={`inline-flex items-center justify-center border-2 font-medium uppercase tracking-[0.08em] transition-colors ${sizeClass} ${className}`}
       href={href}
     >
       {label}
