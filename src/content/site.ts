@@ -7,6 +7,8 @@ export type SiteFeature = {
 export type InvestmentUniverseItem = {
   label: string;
   value: string;
+  // Optional small print rendered under the value in the term-sheet strip.
+  note?: string;
 };
 
 export type FeaturedPublication = {
@@ -36,7 +38,8 @@ export const site = {
     { label: "Coverage", value: "All sectors, all geographies" },
     {
       label: "Style mandate",
-      value: "No style mandate; value, growth, and GARP are all welcome",
+      value: "None",
+      note: "Value, growth, and GARP are all welcome",
     },
   ] satisfies InvestmentUniverseItem[],
   featureHighlights: [
@@ -70,9 +73,18 @@ export const site = {
     ],
   },
   differentiation: [
-    "Unlike broad investment clubs that rotate members through generic projects, the group gives each member true ownership of a coverage universe.",
-    "The small-cap focus ensures original research rather than regurgitation of Street consensus.",
-    "The industry structure creates clear accountability and specialization — every role has a defined owner, and there is nowhere to hide.",
+    {
+      label: "True ownership",
+      body: "Unlike broad investment clubs that rotate members through generic projects, the group gives each member true ownership of a coverage universe.",
+    },
+    {
+      label: "Original research",
+      body: "The small-cap focus ensures original research rather than regurgitation of Street consensus.",
+    },
+    {
+      label: "Nowhere to hide",
+      body: "The industry structure creates clear accountability and specialization — every role has a defined owner, and there is nowhere to hide.",
+    },
   ],
   // Featured publication on the homepage. The home cover always links to /research; the slug/pdf fields are used when this entry surfaces in the publications archive reader.
   featuredPublication: {
