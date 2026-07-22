@@ -89,26 +89,33 @@ export const site = {
   // Featured publication on the homepage. The home cover always links to /research; the slug/pdf fields are used when this entry surfaces in the publications archive reader.
   featuredPublication: {
     title: "Initiating Coverage: dLocal Limited",
-    issue: "June 2026",
-    cover: "/dlocal-cover.jpg" as string | null,
-    slug: "dlocal-june-2026",
-    pdf: "/Final_DLO_Toffel.pdf",
+    issue: "Summer 2026",
+    cover: "/dlo-cover.jpg" as string | null,
+    slug: "dlocal-summer-2026",
+    pdf: "/DLO-Final.pdf",
   } satisfies FeaturedPublication,
-  // Research page publications archive. Newest first — also drives the homepage Featured Publication carousel. Each entry gets its own in-app reader at /research/<slug>.
+  // Research page publications archive. Order shown on the site: DLO first, Independent Bank Corp second, DRH third. Also drives the homepage Featured Publication carousel. Each entry gets its own in-app reader at /research/<slug>.
   publications: [
     {
-      title: "Initiating Coverage: Independent Bank Corp",
-      issue: "June 2026",
-      cover: "/independent-bank-corp-cover.jpg" as string | null,
-      slug: "independent-bank-corp-june-2026",
-      pdf: "/Independent-Bank-Corp.pdf",
+      title: "Initiating Coverage: dLocal Limited",
+      issue: "Summer 2026",
+      cover: "/dlo-cover.jpg" as string | null,
+      slug: "dlocal-summer-2026",
+      pdf: "/DLO-Final.pdf",
     },
     {
-      title: "Initiating Coverage: dLocal Limited",
-      issue: "June 2026",
-      cover: "/dlocal-cover.jpg" as string | null,
-      slug: "dlocal-june-2026",
-      pdf: "/Final_DLO_Toffel.pdf",
+      title: "Initiating Coverage: Independent Bank Corp",
+      issue: "Summer 2026",
+      cover: "/independent-bank-corp-cover.jpg" as string | null,
+      slug: "independent-bank-corp-summer-2026",
+      pdf: "/Independent-Bank-Corp-Final.pdf",
+    },
+    {
+      title: "Initiating Coverage: DiamondRock Hospitality",
+      issue: "Summer 2026",
+      cover: "/drh-cover.jpg" as string | null,
+      slug: "diamondrock-hospitality-summer-2026",
+      pdf: "/DRH-Final.pdf",
     },
   ] satisfies FeaturedPublication[],
 } as const;
