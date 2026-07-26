@@ -26,7 +26,7 @@ export default function Home() {
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-white opacity-80">
                 At Northeastern University
               </p>
-              <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
+              <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)", fontFamily: '"Times New Roman", Times, serif' }}>
                 {site.name}
               </h1>
             </div>
@@ -34,8 +34,8 @@ export default function Home() {
               {site.tagline}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2 md:justify-start">
-              <Button href="/about" label="About" variant="light" large />
-              <Button href="/join" label="Join" variant="light" large />
+              <Button href="/about" label="About" variant="primary" large />
+              <Button href="/join" label="Join" variant="primary" large />
             </div>
           </div>
 

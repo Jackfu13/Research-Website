@@ -33,10 +33,16 @@ export function Navbar() {
       <header className={`z-50 ${containerClass}`}>
         <div className="flex w-full items-center justify-between px-8 py-5 md:px-20">
           <Link href="/" onClick={() => setMenuOpen(false)}>
-            <p className={`text-xs font-medium uppercase tracking-[0.18em] opacity-60 ${textColor}`}>
+            <p
+              className={`text-xs font-medium uppercase tracking-[0.18em] opacity-60 ${textColor}`}
+              style={{ fontFamily: '"Times New Roman", Times, serif' }}
+            >
               {site.shortName}
             </p>
-            <p className={`mt-1 text-lg font-semibold tracking-tight ${textColor}`}>
+            <p
+              className={`mt-1 text-lg font-semibold tracking-tight ${textColor}`}
+              style={{ fontFamily: '"Times New Roman", Times, serif' }}
+            >
               {site.name}
             </p>
           </Link>

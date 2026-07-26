@@ -28,7 +28,7 @@ export function FeaturedPublicationCarousel({ publications }: Props) {
   return (
     <div className="flex w-full flex-col items-center gap-4 md:items-end">
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-white opacity-80">
-        Featured Publication
+        Featured Publications
       </p>
 
       <div className="relative w-full max-w-sm">
