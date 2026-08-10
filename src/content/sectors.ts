@@ -17,6 +17,9 @@ export type IndustryCoLead = {
   bioPhotoOffsetY?: number;
   bioPhotoScale?: number;
   bioPhotoOffsetX?: number;
+  // Optional contact info for a co-lead who isn't in `board.roles`.
+  email?: string;
+  linkedin?: string;
 };
 
 export type Industry = {
@@ -54,7 +57,9 @@ export const industries: Industry[] = [
       name: "Corbin Duckworth",
       slug: "corbin-duckworth",
       photo: "/Corbin-Headshot.png",
-      bio: null,
+      bio: "Corbin Duckworth co-leads coverage of the Technology industry at the Equity Research Group alongside Mia Patel.",
+      email: "duckworth.co@northeastern.edu",
+      linkedin: "https://www.linkedin.com/in/corbin-duckworth",
     },
     subSectors: [
       { name: "Software (Enterprise / SaaS)", lead: "Danny Schwartz", status: "named" },

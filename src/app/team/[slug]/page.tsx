@@ -13,7 +13,8 @@ type Props = {
 export async function generateStaticParams() {
   const boardSlugs = board.roles.map((r) => ({ slug: r.slug }));
   const industrySlugs = industries.map((i) => ({ slug: i.slug }));
-  return [...boardSlugs, ...industrySlugs];
+  const coLeadSlugs = industries.flatMap((i) => (i.coLead ? [{ slug: i.coLead.slug }] : []));
+  return [...boardSlugs, ...industrySlugs, ...coLeadSlugs];
 }
 
 export default async function BioPage({ params }: Props) {
@@ -21,16 +22,18 @@ export default async function BioPage({ params }: Props) {
 
   const boardMember = board.roles.find((r) => r.slug === slug);
   const industry = industries.find((i) => i.slug === slug);
+  const industryOfCoLead = industries.find((i) => i.coLead?.slug === slug);
+  const coLead = industryOfCoLead?.coLead;
 
-  const name = boardMember?.name ?? industry?.lead ?? null;
-  const title = boardMember?.title ?? industry?.name ?? null;
-  const bio = boardMember?.bio ?? industry?.bio ?? null;
-  const photo = boardMember?.photo ?? industry?.photo ?? null;
-  const photoOffsetY = boardMember?.bioPhotoOffsetY ?? boardMember?.photoOffsetY ?? industry?.bioPhotoOffsetY ?? industry?.photoOffsetY ?? 0;
-  const photoScale = boardMember?.bioPhotoScale ?? boardMember?.photoScale ?? industry?.bioPhotoScale ?? industry?.photoScale ?? 1;
-  const photoOffsetX = boardMember?.bioPhotoOffsetX ?? boardMember?.photoOffsetX ?? industry?.bioPhotoOffsetX ?? industry?.photoOffsetX ?? 50;
-  const email = boardMember?.email ?? industry?.email;
-  const linkedin = boardMember?.linkedin ?? industry?.linkedin;
+  const name = boardMember?.name ?? industry?.lead ?? coLead?.name ?? null;
+  const title = boardMember?.title ?? industry?.name ?? industryOfCoLead?.name ?? null;
+  const bio = boardMember?.bio ?? industry?.bio ?? coLead?.bio ?? null;
+  const photo = boardMember?.photo ?? industry?.photo ?? coLead?.photo ?? null;
+  const photoOffsetY = boardMember?.bioPhotoOffsetY ?? boardMember?.photoOffsetY ?? industry?.bioPhotoOffsetY ?? industry?.photoOffsetY ?? coLead?.bioPhotoOffsetY ?? coLead?.photoOffsetY ?? 0;
+  const photoScale = boardMember?.bioPhotoScale ?? boardMember?.photoScale ?? industry?.bioPhotoScale ?? industry?.photoScale ?? coLead?.bioPhotoScale ?? coLead?.photoScale ?? 1;
+  const photoOffsetX = boardMember?.bioPhotoOffsetX ?? boardMember?.photoOffsetX ?? industry?.bioPhotoOffsetX ?? industry?.photoOffsetX ?? coLead?.bioPhotoOffsetX ?? coLead?.photoOffsetX ?? 50;
+  const email = boardMember?.email ?? industry?.email ?? coLead?.email;
+  const linkedin = boardMember?.linkedin ?? industry?.linkedin ?? coLead?.linkedin;
 
   if (!name || !title) {
     return (
