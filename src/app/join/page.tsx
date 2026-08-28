@@ -57,11 +57,12 @@ export default function JoinPage() {
       <section className="w-full bg-[var(--color-surface)] px-8 py-10 md:px-12">
         <div className="space-y-6">
           <SectionHeading title="The Commitment" />
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2">
             {membership.memberExpectations.map((item, i) => (
-              <div key={item}>
+              <div key={item.title}>
                 <p className="text-3xl font-semibold text-[var(--color-accent)] opacity-40">{String(i + 1).padStart(2, "0")}</p>
-                <p className="mt-3 text-sm leading-6 text-[var(--color-text)]">{item}</p>
+                <p className="mt-3 text-base font-semibold tracking-tight text-[var(--color-text)]">{item.title}</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)]">{item.description}</p>
               </div>
             ))}
           </div>

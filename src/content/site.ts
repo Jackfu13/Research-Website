@@ -4,13 +4,6 @@ export type SiteFeature = {
 };
 
 
-export type InvestmentUniverseItem = {
-  label: string;
-  value: string;
-  // Optional small print rendered under the value in the term-sheet strip.
-  note?: string;
-};
-
 export type FeaturedPublication = {
   title: string;
   issue: string;
@@ -24,24 +17,12 @@ export const site = {
   shortName: "ERG",
   tagline:
     "Student-run equity research focused on under-covered small and mid-cap companies.",
-  mission:
-    "The Equity Research Group is a student-run equity research organization at Northeastern focused on under-covered small and mid-cap companies. ERG develops members into rigorous fundamental analysts through deep sector ownership, original bottom-up research, and a published track record built semester by semester.",
   valueProposition:
     "ERG covers small and mid-cap companies where sell-side attention is thin. Members own a sector, build original research through primary work and financial modeling, and defend their ideas before an investment committee. Each semester, the strongest pitches are published, giving members a body of work they can point to in recruiting.",
   recruitingBlock:
     "ERG is for students serious about equity research, asset management, or hedge funds. You'll be assigned a sector, expected to develop a real view on the companies in it, and held accountable for the ideas you bring to the investment committee. Each semester, members add to a portfolio of published research, build sector expertise, and develop the analytical foundation that real investing requires.",
   differentiationParagraph:
     "Most equity research happens above $10 billion in market cap. ERG works below it. Our members own coverage of small and mid-cap companies where sell-side attention is thin, building original research through primary work, financial modeling, and bottom-up analysis. Every pitch is defended in front of an investment committee that decides what enters the portfolio. Each semester adds to a public body of work members can point to, with sector expertise they actually own.",
-  investmentUniverse: [
-    { label: "Market cap", value: "$300M–$10B" },
-    { label: "Listing", value: "US-listed companies" },
-    { label: "Coverage", value: "All sectors, all geographies" },
-    {
-      label: "Style mandate",
-      value: "None",
-      note: "Value, growth, and GARP are all welcome",
-    },
-  ] satisfies InvestmentUniverseItem[],
   featureHighlights: [
     {
       title: "Deep Primary Research",
@@ -59,8 +40,6 @@ export const site = {
         "Every pitch requires a written memo, presentation, valuation work, defined risks, and a clear catalyst or timeline before a portfolio vote.",
     },
   ] satisfies SiteFeature[],
-  missionStatement:
-    "ERG aims to be one of Northeastern's most premier clubs, producing institutional research and developing students' equity research skills to prepare them for Wall Street and beyond.",
   coreEdge: {
     title: "Our Edge",
     summary:

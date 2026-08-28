@@ -16,21 +16,6 @@ export default function AboutPage() {
         photo="/northeastern-5.jpg"
       />
 
-      {/* Mission — full-width statement band */}
-      <section className="w-full bg-[var(--color-footer-dark)] px-8 py-20 md:px-12 md:py-28">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center space-y-6">
-          <div className="flex flex-col items-center gap-3">
-            <span aria-hidden className="block h-0.5 w-12 bg-[var(--color-accent-mid)]" />
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-footer-text-soft)]">
-              Our Mission
-            </p>
-          </div>
-          <p className="text-2xl font-light leading-snug tracking-tight text-[var(--color-footer-text)] md:text-4xl md:leading-snug">
-            {site.missionStatement}
-          </p>
-        </div>
-      </section>
-
       {/* Differentiation — $10B editorial split */}
       <section className="w-full bg-[var(--color-surface)] px-8 py-20 md:px-12 md:py-28">
         <div className="mx-auto max-w-6xl space-y-12">
@@ -39,6 +24,9 @@ export default function AboutPage() {
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">
               The Gap
             </p>
+            <h2 className="max-w-2xl text-center text-2xl font-semibold tracking-tight text-[var(--color-text)] md:text-3xl">
+              We focus on the small and mid-caps the sell-side underfollows.
+            </h2>
           </div>
           <div className="grid gap-14 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:gap-20">
           <div className="flex flex-col justify-center space-y-4 text-center md:text-left">
@@ -48,7 +36,7 @@ export default function AboutPage() {
             <p className="text-lg leading-8 text-[var(--color-text-soft)]">
               Most equity research happens above this line.
               <br />
-              <span className="font-medium text-[var(--color-text)]">We work below it.</span>
+              <span className="font-medium text-[var(--color-text)]">We work in the $300M–$10B range below it.</span>
             </p>
           </div>
           <div className="flex flex-col justify-center">
@@ -66,41 +54,6 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Investment universe — term-sheet strip */}
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-16 md:px-12 md:py-24">
-        <div className="mx-auto max-w-6xl space-y-10">
-          <div className="flex flex-col items-center gap-3">
-            <span aria-hidden className="block h-0.5 w-12 bg-[var(--color-accent)]" />
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">
-              Mandate
-            </p>
-            <h2 className="text-center text-2xl font-semibold tracking-tight text-[var(--color-text)] md:text-3xl">
-              Investment Universe
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 divide-y divide-[var(--color-border)] border border-[var(--color-border)] bg-[var(--color-surface)] sm:grid-cols-2 sm:divide-y-0 md:grid-cols-4">
-            {site.investmentUniverse.map((item) => (
-              <div
-                key={item.label}
-                className="flex flex-col justify-start gap-2 px-6 py-8 sm:border-b sm:border-[var(--color-border)] md:border-b-0 md:border-l md:border-[var(--color-border)] md:first:border-l-0"
-              >
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-muted)]">
-                  {item.label}
-                </p>
-                <p className="text-xl font-semibold leading-7 tracking-tight text-[var(--color-text)]">
-                  {item.value}
-                </p>
-                {item.note ? (
-                  <p className="text-sm leading-6 text-[var(--color-text-soft)]">
-                    {item.note}
-                  </p>
-                ) : null}
-              </div>
-            ))}
           </div>
         </div>
       </section>

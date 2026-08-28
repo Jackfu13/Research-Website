@@ -34,9 +34,16 @@ export const membership = {
     "Attendance is mandatory — consistent absence puts membership at risk",
   ],
   memberExpectations: [
-    "At least one full pitch per semester",
-    "Ongoing coverage and watchlist maintenance for your sector",
-    "Active participation in Q&A and voting",
+    {
+      title: "One full pitch per semester",
+      description:
+        "A complete idea — written memo, financial model, valuation, and a live defense in front of the group.",
+    },
+    {
+      title: "Weekly participation",
+      description:
+        "Attendance is mandatory. You challenge others' pitches in Q&A and vote on what enters the portfolio.",
+    },
   ],
   recruitingPositioning:
     "The group exists to prepare members for equity research careers.",
