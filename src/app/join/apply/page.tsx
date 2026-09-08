@@ -37,7 +37,7 @@ export default function ApplyPage() {
             className="max-w-2xl text-base leading-8 text-white opacity-90 md:text-lg"
             style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
           >
-            Applications are not open yet, but the process is the same every cycle, and the strongest applicants arrive with a pitch already in progress.
+            Check back here, or follow ERG on our channels for updates.
           </p>
         </div>
       </section>

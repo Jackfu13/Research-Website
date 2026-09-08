@@ -19,8 +19,11 @@ export const site = {
     "Student-run equity research focused on under-covered small and mid-cap companies.",
   valueProposition:
     "ERG covers small and mid-cap companies where sell-side attention is thin. Members own a sector, build original research through primary work and financial modeling, and defend their ideas before an investment committee. Each semester, the strongest pitches are published, giving members a body of work they can point to in recruiting.",
-  recruitingBlock:
-    "ERG is for students serious about equity research, asset management, or hedge funds. You'll be assigned a sector, expected to develop a real view on the companies in it, and held accountable for the ideas you bring to the investment committee. Each semester, members add to a portfolio of published research, build sector expertise, and develop the analytical foundation that real investing requires.",
+  // Rendered as standalone statements on the Recruitment page.
+  recruitingStatements: [
+    "ERG is for students serious about equity research, asset management, or hedge funds.",
+    "You'll be assigned a sector, expected to develop a real view on the companies in it, and held accountable for the ideas you bring to the investment committee.",
+  ],
   differentiationParagraph:
     "Most equity research happens above $10 billion in market cap. ERG works below it. Our members own coverage of small and mid-cap companies where sell-side attention is thin, building original research through primary work, financial modeling, and bottom-up analysis. Every pitch is defended in front of an investment committee that decides what enters the portfolio. Each semester adds to a public body of work members can point to, with sector expertise they actually own.",
   featureHighlights: [
