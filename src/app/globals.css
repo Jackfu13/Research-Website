@@ -27,6 +27,19 @@
   --font-sans: var(--font-sans);
 }
 
+@theme {
+  --animate-marquee: marquee-scroll 36s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
 * {
   box-sizing: border-box;
 }

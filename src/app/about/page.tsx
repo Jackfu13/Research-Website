@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/Button";
 import { PageHeader } from "@/components/PageHeader";
 import { PageLayout } from "@/components/PageLayout";
+import { PlacementsMarquee } from "@/components/PlacementsMarquee";
 import { industries } from "@/content/sectors";
 import { site } from "@/content/site";
 
@@ -106,6 +107,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <PlacementsMarquee />
 
       {/* Closing CTA — photo band */}
       <section className="relative w-full px-8 py-24 md:px-12 md:py-32">
