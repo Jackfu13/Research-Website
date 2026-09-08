@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { PageLayout } from "@/components/PageLayout";
-import { SectionHeading } from "@/components/SectionHeading";
+import { PitchAnatomy } from "@/components/PitchAnatomy";
 import { process } from "@/content/process";
 import { site } from "@/content/site";
 
@@ -68,30 +68,22 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[var(--color-surface)] px-8 py-16 md:px-12">
-        <div className="space-y-8">
-          <SectionHeading
-            title="Research Standards"
-            subtitle="Every pitch must cover the following components before it is scheduled for presentation."
-          />
-          <div className="grid gap-px overflow-hidden border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-3">
-            {process.researchStandards.map((r) => (
-              <div key={r.label} className="bg-[var(--color-surface)] px-5 py-5">
-                <p className="text-sm font-semibold leading-6 text-[var(--color-text)]">{r.label}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {r.components.map((component) => (
-                    <span
-                      key={component}
-                      className="border border-[var(--color-border-strong)] px-2.5 py-1 text-xs font-medium uppercase tracking-[0.08em] text-[var(--color-accent)]"
-                    >
-                      {component}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-text-soft)]">{r.description}</p>
-              </div>
-            ))}
+      {/* The standard — anatomy of a pitch */}
+      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-20 md:px-12 md:py-28">
+        <div className="mx-auto max-w-6xl space-y-12">
+          <div className="flex flex-col items-center gap-3 text-center">
+            <span aria-hidden className="block h-0.5 w-12 bg-[var(--color-accent)]" />
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">
+              The Standard
+            </p>
+            <h2 className="max-w-2xl text-2xl font-semibold tracking-tight text-[var(--color-text)] md:text-3xl">
+              What&apos;s inside every report.
+            </h2>
+            <p className="max-w-2xl text-base leading-7 text-[var(--color-text-soft)]">
+              Every pitch is built in the same order, and every component has to be there before it is scheduled for presentation.
+            </p>
           </div>
+          <PitchAnatomy showColophon />
         </div>
       </section>
 
