@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { Button } from "@/components/Button";
 import { PageLayout } from "@/components/PageLayout";
-import { PitchAnatomy } from "@/components/PitchAnatomy";
 import { membership } from "@/content/membership";
 
 export default function ApplyPage() {
@@ -104,28 +103,6 @@ export default function ApplyPage() {
               );
             })}
           </ol>
-        </div>
-      </section>
-
-      {/* Prepare — reuse the research standard as "what we look for in your pitch" */}
-      <section className="w-full bg-[var(--color-surface-muted)] px-8 py-20 md:px-12 md:py-28">
-        <div className="mx-auto max-w-6xl space-y-12">
-          <div className="flex flex-col items-center gap-3 text-center">
-            <span aria-hidden className="block h-0.5 w-12 bg-[var(--color-accent)]" />
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">
-              Prepare
-            </p>
-            <h2 className="text-2xl font-semibold tracking-tight text-[var(--color-text)] md:text-3xl">
-              Start your pitch now.
-            </h2>
-            <p className="max-w-2xl text-base leading-7 text-[var(--color-text-soft)]">
-              Your assignment is a stock pitch. This is what we look for, the same standard every ERG report is built to.
-            </p>
-          </div>
-          <PitchAnatomy compact />
-          <div className="flex justify-center">
-            <Button href="/research" label="See the full standard" variant="outline" />
-          </div>
         </div>
       </section>
 
