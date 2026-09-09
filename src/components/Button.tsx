@@ -5,6 +5,8 @@ type ButtonProps = {
   label: string;
   variant?: "primary" | "outline" | "light";
   large?: boolean;
+  // Render as an external <a> that opens in a new tab (e.g., Google Form).
+  external?: boolean;
 };
 
 export function Button({
@@ -12,6 +14,7 @@ export function Button({
   label,
   variant = "primary",
   large = false,
+  external = false,
 }: ButtonProps) {
   const className =
     variant === "primary"
@@ -24,11 +27,23 @@ export function Button({
     ? "min-h-14 px-10 py-3 text-base"
     : "min-h-11 px-5 py-2 text-sm";
 
+  const combinedClassName = `inline-flex items-center justify-center border-2 font-medium uppercase tracking-[0.08em] transition-colors ${sizeClass} ${className}`;
+
+  if (external) {
+    return (
+      <a
+        className={combinedClassName}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {label}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      className={`inline-flex items-center justify-center border-2 font-medium uppercase tracking-[0.08em] transition-colors ${sizeClass} ${className}`}
-      href={href}
-    >
+    <Link className={combinedClassName} href={href}>
       {label}
     </Link>
   );

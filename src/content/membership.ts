@@ -1,30 +1,37 @@
 export type AdmissionStep = {
   title: string;
   description: string;
+  date: string;
 };
 
 export const membership = {
+  // Google Form for the Fall 2026 recruitment cycle (resume drop → assignment → interview).
+  applicationFormUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSdU02r86LSdRFSEQFghl1XMY0ALBrHikYJFvSyKMxan9gDBIw/viewform",
   intro:
     "The group is built for students who want to prepare for equity research careers through repeated pitching, sector ownership, and active debate.",
   participationSummary:
     "Members are expected to maintain sector coverage, contribute to weekly discussion, and complete at least one full pitch each semester.",
   membershipRules: [
-    "Admission by application, stock pitch submission, and interview",
+    "Admission by application, assignment submission, and interview",
     "Every member pitches at least once per semester",
     "Members who don't meet participation requirements don't stay",
   ],
   admissionSteps: [
     {
       title: "Application",
-      description: "Submit an application covering your background and interest in equity research.",
+      description: "Drop your resume through the application form.",
+      date: "September 8–25",
     },
     {
-      title: "Stock Pitch",
-      description: "Present a stock pitch — a real idea with a thesis, basic analysis, and a view on value.",
+      title: "Assignment",
+      description: "We send an equity assignment on September 27; complete and return it by October 4.",
+      date: "Sent Sep 27 · Due Oct 4",
     },
     {
       title: "Interview",
-      description: "A conversation about your pitch, your thinking, and how you approach markets.",
+      description: "A conversation about your assignment, your thinking, and how you approach markets.",
+      date: "October 8–15",
     },
   ] satisfies AdmissionStep[],
   meetingCadence: [

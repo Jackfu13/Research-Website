@@ -31,14 +31,23 @@ export default function ApplyPage() {
             className="text-4xl font-semibold tracking-tight text-white md:text-5xl"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
           >
-            The next cycle opens this fall. Get a head start.
+            Applications are open.
           </h1>
           <p
             className="max-w-2xl text-base leading-8 text-white opacity-90 md:text-lg"
             style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
           >
-            Check back here, or follow ERG on our channels for updates.
+            Resume drop closes September 25. Submit yours through the application form.
           </p>
+          <div className="pt-2">
+            <Button
+              href={membership.applicationFormUrl}
+              label="Apply now"
+              variant="primary"
+              large
+              external
+            />
+          </div>
         </div>
       </section>
 
@@ -80,10 +89,13 @@ export default function ApplyPage() {
                       {isFirst ? (
                         <span className="inline-flex items-center gap-1.5 bg-[var(--color-accent-soft)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-accent-strong)]">
                           <span aria-hidden className="size-1.5 bg-[var(--color-accent)] motion-safe:animate-pulse" />
-                          Opens Fall 2026
+                          Open Now
                         </span>
                       ) : null}
                     </div>
+                    <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-accent)] tabular-nums">
+                      {step.date}
+                    </p>
                     <p className="max-w-xs text-sm leading-6 text-[var(--color-text-soft)]">
                       {step.description}
                     </p>
@@ -107,7 +119,7 @@ export default function ApplyPage() {
               Start your pitch now.
             </h2>
             <p className="max-w-2xl text-base leading-7 text-[var(--color-text-soft)]">
-              Your application includes a stock pitch. This is what we look for, the same standard every ERG report is built to.
+              Your assignment is a stock pitch. This is what we look for, the same standard every ERG report is built to.
             </p>
           </div>
           <PitchAnatomy compact />

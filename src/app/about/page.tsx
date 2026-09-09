@@ -131,7 +131,7 @@ export default function AboutPage() {
             className="text-base leading-7 text-white opacity-90 md:text-lg"
             style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
           >
-            Admission is by application, stock pitch submission, and interview.
+            Admission is by application, assignment submission, and interview.
           </p>
           <div className="pt-2">
             <Button href="/join" label="Recruitment" variant="light" large />

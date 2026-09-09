@@ -154,10 +154,10 @@ export default function JoinPage() {
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center space-y-6">
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl" style={heroShadow}>
-            Applications open this fall.
+            Applications are open.
           </h2>
           <p className="text-base leading-7 text-white opacity-90 md:text-lg" style={bodyShadow}>
-            Admission is by application, stock pitch submission, and interview.
+            Admission is by application, assignment submission, and interview.
           </p>
           <div className="pt-2">
             <Button href="/join/apply" label="Apply" variant="light" large />
