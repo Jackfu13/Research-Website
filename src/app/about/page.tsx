@@ -12,7 +12,7 @@ export default function AboutPage() {
     <PageLayout>
       <PageHeader
         title="About"
-        intro="The Equity Research Group is a student-run research organization at Northeastern University. Members own coverage of under-followed public companies and produce institutional-quality equity research."
+        intro="The Equity Research Group is a student-run research organization at Northeastern University, seeking official university approval. Members own coverage of under-followed public companies and produce institutional-quality equity research."
         large
         photo="/northeastern-5.jpg"
       />
