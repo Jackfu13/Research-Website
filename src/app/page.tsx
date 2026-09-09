@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/Button";
 import { FeaturedPublicationCarousel } from "@/components/FeaturedPublicationCarousel";
@@ -22,6 +23,14 @@ export default function Home() {
         <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-2 md:items-start md:gap-16">
           {/* Left: hero text */}
           <div className="space-y-6 text-center md:text-left">
+            <Link
+              href="/join/apply"
+              className="inline-flex items-center gap-2.5 bg-[var(--color-accent)] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg transition-colors hover:bg-[var(--color-accent-strong)]"
+            >
+              <span aria-hidden className="size-1.5 bg-white motion-safe:animate-pulse" />
+              Applications open · Apply now
+              <span aria-hidden>→</span>
+            </Link>
             <div className="space-y-3">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-white opacity-80">
                 At Northeastern University

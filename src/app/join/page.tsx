@@ -24,6 +24,14 @@ export default function JoinPage() {
         />
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center space-y-6">
+          <Link
+            href="/join/apply"
+            className="inline-flex items-center gap-2.5 bg-[var(--color-accent)] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg transition-colors hover:bg-[var(--color-accent-strong)]"
+          >
+            <span aria-hidden className="size-1.5 bg-white motion-safe:animate-pulse" />
+            Applications open · Apply now
+            <span aria-hidden>→</span>
+          </Link>
           <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl" style={heroShadow}>
             Recruitment
           </h1>
