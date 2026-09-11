@@ -12,14 +12,14 @@ export default function Home() {
       {/* Hero with featured publication */}
       <section className="relative flex min-h-svh w-full items-center px-8 pt-28 pb-16 md:px-12 md:pt-32 md:pb-20">
         <Image
-          src="/NEU-Bridge-Shot.jpg"
+          src="/neucampus.jpg"
           alt=""
           fill
           className="object-cover"
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
         <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-2 md:items-start md:gap-16">
           {/* Left: hero text */}
           <div className="space-y-6 text-center md:text-left">
