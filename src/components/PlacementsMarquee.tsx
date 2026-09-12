@@ -9,7 +9,7 @@ export function PlacementsMarquee() {
         <div className="flex flex-col items-center gap-3">
           <span aria-hidden className="block h-0.5 w-12 bg-[var(--color-accent)]" />
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">
-            Where Our Members Have Worked
+            Where We&apos;ve Landed Internships
           </p>
         </div>
         <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
