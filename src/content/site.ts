@@ -76,8 +76,15 @@ export const site = {
     slug: "dlocal-summer-2026",
     pdf: "/DLO-Final.pdf",
   } satisfies FeaturedPublication,
-  // Research page publications archive. Order shown on the site: DLO first, then Independent Bank Corp, DRH, Paycom. Also drives the homepage Featured Publication carousel. Each entry gets its own in-app reader at /research/<slug>.
+  // Research page publications archive. Order shown on the site: Paycom first (front-facing / strongest pitch), then dLocal, Independent Bank Corp, DRH. Also drives the homepage Featured Publications carousel (first entry is the front cover on load). Each entry gets its own in-app reader at /research/<slug>.
   publications: [
+    {
+      title: "Initiating Coverage: Paycom Software",
+      issue: "Summer 2026",
+      cover: "/paycom-cover.jpg" as string | null,
+      slug: "paycom-software-summer-2026",
+      pdf: "/Paycom-Software-Final.pdf",
+    },
     {
       title: "Initiating Coverage: dLocal Limited",
       issue: "Summer 2026",
@@ -98,13 +105,6 @@ export const site = {
       cover: "/drh-cover.jpg" as string | null,
       slug: "diamondrock-hospitality-summer-2026",
       pdf: "/DRH-Final.pdf",
-    },
-    {
-      title: "Initiating Coverage: Paycom Software",
-      issue: "Summer 2026",
-      cover: "/paycom-cover.jpg" as string | null,
-      slug: "paycom-software-summer-2026",
-      pdf: "/Paycom-Software-Final.pdf",
     },
   ] satisfies FeaturedPublication[],
 } as const;
