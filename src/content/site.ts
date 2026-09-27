@@ -4,12 +4,23 @@ export type SiteFeature = {
 };
 
 
-export type FeaturedPublication = {
+// "initiation" = the first full pitch on a company (thesis, model, valuation, rating).
+// "note" = an event-driven follow-up on a company already under coverage (earnings, guidance change).
+export type PublicationKind = "initiation" | "note";
+
+export type Publication = {
   title: string;
+  // Initiations use the cycle they were produced in ("Summer 2026"); notes use the period they cover ("Q2 2026").
   issue: string;
   cover: string | null;
   slug: string;     // URL slug for the in-app reader (/research/<slug>)
   pdf: string;      // path to the PDF file in /public
+  kind: PublicationKind;
+  // Ticker is the key that links a note back to the initiation covering the same company.
+  ticker: string;
+  // Authoring analyst. Shown on notes; initiations carry the byline inside the PDF cover.
+  analyst?: string;
+  publishedAt?: string; // ISO date, used to order notes within a company
 };
 
 export const site = {
@@ -68,15 +79,9 @@ export const site = {
       body: "The industry structure creates clear accountability and specialization — every role has a defined owner, and there is nowhere to hide.",
     },
   ],
-  // Featured publication on the homepage. The home cover always links to /research; the slug/pdf fields are used when this entry surfaces in the publications archive reader.
-  featuredPublication: {
-    title: "Initiating Coverage: dLocal Limited",
-    issue: "Summer 2026",
-    cover: "/dlo-cover.jpg" as string | null,
-    slug: "dlocal-summer-2026",
-    pdf: "/DLO-Final.pdf",
-  } satisfies FeaturedPublication,
-  // Research page publications archive. Order shown on the site: Paycom first (front-facing / strongest pitch), then dLocal, Independent Bank Corp, DRH. Also drives the homepage Featured Publications carousel (first entry is the front cover on load). Each entry gets its own in-app reader at /research/<slug>.
+  // All research, initiations and notes together. Initiation order drives the /research grid and the homepage
+  // carousel (which shows initiations only) — Paycom is first as the front-facing pitch. Notes are grouped under
+  // their initiation by matching `ticker`. Each entry gets its own in-app reader at /research/<slug>.
   publications: [
     {
       title: "Initiating Coverage: Paycom Software",
@@ -84,6 +89,19 @@ export const site = {
       cover: "/paycom-cover.jpg" as string | null,
       slug: "paycom-software-summer-2026",
       pdf: "/Paycom-Software-Final.pdf",
+      kind: "initiation",
+      ticker: "PAYC",
+    },
+    {
+      title: "Analyst Note: Paycom Software",
+      issue: "Q2 2026",
+      cover: "/paycom-note-q2-cover.jpg" as string | null,
+      slug: "paycom-q2-2026-note",
+      pdf: "/Paycom-Note-Q2-2026.pdf",
+      kind: "note",
+      ticker: "PAYC",
+      analyst: "Braden Benzan",
+      publishedAt: "2026-09-21",
     },
     {
       title: "Initiating Coverage: dLocal Limited",
@@ -91,6 +109,8 @@ export const site = {
       cover: "/dlo-cover.jpg" as string | null,
       slug: "dlocal-summer-2026",
       pdf: "/DLO-Final.pdf",
+      kind: "initiation",
+      ticker: "DLO",
     },
     {
       title: "Initiating Coverage: Independent Bank Corp",
@@ -98,6 +118,8 @@ export const site = {
       cover: "/independent-bank-corp-cover.jpg" as string | null,
       slug: "independent-bank-corp-summer-2026",
       pdf: "/Independent-Bank-Corp-Final.pdf",
+      kind: "initiation",
+      ticker: "INDB",
     },
     {
       title: "Initiating Coverage: DiamondRock Hospitality",
@@ -105,6 +127,42 @@ export const site = {
       cover: "/drh-cover.jpg" as string | null,
       slug: "diamondrock-hospitality-summer-2026",
       pdf: "/DRH-Final.pdf",
+      kind: "initiation",
+      ticker: "DRH",
     },
-  ] satisfies FeaturedPublication[],
+  ] satisfies Publication[],
 } as const;
+
+const byNewestFirst = (a: Publication, b: Publication) =>
+  (b.publishedAt ?? "").localeCompare(a.publishedAt ?? "");
+
+export const initiations = site.publications.filter((p) => p.kind === "initiation");
+
+export const notes = site.publications.filter((p) => p.kind === "note").toSorted(byNewestFirst);
+
+export const notesForTicker = (ticker: string) => notes.filter((p) => p.ticker === ticker);
+
+// Companies under coverage. Array order drives the /research grid and the homepage carousel.
+// A publication whose ticker is missing here won't surface on the site — add the company first.
+// Phase 2 (per Braden): add a `sector` field here and group the /research grid by it.
+export const coverage = [
+  { ticker: "PAYC", name: "Paycom Software", slug: "paycom-software" },
+  { ticker: "DLO", name: "dLocal Limited", slug: "dlocal-limited" },
+  { ticker: "INDB", name: "Independent Bank Corp", slug: "independent-bank-corp" },
+  { ticker: "DRH", name: "DiamondRock Hospitality", slug: "diamondrock-hospitality" },
+];
+
+// Every report on a company, current view first: notes newest-first, then the initiation underneath.
+export const reportsForTicker = (ticker: string) => [
+  ...notesForTicker(ticker),
+  ...initiations.filter((p) => p.ticker === ticker),
+];
+
+// One entry per covered company. The cover shown is the newest report's, so a company with a
+// fresh note leads with the note cover rather than the initiation cover.
+export const coveredCompanies = coverage.map((company) => {
+  const reports = reportsForTicker(company.ticker);
+  return { ...company, reports, cover: reports[0]?.cover ?? null };
+});
+
+export const companyBySlug = (slug: string) => coveredCompanies.find((c) => c.slug === slug);

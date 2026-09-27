@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageLayout } from "@/components/PageLayout";
 import { PitchAnatomy } from "@/components/PitchAnatomy";
 import { process } from "@/content/process";
-import { site } from "@/content/site";
+import { coveredCompanies } from "@/content/site";
 
 export default function ResearchPage() {
   return (
@@ -29,40 +29,59 @@ export default function ResearchPage() {
             </p>
           </div>
 
+          {/* One card per company under coverage — cover is the newest report on that name */}
           <div className="space-y-6">
-            <p className="text-center text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent-soft)]">
-              Publications
-            </p>
+            <div className="flex flex-col items-center gap-2 text-center">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent-soft)]">
+                Under Coverage
+              </p>
+              <p className="max-w-xl text-sm leading-6 text-white opacity-75">
+                Every name we cover, with our most recent view on top.
+              </p>
+            </div>
             <div className="flex flex-wrap justify-center gap-8">
-              {site.publications.map((pub) => (
-                <Link
-                  key={pub.title}
-                  href={`/research/${pub.slug}`}
-                  className="group block w-full max-w-xs"
-                >
-                  <div className="relative aspect-[3/4] w-full overflow-hidden border-2 border-[var(--color-accent-soft)]/50 transition-colors group-hover:border-[var(--color-accent-soft)]">
-                    {pub.cover ? (
-                      <Image
-                        src={pub.cover}
-                        alt={pub.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 640px) 80vw, 320px"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[var(--color-surface)] px-6">
-                        <p className="text-4xl font-semibold tracking-tight text-[var(--color-accent)]">ERG</p>
-                        <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-text-soft)]">
-                          Cover coming soon
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                  <p className="mt-4 text-center text-sm font-medium uppercase tracking-[0.12em] text-white opacity-80">
-                    {pub.issue}
-                  </p>
-                </Link>
-              ))}
+              {coveredCompanies.map((company) => {
+                const latest = company.reports[0];
+                return (
+                  <Link
+                    key={company.slug}
+                    href={`/research/${company.slug}`}
+                    className="group block w-full max-w-xs"
+                  >
+                    <div className="relative aspect-[3/4] w-full overflow-hidden border-2 border-[var(--color-accent-soft)]/50 transition-colors group-hover:border-[var(--color-accent-soft)]">
+                      {company.cover ? (
+                        <Image
+                          src={company.cover}
+                          alt={company.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 80vw, 320px"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[var(--color-surface)] px-6">
+                          <p className="text-4xl font-semibold tracking-tight text-[var(--color-accent)]">ERG</p>
+                          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-text-soft)]">
+                            Cover coming soon
+                          </p>
+                        </div>
+                      )}
+                      {latest ? (
+                        <span className="absolute right-0 top-0 bg-[var(--color-accent)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
+                          {latest.kind === "note" ? `${latest.issue} Note` : "Initiation"}
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="mt-4 text-center text-sm font-medium uppercase tracking-[0.12em] text-white opacity-90">
+                      {company.ticker}
+                    </p>
+                    <p className="mt-1 text-center text-sm text-white opacity-70">{company.name}</p>
+                    <p className="mt-1 text-center text-xs text-white opacity-50">
+                      {company.reports.length}{" "}
+                      {company.reports.length === 1 ? "report" : "reports"}
+                    </p>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

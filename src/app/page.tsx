@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/Button";
 import { FeaturedPublicationCarousel } from "@/components/FeaturedPublicationCarousel";
-import { site } from "@/content/site";
+import { coveredCompanies, site } from "@/content/site";
 
 export default function Home() {
   return (
@@ -43,7 +43,7 @@ export default function Home() {
           </div>
 
           {/* Right: featured publication carousel */}
-          <FeaturedPublicationCarousel publications={site.publications} />
+          <FeaturedPublicationCarousel publications={coveredCompanies} />
         </div>
       </section>
 

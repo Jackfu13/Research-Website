@@ -4,16 +4,15 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-type Publication = {
-  title: string;
-  issue: string;
-  cover: string | null;
+type CoveredCompany = {
+  name: string;
+  ticker: string;
   slug: string;
-  pdf: string;
+  cover: string | null;
 };
 
 type Props = {
-  publications: readonly Publication[];
+  publications: readonly CoveredCompany[];
 };
 
 export function FeaturedPublicationCarousel({ publications }: Props) {
@@ -33,13 +32,13 @@ export function FeaturedPublicationCarousel({ publications }: Props) {
 
       <div className="relative w-full max-w-sm">
         <Link
-          href="/research"
+          href={`/research/${pub.slug}`}
           className="relative block aspect-[3/4] w-full overflow-hidden border border-[var(--color-border)] transition-colors hover:border-[var(--color-accent)]"
         >
           {pub.cover ? (
             <Image
               src={pub.cover}
-              alt={pub.title}
+              alt={pub.name}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 80vw, 380px"
@@ -48,7 +47,7 @@ export function FeaturedPublicationCarousel({ publications }: Props) {
             <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[var(--color-surface)] px-6 text-center">
               <p className="text-4xl font-semibold tracking-tight text-[var(--color-accent)]">ERG</p>
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-text-soft)]">
-                {pub.title}
+                {pub.name}
               </p>
             </div>
           )}
