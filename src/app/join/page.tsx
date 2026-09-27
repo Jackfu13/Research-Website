@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/Button";
 import { PageLayout } from "@/components/PageLayout";
 import { membership } from "@/content/membership";
 import { site } from "@/content/site";
@@ -24,23 +23,15 @@ export default function JoinPage() {
         />
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center space-y-6">
-          <Link
-            href="/join/apply"
-            className="inline-flex items-center gap-2.5 bg-[var(--color-accent)] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-lg transition-colors hover:bg-[var(--color-accent-strong)]"
-          >
-            <span aria-hidden className="size-1.5 bg-white motion-safe:animate-pulse" />
-            Applications open · Apply now
-            <span aria-hidden>→</span>
-          </Link>
+          <span className="inline-flex items-center bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white">
+            Applications closed for Fall 2026
+          </span>
           <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl" style={heroShadow}>
             Recruitment
           </h1>
           <p className="max-w-2xl text-base leading-8 text-white opacity-90 md:text-lg" style={bodyShadow}>
             {membership.recruitingPositioning}
           </p>
-          <div className="pt-2">
-            <Button href="/join/apply" label="Apply" variant="primary" large />
-          </div>
         </div>
       </section>
 
@@ -162,14 +153,11 @@ export default function JoinPage() {
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center space-y-6">
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl" style={heroShadow}>
-            Applications are open.
+            Applications are closed for Fall 2026.
           </h2>
           <p className="text-base leading-7 text-white opacity-90 md:text-lg" style={bodyShadow}>
             Admission is by application, assignment submission, and interview.
           </p>
-          <div className="pt-2">
-            <Button href="/join/apply" label="Apply" variant="light" large />
-          </div>
           <p className="pt-6 text-sm leading-6 text-white opacity-80" style={bodyShadow}>
             Questions? Reach out to{" "}
             <Link href="/team/isaac-toffel" className="font-medium text-white underline">

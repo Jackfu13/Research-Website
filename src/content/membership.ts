@@ -6,6 +6,7 @@ export type AdmissionStep = {
 
 export const membership = {
   // Google Form for the Fall 2026 recruitment cycle (resume drop → assignment → interview).
+  // Cycle is currently CLOSED (resume drop ended 2026-09-25). URL kept as record — no site component renders an Apply button right now. Swap for the next cycle's form URL when reopening.
   applicationFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSdU02r86LSdRFSEQFghl1XMY0ALBrHikYJFvSyKMxan9gDBIw/viewform",
   intro:

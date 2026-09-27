@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/Button";
 import { PageLayout } from "@/components/PageLayout";
 import { membership } from "@/content/membership";
 
@@ -30,23 +29,14 @@ export default function ApplyPage() {
             className="text-4xl font-semibold tracking-tight text-white md:text-5xl"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
           >
-            Applications are open.
+            Applications are closed for Fall 2026.
           </h1>
           <p
             className="max-w-2xl text-base leading-8 text-white opacity-90 md:text-lg"
             style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
           >
-            Resume drop closes September 25. Submit yours through the application form.
+            Thanks to everyone who applied. Assignments are out; interviews run October 8–15.
           </p>
-          <div className="pt-2">
-            <Button
-              href={membership.applicationFormUrl}
-              label="Apply now"
-              variant="primary"
-              large
-              external
-            />
-          </div>
         </div>
       </section>
 
@@ -64,44 +54,27 @@ export default function ApplyPage() {
           </div>
 
           <ol className="relative grid gap-10 before:absolute before:top-0 before:bottom-0 before:left-5 before:w-px before:bg-[var(--color-border-strong)] md:grid-cols-3 md:gap-8 md:before:top-5 md:before:right-[16.67%] md:before:bottom-auto md:before:left-[16.67%] md:before:h-px md:before:w-auto">
-            {membership.admissionSteps.map((step, i) => {
-              const isFirst = i === 0;
-              return (
-                <li
-                  key={step.title}
-                  className="relative flex gap-5 md:flex-col md:items-center md:text-center"
-                >
-                  <span
-                    className={`relative z-10 flex size-10 shrink-0 items-center justify-center border-2 text-sm font-semibold tabular-nums ${
-                      isFirst
-                        ? "border-[var(--color-accent)] bg-[var(--color-accent)] text-white"
-                        : "border-[var(--color-border-strong)] bg-[var(--color-surface)] text-[var(--color-accent)]"
-                    }`}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="space-y-2 pt-1.5 md:pt-0">
-                    <div className="flex flex-wrap items-center gap-2 md:justify-center">
-                      <h3 className="text-lg font-semibold tracking-tight text-[var(--color-text)]">
-                        {step.title}
-                      </h3>
-                      {isFirst ? (
-                        <span className="inline-flex items-center gap-1.5 bg-[var(--color-accent-soft)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--color-accent-strong)]">
-                          <span aria-hidden className="size-1.5 bg-[var(--color-accent)] motion-safe:animate-pulse" />
-                          Open Now
-                        </span>
-                      ) : null}
-                    </div>
-                    <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-accent)] tabular-nums">
-                      {step.date}
-                    </p>
-                    <p className="max-w-xs text-sm leading-6 text-[var(--color-text-soft)]">
-                      {step.description}
-                    </p>
-                  </div>
-                </li>
-              );
-            })}
+            {membership.admissionSteps.map((step, i) => (
+              <li
+                key={step.title}
+                className="relative flex gap-5 md:flex-col md:items-center md:text-center"
+              >
+                <span className="relative z-10 flex size-10 shrink-0 items-center justify-center border-2 border-[var(--color-border-strong)] bg-[var(--color-surface)] text-sm font-semibold tabular-nums text-[var(--color-accent)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="space-y-2 pt-1.5 md:pt-0">
+                  <h3 className="text-lg font-semibold tracking-tight text-[var(--color-text)]">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-accent)] tabular-nums">
+                    {step.date}
+                  </p>
+                  <p className="max-w-xs text-sm leading-6 text-[var(--color-text-soft)]">
+                    {step.description}
+                  </p>
+                </div>
+              </li>
+            ))}
           </ol>
         </div>
       </section>
