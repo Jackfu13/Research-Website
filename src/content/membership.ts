@@ -9,6 +9,17 @@ export const membership = {
   // Cycle is currently CLOSED (resume drop ended 2026-09-25). URL kept as record — no site component renders an Apply button right now. Swap for the next cycle's form URL when reopening.
   applicationFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSdU02r86LSdRFSEQFghl1XMY0ALBrHikYJFvSyKMxan9gDBIw/viewform",
+  // Where the cycle stands right now. Every recruitment surface reads these three strings, so
+  // moving the site to the next phase (interviews → decisions → next cycle opens) is one edit here.
+  cycleStatus: {
+    // Compact signal used on the homepage hero.
+    chip: "Currently reviewing Fall 2026 applications",
+    // Primary status statement — /join hero subline and /join/apply H1.
+    headline: "Applications for Fall 2026 are closed and under review.",
+    // What happens next — paired with the headline wherever there's room for detail.
+    detail:
+      "Thanks to everyone who applied. Assignments are out, and interviews run October 8–15.",
+  },
   intro:
     "The group is built for students who want to prepare for equity research careers through repeated pitching, sector ownership, and active debate.",
   participationSummary:

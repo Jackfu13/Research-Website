@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/Button";
 import { FeaturedPublicationCarousel } from "@/components/FeaturedPublicationCarousel";
+import { membership } from "@/content/membership";
 import { coveredCompanies, site } from "@/content/site";
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
           {/* Left: hero text */}
           <div className="space-y-6 text-center md:text-left">
             <span className="inline-flex items-center bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-              Applications closed for Fall 2026
+              {membership.cycleStatus.chip}
             </span>
             <div className="space-y-3">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-white opacity-80">

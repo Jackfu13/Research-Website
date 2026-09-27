@@ -29,13 +29,13 @@ export default function ApplyPage() {
             className="text-4xl font-semibold tracking-tight text-white md:text-5xl"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
           >
-            Applications are closed for Fall 2026.
+            {membership.cycleStatus.headline}
           </h1>
           <p
             className="max-w-2xl text-base leading-8 text-white opacity-90 md:text-lg"
             style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
           >
-            Thanks to everyone who applied. Assignments are out; interviews run October 8–15.
+            {membership.cycleStatus.detail}
           </p>
         </div>
       </section>
