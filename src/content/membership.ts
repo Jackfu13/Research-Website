@@ -37,8 +37,8 @@ export const membership = {
     },
     {
       title: "Assignment",
-      description: "We send an equity assignment on September 27; complete and return it by October 4.",
-      date: "Sent Sep 27 · Due Oct 4",
+      description: "We send an equity assignment on September 27; complete and return it by October 5.",
+      date: "Sent Sep 27 · Due Oct 5",
     },
     {
       title: "Interview",

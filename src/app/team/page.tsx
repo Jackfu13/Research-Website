@@ -31,7 +31,7 @@ export default function TeamPage() {
       <section className="w-full bg-[var(--color-accent-soft)] px-8 py-16 md:px-12">
         <div className="space-y-10">
           <SectionHeading title="Industry Leads" center />
-          <div className="mx-auto grid w-full max-w-[86rem] grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mx-auto grid w-full max-w-[77rem] grid-cols-1 gap-6 sm:grid-cols-4">
             {industries.filter((v) => !v.upcoming).flatMap((v) => {
               const cards = [
                 <BoardMemberCard
