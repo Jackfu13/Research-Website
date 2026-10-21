@@ -157,7 +157,7 @@ export default function JoinPage() {
             {membership.cycleStatus.detail}
           </p>
           <div className="pt-2">
-            <Button href="/join/apply" label="Recruitment timeline" variant="light" large />
+            <Button href="/join/apply" label="How admission works" variant="light" large />
           </div>
           <p className="pt-6 text-sm leading-6 text-white opacity-80" style={bodyShadow}>
             Questions? Reach out to{" "}

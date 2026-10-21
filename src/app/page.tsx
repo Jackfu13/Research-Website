@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import { Button } from "@/components/Button";
 import { FeaturedPublicationCarousel } from "@/components/FeaturedPublicationCarousel";
-import { membership } from "@/content/membership";
 import { coveredCompanies, site } from "@/content/site";
 
 export default function Home() {
@@ -23,9 +22,6 @@ export default function Home() {
         <div className="relative z-10 mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-2 md:items-start md:gap-16">
           {/* Left: hero text */}
           <div className="space-y-6 text-center md:text-left">
-            <span className="inline-flex items-center bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-              {membership.cycleStatus.chip}
-            </span>
             <div className="space-y-3">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-white opacity-80">
                 At Northeastern University

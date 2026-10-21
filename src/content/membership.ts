@@ -1,24 +1,25 @@
 export type AdmissionStep = {
   title: string;
   description: string;
-  date: string;
+  // Shown on the /join/apply timeline only when set. Fill in once the next cycle's dates are announced.
+  date?: string;
 };
 
 export const membership = {
-  // Google Form for the Fall 2026 recruitment cycle (resume drop → assignment → interview).
-  // Cycle is currently CLOSED (resume drop ended 2026-09-25). URL kept as record — no site component renders an Apply button right now. Swap for the next cycle's form URL when reopening.
+  // Google Form from the Fall 2026 cycle, which is finished. Kept as record — no component renders
+  // an Apply button right now. Replace with the Spring 2027 form URL when that cycle opens.
   applicationFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSdU02r86LSdRFSEQFghl1XMY0ALBrHikYJFvSyKMxan9gDBIw/viewform",
-  // Where the cycle stands right now. Every recruitment surface reads these three strings, so
-  // moving the site to the next phase (interviews → decisions → next cycle opens) is one edit here.
+  // Label for the next recruitment cycle, shown at the top of /join/apply.
+  nextCycle: "Spring 2027",
+  // Where the cycle stands right now. Every recruitment surface reads these strings, so
+  // moving the site to the next phase is one edit here.
   cycleStatus: {
-    // Compact signal used on the homepage hero.
-    chip: "Currently reviewing Fall 2026 applications",
     // Primary status statement — /join hero subline and /join/apply H1.
-    headline: "Applications for Fall 2026 are closed and under review.",
+    headline: "The Fall 2026 class is final. Applications reopen in Spring 2027.",
     // What happens next — paired with the headline wherever there's room for detail.
     detail:
-      "Thanks to everyone who applied. Assignments are out, and interviews run October 8–15.",
+      "Thanks to everyone who applied this fall. The Spring 2027 schedule will be posted here when applications open.",
   },
   intro:
     "The group is built for students who want to prepare for equity research careers through repeated pitching, sector ownership, and active debate.",
@@ -33,17 +34,14 @@ export const membership = {
     {
       title: "Application",
       description: "Drop your resume through the application form.",
-      date: "September 8–25",
     },
     {
       title: "Assignment",
-      description: "We send an equity assignment on September 27; complete and return it by October 5.",
-      date: "Sent Sep 27 · Due Oct 5",
+      description: "Complete an equity assignment and return it by the deadline.",
     },
     {
       title: "Interview",
       description: "A conversation about your assignment, your thinking, and how you approach markets.",
-      date: "October 8–15",
     },
   ] satisfies AdmissionStep[],
   meetingCadence: [

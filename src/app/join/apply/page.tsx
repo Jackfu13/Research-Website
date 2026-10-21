@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { PageLayout } from "@/components/PageLayout";
-import { membership } from "@/content/membership";
+import { membership, type AdmissionStep } from "@/content/membership";
 
 export default function ApplyPage() {
   return (
@@ -22,7 +22,7 @@ export default function ApplyPage() {
           <div className="flex flex-col items-center gap-3">
             <span aria-hidden className="block h-0.5 w-12 bg-[var(--color-accent-soft)]" />
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent-soft)]">
-              Fall 2026 Cycle
+              Next cycle: {membership.nextCycle}
             </p>
           </div>
           <h1
@@ -54,7 +54,7 @@ export default function ApplyPage() {
           </div>
 
           <ol className="relative grid gap-10 before:absolute before:top-0 before:bottom-0 before:left-5 before:w-px before:bg-[var(--color-border-strong)] md:grid-cols-3 md:gap-8 md:before:top-5 md:before:right-[16.67%] md:before:bottom-auto md:before:left-[16.67%] md:before:h-px md:before:w-auto">
-            {membership.admissionSteps.map((step, i) => (
+            {membership.admissionSteps.map((step: AdmissionStep, i) => (
               <li
                 key={step.title}
                 className="relative flex gap-5 md:flex-col md:items-center md:text-center"
@@ -66,9 +66,11 @@ export default function ApplyPage() {
                   <h3 className="text-lg font-semibold tracking-tight text-[var(--color-text)]">
                     {step.title}
                   </h3>
-                  <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-accent)] tabular-nums">
-                    {step.date}
-                  </p>
+                  {step.date ? (
+                    <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-accent)] tabular-nums">
+                      {step.date}
+                    </p>
+                  ) : null}
                   <p className="max-w-xs text-sm leading-6 text-[var(--color-text-soft)]">
                     {step.description}
                   </p>
